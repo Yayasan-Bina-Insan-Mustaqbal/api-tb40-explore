@@ -8,11 +8,19 @@ var compression = require('compression');
 var helmet = require('helmet');
 var cors = require('cors');
 var rateLimit = require('express-rate-limit');
+var swaggerUi = require('swagger-ui-express');
+var YAML = require('yamljs');
+var winstonLogger = require('./utils/logger');
+var errorHandler = require('./middleware/errorHandler');
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // limit each IP to 100 requests per windowMs
-  message: { error: 'Too many requests, please try again later.' }
+  message: { error: 'Too many requests, please try again later.' },
+  handler: (req, res, next, options) => {
+    winstonLogger.warn(`Rate limit exceeded for IP: ${req.ip}`);
+    res.status(options.statusCode).send(options.message);
+  }
 });
 
 
@@ -29,12 +37,19 @@ app.use('/api/', limiter); // Apply rate limiting to API routes
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 // Enable compression
 app.use(compression());
 
-app.use(logger('dev'));
+// HTTP Request Logging (Morgan + Winston)
+app.use(logger('combined', { stream: { write: message => winstonLogger.info(message.trim()) } }));
+
+// Swagger Documentation
+const swaggerDocument = YAML.load(path.join(__dirname, 'public/api/swagger.yaml'));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -48,15 +63,7 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+// Centralized Error Handling
+app.use(errorHandler);
 
 module.exports = app;

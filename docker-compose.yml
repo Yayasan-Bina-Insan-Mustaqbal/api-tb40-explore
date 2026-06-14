@@ -1,17 +1,40 @@
-version: "3.8"
+version: '3.8'
 
 services:
-  api-tb40:
+  api:
     build: .
     container_name: api-tb40
-    ports:
-      - "4040:4040"
-    restart: unless-stopped
+    restart: always
     environment:
       - NODE_ENV=production
+      - PORT=4040
+    ports:
+      - "4040:4040"
+    volumes:
+      - ./logs:/usr/src/app/logs
     networks:
-      - app-network
+      - tb40-network
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy-proxy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - api
+    networks:
+      - tb40-network
 
 networks:
-  app-network:
+  tb40-network:
     driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:

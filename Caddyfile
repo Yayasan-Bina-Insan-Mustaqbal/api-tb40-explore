@@ -1,0 +1,13 @@
+{
+    email your-email@example.com
+}
+
+# Replace with your actual domain
+http://tb40.local {
+    reverse_proxy api:4040
+    
+    handle_errors {
+        rewrite * /{err.status_code}.html
+        file_server
+    }
+}

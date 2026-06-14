@@ -1,0 +1,131 @@
+openapi: 3.0.0
+info:
+  title: API TB40
+  description: RESTful API for Tafsir Bakat 40 personality assessment.
+  version: 0.2.0
+servers:
+  - url: http://localhost:4040
+    description: Local development server
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  uptime:
+                    type: number
+  /api/v0.2/{type}/schema:
+    get:
+      summary: Get tiered assessment schema (v0.2)
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [tb40, tb40anak]
+      responses:
+        '200':
+          description: Tiered questions and dimensions
+  /api/v0.2/{type}/evaluate:
+    post:
+      summary: Evaluate assessment progress and get next steps (v0.2)
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [tb40, tb40anak]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                answers:
+                  type: object
+                  properties:
+                    tier_1:
+                      type: integer
+                      description: "1=Introvert, 2=Extrovert"
+                    tier_2:
+                      type: integer
+                      description: "1=Karsa, 2=Cipta, 3=Rasa"
+                    tier_3:
+                      type: object
+                      description: "Answers to specific group questions"
+                request_precision:
+                  type: boolean
+      responses:
+        '200':
+          description: Current evaluation status and next required tier
+  /api/{version}/{type}/calculation:
+    post:
+      summary: Calculate TB40 results (v0.1 & v0.2)
+      parameters:
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [v0.1, v0.2]
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [tb40, tb40anak, raporkarakter]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                parts:
+                  type: object
+                  properties:
+                    umum:
+                      type: object
+                      properties:
+                        nama:
+                          type: object
+                          properties:
+                            lengkap:
+                              type: string
+                            panggilan:
+                              type: string
+                        lahir:
+                          type: object
+                          properties:
+                            tanggal:
+                              type: string
+                        tanggal:
+                          type: string
+                    tb40:
+                      type: array
+                      items:
+                        type: number
+                      minItems: 40
+                      maxItems: 40
+                    tb40anak:
+                      type: array
+                      items:
+                        type: number
+                      minItems: 40
+                      maxItems: 40
+      responses:
+        '200':
+          description: Calculation successful
+        '400':
+          description: Invalid request

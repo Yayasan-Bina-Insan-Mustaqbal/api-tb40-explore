@@ -1,0 +1,15 @@
+[views/index.pug#A1B2]
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+[views/layout.pug#C3D4]
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content

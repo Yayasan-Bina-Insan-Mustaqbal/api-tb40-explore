@@ -4,6 +4,7 @@ API TB40 is a RESTful API service for calculating and analyzing the TB40 (Tafsir
 
 ## Features
 
+- **Tiered Assessment (v0.2)**: New branching logic reduces user friction by starting with high-level questions before drilling down into specific traits.
 - **Multi-Type Assessments**: Supports Adult (`tb40`) and Children (`tb40anak`) versions.
 - **Dynamic Calculation**: Automatic scoring, ranking, and trait categorization.
 - **Visual Representations**: Generates SVG personality maps based on scores or ranks.
@@ -13,6 +14,8 @@ API TB40 is a RESTful API service for calculating and analyzing the TB40 (Tafsir
   - Publicly accessible via `cors`.
   - Abuse prevention with `express-rate-limit`.
   - Environment-based configuration with `dotenv`.
+  - Structured logging with `winston`.
+  - Centralized JSON error handling.
 - **Automated Testing**: Comprehensive test suite with Jest.
 
 ## Quick Start
@@ -41,23 +44,39 @@ The API will be available at `http://localhost:4040`.
 
 ## API Documentation
 
+Interactive documentation is available at `http://localhost:4040/api-docs`.
+
 ### Health Check
 ```bash
 GET /health
 ```
 Returns application status, uptime, and timestamp.
 
-### Get Test Questions
-```bash
-GET /api/:version/:type/questions.json
-```
-- `version`: `v0.1`, `v0.2`
-- `type`: `tb40` (Adult), `tb40anak` (Children)
+### Tiered Evaluation (v0.2)
+**Endpoint:** `POST /api/v0.2/:type/evaluate`
 
-### Calculate Results
-```bash
-POST /api/:version/:type/calculation
+Allows multi-step assessment where each step determines the next set of questions.
+
+**Example Payload (Step 1):**
+```json
+{
+  "answers": {}
+}
 ```
+**Response:** Returns `next_tier: "tier_1"` with Introvert/Extrovert dimensions.
+
+**Example Payload (Step 2):**
+```json
+{
+  "answers": { "tier_1": 1 }
+}
+```
+**Response:** Returns `next_tier: "tier_2"` with Karsa/Cipta/Rasa dimensions.
+
+**Precision Mode:** Add `"request_precision": true` to any payload to receive the full 40-question precision set.
+
+### Legacy Calculation (v0.1)
+**Endpoint:** `POST /api/v0.1/:type/calculation`
 
 **Request Body Format:**
 ```json
@@ -72,7 +91,6 @@ POST /api/:version/:type/calculation
   }
 }
 ```
-*Note: Use the assessment type as the key for scores (e.g., `tb40anak` or `tb40`).*
 
 ## Development & Testing
 
@@ -96,13 +114,10 @@ api-tb40/
 ├── middleware/      # Request validation & security
 ├── routes/          # API endpoints
 ├── services/        # Core calculation logic
-├── utils/           # Helper functions (coloring, rendering)
+├── utils/           # Helper functions (coloring, rendering, logging)
 ├── __tests__/       # Automated test suite
 └── app.js           # Application entry point
 ```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 [ISC](https://choosealicense.com/licenses/isc/)
