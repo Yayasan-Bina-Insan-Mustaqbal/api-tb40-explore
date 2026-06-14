@@ -1,10 +1,10 @@
 # Production Readiness Todo
 
 ## Priority 1 (Essential, Do Now)
-- [ ] Add basic security packages
-- [ ] Implement proper error handling
-- [ ] Add health check endpoint
-- [ ] Setup environment variables
+ - [x] Add basic security packages (helmet, cors, express-rate-limit)
+ - [ ] Implement proper error handling
+ - [x] Add health check endpoint (`/health`)
+ - [x] Setup environment variables (`dotenv`, `.env.example`)
 
 ## Priority 2 (Important, Can Wait)
 - [ ] Add request validation

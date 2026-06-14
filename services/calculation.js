@@ -7,7 +7,9 @@ const { group } = require("console");
 function handleCalculation(req) {
   const { version, type } = req.params;
   const { parts } = req.body;
-  const { umum, tb40 } = parts;
+  const { umum } = parts;
+  const scores = parts[type] || parts.tb40;
+
 
   // Load the calculation JSON data
   const calculationData = JSON.parse(
@@ -31,9 +33,9 @@ function handleCalculation(req) {
   // Calculate the scores for each pillar
   tb40Calc.groupLinage.forEach((group, index) => {
     if (index === 0) {
-      // Assign scores from the tb40 array to the first group of pillars
+      // Assign scores from the input array to the first group of pillars
       tb40Result[group.child].forEach((pillar) => {
-        pillar.score = tb40[pillar.questionIndex - 1];
+        pillar.score = scores[pillar.questionIndex - 1];
         pillar.color = scoreToColor(pillar.score);
       });
     }
@@ -79,7 +81,6 @@ function handleCalculation(req) {
 
   // Inject file to presentation
   Object.entries(tb40Calc.presentation).forEach(([key, value]) => {
-    console.log(value);
     if (value.file) {
       value.file = fs.readFileSync(
         path.join(__dirname, `../api/${version}/${type}/${value.file}`),

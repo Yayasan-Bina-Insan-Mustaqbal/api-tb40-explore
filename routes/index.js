@@ -15,6 +15,15 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* Health check endpoint */
+router.get('/health', function(req, res) {
+  res.json({
+    status: 'ok',
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  });
+});
+
 // API calculation routes
 const versions = ['v0.1', 'v0.2'];
 const types = ['tb40', 'tb40anak', 'raporkarakter'];

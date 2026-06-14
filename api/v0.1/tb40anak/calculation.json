@@ -1,0 +1,1467 @@
+{
+  "name": "Tafsir Bakat 40 Anak",
+  "version": "0.1",
+  "report": "",
+  "parts": {
+    "umum": {
+      "input": "same as result",
+      "result": {
+        "nama": {
+          "lengkap": "",
+          "panggilan": ""
+        },
+        "lahir": {
+          "tanggal": ""
+        },
+        "keterangan": {
+          "tingkat": "",
+          "lembaga": "",
+          "refererr": ""
+        },
+        "tanggal": ""
+      }
+    },
+    "tb40": {
+      "input": "Array of 40 of value between 0-100 presenting 40 base pillars",
+      "calculation": "Calculate avarage of every group and rank every pillar in every group",
+      "result": { "2": [], "3": [], "6": [], "18": [], "40": [] },
+      "presentation": {
+        "definisi_tb40": {
+          "title": "Apa itu TB40?",
+          "data": "TB-40 adalah cara seru untuk mengenal bakat dan kebaikan yang ada di dalam dirimu. Dengan TB-40, kita bisa tahu apa yang paling kamu suka, cara belajarmu yang paling asik, dan cita-citamu nanti!"
+        },
+        "definisi_bakat": {
+          "title": "Apa itu Bakat?",
+          "data": "Bakat adalah kelebihan yang Tuhan berikan padamu supaya kamu jadi anak yang hebat dan unik. Perbedaan itu ada pada:\n - Cara bekerja dan bermain (BAKAT)\n - Cara belajar di sekolah (GAYA BELAJAR)\n - Cara merasa dan berteman (BAHASA HATI)"
+        },
+        "julukan": {
+          "title": "julukan",
+          "data": "{{tb40.ranked.[6].[0].data.label}} yang {{tb40.ranked.[6].[1].data.label}}"
+        },
+        "kepribadian": {
+          "title": "Sifat Hebatmu",
+          "data": "Halo {{umum.nama.panggilan}}! Kamu adalah anak yang {{tb40.ranked.[2].[0].name}} ({{tb40.ranked.[2].[0].data.definisi}}). Kamu juga anak yang suka {{tb40.ranked.[3].[0].data.definisi}}. Selain itu, kamu punya sifat hebat yaitu suka {{tb40.ranked.[6].[0].data.arti}} dan juga {{tb40.ranked.[18].[0].data.arti}}. Kamu adalah anak yang: {{tb40.ranked.[40].[0].data.nama}}, {{tb40.ranked.[40].[1].data.nama}}, {{tb40.ranked.[40].[2].data.nama}}, {{tb40.ranked.[40].[3].data.nama}} dan {{tb40.ranked.[40].[4].data.nama}}. Hebat ya!"
+        },
+        "ringkasan_gaya_belajar": {
+          "title": "Cara Belajar yang Asik",
+          "data": "Kamu paling suka belajar dengan cara: {{tb40.ranked.[3].[0].data.gaya_belajar_cara}}."
+        },
+        "ringkasan_bahasa_hati": {
+          "title": "Rahasia Membuatmu Senang",
+          "data": "Kamu akan merasa sangat senang dan disayang kalau orang lain: {{tb40.ranked.[3].[0].data.bahasa_hati_definisi}}."
+        },
+        "pemetaan_tafsir_bakat": {
+          "title": "Pemetaan Tafsir Bakat",
+          "file": "tb40.svg"
+        },
+        "pemetaan_tafsir_bakat_byRank": {
+          "title": "Pemetaan Tafsir Bakat",
+          "file": "tb40byRank.svg"
+        }
+      },
+      "groupLinage": [
+        { "child": "40", "parent": "18" },
+        { "child": "18", "parent": "6" },
+        { "child": "6", "parent": "3" },
+        { "child": "6", "parent": "2" }
+      ],
+      "pillars": [
+        {
+          "name": "Introvert",
+          "pillar": { "no": "1", "group": "2" },
+          "data": {
+            "arab": null,
+            "arti": "introvert",
+            "definisi": "tidak senang bertemu orang"
+          }
+        },
+        {
+          "name": "Extrovert",
+          "pillar": { "no": "2", "group": "2" },
+          "data": {
+            "arab": null,
+            "arti": "extrovert",
+            "definisi": "senang bertemu orang"
+          }
+        },
+        {
+          "name": "Karsa",
+          "pillar": { "no": "1", "group": "3" },
+          "data": {
+            "arab": "الهَوَى",
+            "sebutan": "karsa",
+            "definisi": "bersemangat",
+            "nama_lengkap": "Al Hawa (الهَوَى)",
+            "arti": "bersemangat",
+            "gaya_belajar_arab": "Al Fuad (الفُؤَاد)",
+            "gaya_belajar": "bergerak",
+            "gaya_belajar_definisi": "Dalam belajar lebih suka bergerak dan menyentuh segala sesuatu yang dijumpai, memiliki koordinasi fisik yang baik, suka menggunakan objek nyata sebagai alat bantu belajar, sering melakukan kegiatan fisik / banyak bergerak, lebih bisa belajar dengan praktek, belajar dengan berjalan-jalan, menggunakan jari untuk menunjuk saat membaca, banyak menggunakan isyarat tubuh, tak bisa duduk tenang untuk waktu yang lama, membuat keputusan berdasarkan perasaan, suka mengetuk-ngetuk dengan pena, menggerakkan jari atau kaki saat mendengarkan, dan suka meluangkan waktu untuk berolah raga dan kegiatan fisik lainnya.",
+            "gaya_belajar_cara": "belajar dengan bergerak dan menyentuh (meskipun mampu juga dengan mendengar dan melihat), membongkar sesuatu, praktek langsung dengan menggunakan peragaan, beraktifitas gerak fisik yang dapat langsung dirasakan, lebih suka langsung praktek dari pada teori.",
+            "gaya_belajar_tempat": "Tempat belajar yang nyaman dengan gaya belajar ini antara lain di alam terbuka, lapangan, bengkel, sawah, atau tempat lain yang memungkinkan untuk melakukan banyak gerakan.",
+            "bahasa_hati": "Bahasa Pelayanan",
+            "bahasa_hati_definisi": "Bahasa hati dengan melayani kemauannya, melaksanakan perintahnya, menjaga rahasianya, menutupi aibnya, memaafkan kesalahannya, atau bersabar atas perilakunya."
+          }
+        },
+        {
+          "name": "Cipta",
+          "pillar": { "no": "2", "group": "3" },
+          "data": {
+            "arab": "العَقْل",
+            "sebutan": "cipta",
+            "definisi": "berpikir",
+            "nama_lengkap": "Al Aql (العَقْل)",
+            "arti": "berpikir",
+            "gaya_belajar_arab": "Al Bashar (البَصَر)",
+            "gaya_belajar": "melihat",
+            "gaya_belajar_definisi": "Dalam belajar lebih suka dengan cara melihat, senantiasa berusaha melihat bibir guru yang sedang mengajar, berbicara agak cepat, kadang belepotan, tidak mudah terganggu oleh keributan tetapi mudah terganggu dengan cahaya ruangan yang kurang terang, lebih mudah mengingat apa yang  dilihat dari pada apa yang didengar, lebih suka membaca dari pada dibacakan, pembaca cepat dan tekun, lebih suka membaca mushaf  dari pada mendengar murottal  dalam menghafal Al Qur’an, cenderung menggunakan gerakan tubuh (untuk mengekspresikan dan menggantikan kata-kata) saat mengungkapkan sesuatu, lebih suka peragaan daripada penjelasan lisan.",
+            "gaya_belajar_cara": "belajar dengan cara melihat (meskipun mampu juga dengan mendengar dan bergerak), lebih suka melihat gambar atau diagram, menonton pertunjukan, demonstrasi suatu kegiatan, atau menyaksikan video, menyukai tampilan simbol-simbol, warna-warna, tulisan yang indah, gambar yang mencolok, dan pemandangan yang indah.",
+            "gaya_belajar_tempat": "Tempat belajar yang nyaman dengan gaya belajar ini harus memiliki penerangan yang cukup dan pemandangan disekitar tempat belajar tampak menarik sehingga nyaman dengan visualnya.",
+            "bahasa_hati": "Bahasa Kebersamaan",
+            "bahasa_hati_definisi": "Bahasa hati dengan cara menemaninya, mendengarkan keluhannya, memberikan senyuman, memenuhi janji kepadanya, bercanda dengannya, memudahkan urusan dengannya, atau dengan menyayanginya."
+          }
+        },
+        {
+          "name": "Rasa",
+          "pillar": { "no": "3", "group": "3" },
+          "parents": [{ "no": null, "group": null }],
+          "data": {
+            "arab": "القَلْب",
+            "sebutan": "rasa",
+            "definisi": "berperasaan",
+            "nama_lengkap": "Al Qalb (القَلْب)",
+            "arti": "berperasaan",
+            "gaya_belajar_arab": "As Sam'u (السَمْع)",
+            "gaya_belajar": "mendengar",
+            "gaya_belajar_definisi": "Dalam belajar lebih suka dengan cara mendengar, saat beraktifitas suka bicara kepada diri sendiri, mudah terganggu oleh suara berisik dan keributan, mudah mengingat apa yang didengar dari pada yang dilihat, senang mengeraskan suara ketika membaca buku atau menghafal, pembicara yang fasih, lebih suka mendengar (audio) dari pada membaca mushaf dalam menghafal Al Qur’an, lebih pandai mengeja dengan suara daripada menuliskannya, dapat mengulangi kembali dan menirukan  suara  dengan nada, irama dan warna suara.",
+            "gaya_belajar_cara": "belajar dengan cara mendengar (meskipun mampu juga dengan melihat dan bergerak), mendengar ceramah guru, pidato, mendengarkan audio atau rekaman, berdiskusi, merangkum pelajaran untuk dibaca kembali dengan suara dikeraskan atau dengan cara merekam suara.",
+            "gaya_belajar_tempat": "Tempat belajar yang nyaman dengan gaya belajar ini suasananya harus cukup hening, tidak berisik, dan tidak ada suara gaduh disekitar.",
+            "bahasa_hati": "Bahasa Perlindungan",
+            "bahasa_hati_definisi": "Bahasa hati yang berupa pemberian hadiah, memberi motivasi dengan kata-kata penyemangat, keberanian untuk mendekat, menolong kesulitannya, merasa mencemburuinya, atau dengan mengajaknya bersaing."
+          }
+        },
+        {
+          "name": "Bekerja keras",
+          "pillar": { "no": "1", "group": "6" },
+          "parents": [
+            { "no": "1", "group": "3" },
+            { "no": "1", "group": "2" }
+          ],
+          "data": {
+            "arab": "الحَمَاسَة",
+            "arti": "bekerja keras",
+            "nama_lengkap": "al hamaasah (الحَمَاسَة)",
+            "uraian": "memiliki keinginan yang melambung tinggi, tidak mudah putus asa, ingin segera menyelesaikan pekerjaan meskipun harus lembur, atau tidak menunda-nunda waktu untuk bekerja",
+            "lebih": "tamak dalam mendapatkan sesuatu",
+            "label": "Pekerja Keras",
+            "julukan": "Bekerja Keras"
+          }
+        },
+        {
+          "name": "Berpikir",
+          "pillar": { "no": "2", "group": "6" },
+          "parents": [
+            { "no": "2", "group": "3" },
+            { "no": "1", "group": "2" }
+          ],
+          "data": {
+            "arab": "التَّفْكِيْر",
+            "arti": "berpikir",
+            "nama_lengkap": "at tafkiir (التَّفْكِيْر)",
+            "uraian": "cerdas, senang menganalisa sesuatu secara detail, menghitung, atau menghafal",
+            "lebih": "ahlu ra'yi (mengandalkan akal)",
+            "label": "Cerdas",
+            "julukan": "Cerdas"
+          }
+        },
+        {
+          "name": "Berperasaan",
+          "pillar": { "no": "3", "group": "6" },
+          "parents": [
+            { "no": "3", "group": "3" },
+            { "no": "1", "group": "2" }
+          ],
+          "data": {
+            "arab": "الشُعُوْر",
+            "arti": "berperasaan",
+            "nama_lengkap": "as syu'uur (الشُعُوْر)",
+            "uraian": "suka diam merenung sendiri, mudah tersentuh perasaannya, pemalu, jika memikirkan sesuatu sampai mendalam sekali, dan suka apa adanya",
+            "lebih": "minder dalam menghadapi sesuatu",
+            "label": "Berperasaan",
+            "julukan": "Berperasaan"
+          }
+        },
+        {
+          "name": "Mempengaruhi",
+          "pillar": { "no": "4", "group": "6" },
+          "parents": [
+            { "no": "1", "group": "3" },
+            { "no": "2", "group": "2" }
+          ],
+          "data": {
+            "arab": "التَّأْثِيْر",
+            "arti": "mempengaruhi",
+            "nama_lengkap": "at ta'tsiir (التَّأْثِيْر)",
+            "uraian": "berani menghadapi orang untuk berbicara, mengatur atau menguasainya, ingin mengubah orang lain, tidak mudah mengalah, tampak tegas dalam menghadapi orang lain",
+            "lebih": "otoriter terhadap orang lain",
+            "label": "Tegas",
+            "julukan": "Tegas"
+          }
+        },
+        {
+          "name": "Bekerjasama",
+          "pillar": { "no": "5", "group": "6" },
+          "parents": [
+            { "no": "2", "group": "3" },
+            { "no": "2", "group": "2" }
+          ],
+          "data": {
+            "arab": "التَّعَامُل",
+            "arti": "bekerjasama",
+            "nama_lengkap": "at ta'aamul (التَّعَامُل)",
+            "uraian": "tidak suka konflik, suka berkumpul dan bersama-sama dengan orang lain, tidak suka perbedaan status, ingin sama rata, memiliki banyak relasi dan kenalan, atau senang menjalin pertemanan dengan orang lain",
+            "lebih": "bimbang dalam mengambil keputusan",
+            "label": "Gaul",
+            "julukan": "Mudah Bergaul"
+          }
+        },
+        {
+          "name": "Melayani",
+          "pillar": { "no": "6", "group": "6" },
+          "parents": [
+            { "no": "3", "group": "3" },
+            { "no": "2", "group": "2" }
+          ],
+          "data": {
+            "arab": "الخِدْمَة",
+            "arti": "melayani",
+            "nama_lengkap": "al khidmah (الخِدْمَة)",
+            "uraian": "suka mengalah dan mendahulukan orang lain, tidak tegaan, mudah memaafkan, lembut dan ramah ketika menghadapi orang lain",
+            "lebih": "mudah khawatir atau takut terhadap sesuatu",
+            "label": "Pelayan",
+            "julukan": "Lembut"
+          }
+        },
+        {
+          "name": "Berambisi",
+          "pillar": { "no": "1", "group": "18" },
+          "parents": [{ "no": "1", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "berambisi",
+            "definisi": "bekerja keras karena ambisi"
+          }
+        },
+        {
+          "name": "Berwibawa",
+          "pillar": { "no": "2", "group": "18" },
+          "parents": [{ "no": "1", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "berwibawa",
+            "definisi": "bekerja keras karena wibawa"
+          }
+        },
+        {
+          "name": "Giat bekerja",
+          "pillar": { "no": "3", "group": "18" },
+          "parents": [{ "no": "1", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "giat bekerja",
+            "definisi": "bekerja keras karena giat bekerja"
+          }
+        },
+        {
+          "name": "Suka berpikir imajinatif",
+          "pillar": { "no": "4", "group": "18" },
+          "parents": [{ "no": "2", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka berpikir imajinatif",
+            "definisi": "berpikir imajinatif"
+          }
+        },
+        {
+          "name": "Suka berpikir positif",
+          "pillar": { "no": "5", "group": "18" },
+          "parents": [{ "no": "2", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka berpikir positif",
+            "definisi": "berpikir positif"
+          }
+        },
+        {
+          "name": "Suka berpikir analitis",
+          "pillar": { "no": "6", "group": "18" },
+          "parents": [{ "no": "2", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka berpikir analitis",
+            "definisi": "berpikir analitis"
+          }
+        },
+        {
+          "name": "Suka apa adanya",
+          "pillar": { "no": "7", "group": "18" },
+          "parents": [{ "no": "3", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka apa adanya",
+            "definisi": "apa adanya"
+          }
+        },
+        {
+          "name": "Pendiam",
+          "pillar": { "no": "8", "group": "18" },
+          "parents": [{ "no": "3", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "pendiam",
+            "definisi": "berdiam diri"
+          }
+        },
+        {
+          "name": "Suka merendah",
+          "pillar": { "no": "9", "group": "18" },
+          "parents": [{ "no": "3", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka merendah",
+            "definisi": "merendah"
+          }
+        },
+        {
+          "name": "Suka menguasai",
+          "pillar": { "no": "10", "group": "18" },
+          "parents": [{ "no": "4", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka menguasai",
+            "definisi": "mempengaruhi dengan cara menguasai"
+          }
+        },
+        {
+          "name": "Suka memotivasi",
+          "pillar": { "no": "11", "group": "18" },
+          "parents": [{ "no": "4", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka memotivasi",
+            "definisi": "mempengaruhi dengan cara memotivasi"
+          }
+        },
+        {
+          "name": "Suka menolong",
+          "pillar": { "no": "12", "group": "18" },
+          "parents": [{ "no": "4", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka menolong",
+            "definisi": "mempengaruhi dengan cara menolong"
+          }
+        },
+        {
+          "name": "Suka menggunakan hubungan yang ada",
+          "pillar": { "no": "13", "group": "18" },
+          "parents": [{ "no": "5", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka menggunakan hubungan yang ada",
+            "definisi": "memanfaatkan hubungan"
+          }
+        },
+        {
+          "name": "Suka membuat hubungan baru",
+          "pillar": { "no": "14", "group": "18" },
+          "parents": [{ "no": "5", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka membuat hubungan baru",
+            "definisi": "memulai hubungan baru"
+          }
+        },
+        {
+          "name": "Suka mengeratkan hubungan yang sudah ada",
+          "pillar": { "no": "15", "group": "18" },
+          "parents": [{ "no": "5", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka mengeratkan hubungan yang sudah ada",
+            "definisi": "menguatkan hubungan yang ada"
+          }
+        },
+        {
+          "name": "Suka melayani dengan cara memberi",
+          "pillar": { "no": "16", "group": "18" },
+          "parents": [{ "no": "6", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka melayani dengan cara memberi",
+            "definisi": "melayani dengan cara memberi"
+          }
+        },
+        {
+          "name": "Suka melayani dengan cara menjaga",
+          "pillar": { "no": "17", "group": "18" },
+          "parents": [{ "no": "6", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka melayani dengan cara menjaga",
+            "definisi": "melayani dengan cara menjaga"
+          }
+        },
+        {
+          "name": "Suka melayani dengan cara mengalah",
+          "pillar": { "no": "18", "group": "18" },
+          "parents": [{ "no": "6", "group": "6" }],
+          "data": {
+            "arab": null,
+            "arti": "suka melayani dengan cara mengalah",
+            "definisi": "melayani dengan cara mengalah"
+          }
+        },
+        {
+          "questionIndex": "1",
+          "name": "‘adaalah",
+          "pillar": { "no": "27", "group": "40" },
+          "parents": [{ "no": "13", "group": "18" }],
+          "data": {
+            "pilar40": "27",
+            "arab": "العَدَالَة",
+            "nama": "adil",
+            "nama_lengkap": "‘Adaalah / العَدَالَة (adil)",
+            "label_diri": "bersikap adil",
+            "definisi": "bersikap tengah-tengah, tepat dalam menempatkan sesuatu pada tempatnya tanpa berlebihan dan tidak kurang",
+            "lalai_arab": "الظُّلْم",
+            "lalai_nama_lengkap": "Zhulm (الظُّلْم)(zhalim)",
+            "lalai_definisi": "berbuat tidak adil atau berat sebelah dalam bersikap dan bertindak sehingga merugikan orang atau pihak lain",
+            "lalai_perbaiki": "Sifat tercela zhulm (الظُّلْم)(zhalim) yang ditimbulkan akibat meremehkan bakat ‘adaalah, dapat diperbaiki dengan menguatkan bakat ‘adaalah itu sendiri dan bakat lainnya, yaitu antara lain bakat itsaar, rahmah, shabr, hilm, anaah, dan amaanah",
+            "lebih_arab": "الجَهْل",
+            "lebih_nama_lengkap": "Jahl (الجَهْل) (kebodohan) ",
+            "lebih_definisi": "ketiadaan pengetahuan sehingga menganggap yang dilakukan adalah adil, tetapi sebenarnya yang dilakukannya bukanlah keadilan",
+            "lebih_perbaiki": "sifat tercela jahl (الجَهْل) (kebodohan) yang ditimbulkan akibat berlebihan dalam bakat ‘adaalah, dapat diperbaiki dengan menguatkan bakat syajaa’ah, munaafasah, dan ghairah.",
+            "profesi": "Hakim, Petugas pembinaan keluarga, Konselor masalah keluarga, Mediator, Petugas kontrol terhadap kesesuaian atas standar seperti kepatuhan kepada aturan, Quantity Surveyor, Petugas Commisioning atau peran yang bisa memiliki kekuatan untuk menyamakan aturan main dan peran lainnya  yang terkait dengan sifat adil",
+            "jurusan": "Hukum Islam, Syariah, Konseling keluarga, Hukum Publik, Hukum Perdata, Hukum Internasioanal, Ilmu Hukum, Hukum Pidana, atau jurusan lainnya yang terkait dengan keadilan",
+            "lalai_perbaiki_arab": "العَدَالَة,الاِيْثَار,الرَّحْمَة,الصَّبْر,الحِلْم,الاَنَاة,الاَمَانَة",
+            "lebih_perbaiki_arab": "الشَّجَاعَة,المُنَافَسَة,الغَيْرَة"
+          }
+        },
+        {
+          "questionIndex": "2",
+          "name": "Amaanah",
+          "pillar": { "no": "37", "group": "40" },
+          "parents": [{ "no": "18", "group": "18" }],
+          "data": {
+            "pilar40": "37",
+            "arab": "الاَمَانَة",
+            "nama": "bertanggung jawab",
+            "nama_lengkap": "Amaanah / الاَمَانَة (tanggung Jawab)",
+            "label_diri": "bertanggung jawab terhadap tugas yang diberikan kepadanya",
+            "definisi": "senang jika diberi tanggung jawab serta menunaikan akad atau janji yang disepakati dengan sebaik-baiknya",
+            "lalai_arab": "الخِيَانَة",
+            "lalai_nama_lengkap": "Khiaanah (الخِيَانَة) (penghianatan)",
+            "lalai_definisi": "perkataan dan perlakuan yang tidak sesuai dengan apa yang telah diamanahkan",
+            "lalai_perbaiki": "Sifat tercela khiaanah (الخِيَانَة) (penghianatan) yang ditimbulkan akibat meremehkan bakat amaanah, dapat diperbaiki dengan menguatkan bakat itu sendiri dan bakat lainnya, yaitu antara lain bakat  iffah dan shidq.",
+            "lebih_arab": "التَّقْلِيْد",
+            "lebih_nama_lengkap": "Taqliid (التَّقْلِيْد) (fanatik buta)",
+            "lebih_definisi": "menerima tugas dan menuruti perkataan dan perbuatan orang lain tanpa mempedulikan kebenarannya",
+            "lebih_perbaiki": "sifat tercela taqliid (التَّقْلِيْد) (fanatik buta) yang ditimbulkan akibat berlebihan dalam bakat amaanah, dapat diperbaiki dengan menguatkan bakat izzah dan waqaar.",
+            "profesi": "Pengelola Lembaga Pendidikan, Pengelola Baitul Maal, Pengasuh Anak Yatim, Pedagang, Pengelola Dana Umat, Bendahara, Account Sales, Manajer Umum, Manajer Keuangan, Quality Controller, Keamanan, dan peran lainnya  yang terkait dengan sifat amanah atau tanggung jawab",
+            "jurusan": "Keguruan/tarbiyah, akuntansi, bisnis dan manajemen, administrasi",
+            "lalai_perbaiki_arab": "الاَمَانَة,الصِّدْق,العِفَّة",
+            "lebih_perbaiki_arab": "العِزَّة,الوَقَار"
+          }
+        },
+        {
+          "questionIndex": "3",
+          "name": "Anaah",
+          "pillar": { "no": "38", "group": "40" },
+          "parents": [{ "no": "18", "group": "18" }],
+          "data": {
+            "pilar40": "38",
+            "arab": "الاَنَاة",
+            "nama": "tidak tergesa",
+            "nama_lengkap": "Anaah / الاَنَاة (tidak tergesa)",
+            "label_diri": "mempertimbangkan dulu sebelum bertindak",
+            "definisi": "tenang, dan mencari kejelasan terlebih dahulu sebelum melakukan tindakan",
+            "lalai_arab": "العَجَلَة",
+            "lalai_nama_lengkap": "‘ajalah (العَجَلَة) (tergesa-gesa)",
+            "lalai_definisi": "keinginan untuk mendapatkan sesuatu sebelum tiba waktunya yang disebabkan oleh besarnya keinginannya terhadap sesuatu tersebut, seperti halnya orang yang memanen buah sebelum datang waktu panennya",
+            "lalai_perbaiki": "Sifat tercela ‘ajalah (العَجَلَة) (tergesa-gesa) yang ditimbulkan akibat meremehkan bakat anaah, dapat diperbaiki dengan menguatkan bakat itu sendiri dan bakat lainnya, yaitu antara lain bakat hilm.",
+            "lebih_arab": "وَسْوَاس",
+            "lebih_nama_lengkap": "Was-was (وَسْوَاس)(ragu-ragu)",
+            "lebih_definisi": "salah satu senjata iblis yang disematkan di hati hamba Allah untuk menimbulkan keraguan, baik dalam beribadah, muamalah, maupun lainnya",
+            "lebih_perbaiki": "sifat tercela was-was (وَسْوَاس)(ragu-ragu) yang ditimbulkan akibat berlebihan dalam bakat anaah, dapat diperbaiki dengan menguatkan bakat husnuzhan  dan firaasah.",
+            "profesi": "Mufti, Penasehat, Konsultan, Perumus peraturan, Perancang Sistem Keamanan, Pengawas, Pilot, Urusan Legal, Membuat Kontrak Bisnis yang baik atau memastikan kesesuaian dengan peraturan atau standar atau kode atau juga peran yang terkait dengan masalah keuangan dan atau keamanan",
+            "jurusan": "Teknik Penerbangan, Teknik Mesin, Teknik Konstruksi Bangunan, Keselamatan Lalu Lintas, Teknik Listrik, Akuntansi, Manajemen Keuangan, dan jurusan lain yang terkait dengan kehati-hatian, keamanan, dan ketelitian",
+            "lalai_perbaiki_arab": "الاَنَاة,الحِلْم",
+            "lebih_perbaiki_arab": "حُسْنُ الظَّن,الفِرَاسَة"
+          }
+        },
+        {
+          "questionIndex": "4",
+          "name": "‘aziimah",
+          "pillar": { "no": "5", "group": "40" },
+          "parents": [{ "no": "3", "group": "18" }],
+          "data": {
+            "pilar40": "5",
+            "arab": "العَزِيمَة",
+            "nama": "bertekad kuat",
+            "nama_lengkap": "‘Aziimah / العَزِيمَة (tekad)",
+            "label_diri": "memiliki tekad untuk segera memulai sesuatu pekerjaan",
+            "definisi": "memiliki tekad kuat untuk segera memulai suatu tindakan atau amalan",
+            "lalai_arab": "الكَسَل",
+            "lalai_nama_lengkap": "Kasal (الكَسَل) (malas)",
+            "lalai_definisi": "merasa berat dan lamban terhadap sesuatu, padahal memiliki kekuatan, karena tidak adanya keinginan untuk berbuat kebaikan",
+            "lalai_perbaiki": "Sifat tercela kasal (الكَسَل) (malas) yang ditimbulkan akibat meremehkan bakat ‘aziimah, dapat diperbaiki dengan menguatkan bakat itu sendiri dan bakat lainnya, yaitu antara lain bakat himmah dan nasyaath.",
+            "lebih_arab": "الطَّمَع",
+            "lebih_nama_lengkap": "Thama’ (الطَّمَع) (Serakah)",
+            "lebih_definisi": "keinginan kuat terhadap sesuatu yang sebenarnya tidak dibutuhkannya",
+            "lebih_perbaiki": "sifat tercela thama’ (الطَّمَع) (Serakah) yang ditimbulkan akibat berlebihan dalam bakat ‘aziimah, dapat diperbaiki dengan menguatkan bakat qanaa’ah, tawaadhu’, dan hayaa’.",
+            "profesi": "Perintis atau pelopor, Team penggerak, Entrepreneur, Sales, Pengelola usaha-usaha baru,  atau usaha yang memerlukan perubahan besar",
+            "jurusan": "Manajemen dan Bisnis, Teknologi Terapan, Marketing, Kewirausahaan, Pekerjaan Umum",
+            "lalai_perbaiki_arab": "العَزِيمَة,النَّشَاط,الهِمَّة",
+            "lebih_perbaiki_arab": "القَنَاعَة,التَّوَاضُع,الحَيَاء"
+          }
+        },
+        {
+          "questionIndex": "5",
+          "name": "Basyaasyah",
+          "pillar": { "no": "30", "group": "40" },
+          "parents": [{ "no": "14", "group": "18" }],
+          "data": {
+            "pilar40": "30",
+            "arab": "البَشَاشَة",
+            "nama": "berseri-seri",
+            "nama_lengkap": "Basyaasyah / البَشَاشَة (berseri-seri)",
+            "label_diri": "berseri-seri tampak wajahnya",
+            "definisi": "berseri-seri wajahnya, murah senyum, berkata lembut, dan memberikan penyambutan yang baik karena rasa gembira ketika bertemu orang lain",
+            "lalai_arab": "العَبُوْس",
+            "lalai_nama_lengkap": "Abush (العَبُوْس) (muka masam)",
+            "lalai_definisi": "berwajah masam dalam bergaul sehingga membuat orang-orang tidak suka, takut, bahkan lari darinya",
+            "lalai_perbaiki": "Sifat tercela abush (العَبُوْس) (muka masam) yang ditimbulkan akibat meremehkan bakat basyaasyah, dapat diperbaiki dengan menguatkan bakat itu sendiri dan bakat lainnya, yaitu antara lain bakat rifq, muzaah, dan ulfah.",
+            "lebih_arab": "الذُّلّ",
+            "lebih_nama_lengkap": "Dzull (الذُّلّ)(Lemah)",
+            "lebih_definisi": "kelemahan untuk mempertahankan sesuatu sehingga cenderung untuk direndahkan orang lain karena kurangnya ketegasan dalam bersikap",
+            "lebih_perbaiki": "sifat tercela dzull (الذُّلّ)(Lemah) yang ditimbulkan akibat berlebihan dalam bakat basyaasyah, dapat diperbaiki dengan menguatkan bakat syajaa’ah, munaafasah, dan ghairah.",
+            "profesi": "Guru, Konselor, Presenter, Trainer, Motivator, Pemandu Kegiatan Anak, Pelayan Publik, Tour Leader (Pemandu Wisata)",
+            "jurusan": "Ilmu Keguruan, Ilmu Komunikasi, PGTK (Pendidikan Guru TK), Keperawatan, Psikologi, Kepariwisataan, Pelayanan Publik",
+            "lalai_perbaiki_arab": "البَشَاشَة,الرِّفْق,المُزَاح,الاُلْفَة",
+            "lebih_perbaiki_arab": "الشَّجَاعَة,المُنَافَسَة,الغَيْرَة"
+          }
+        },
+        {
+          "questionIndex": "6",
+          "name": "Dzakaa’",
+          "pillar": { "no": "10", "group": "40" },
+          "parents": [{ "no": "6", "group": "18" }],
+          "data": {
+            "pilar40": "10",
+            "arab": "الذَّكَاء",
+            "nama": "cerdas",
+            "nama_lengkap": "Dzakaa’ / الذَّكَاء (cerdas)",
+            "label_diri": "cerdas dalam menganalisa sesuatu",
+            "definisi": "memiliki kecepatan dan ketajaman berpikir dalam memahami, menghafal, menganalisa, dan menyimpulkan sesuatu yang dihadapkan kepadanya",
+            "lalai_arab": "الجَهْل",
+            "lalai_nama_lengkap": "Jahl (الجَهْل) (bodoh)",
+            "lalai_definisi": "meyakini sesuatu yang bertentangan dengan hakikat yang sebenarnya",
+            "lalai_perbaiki": "Sifat tercela jahl (الجَهْل) (bodoh) yang ditimbulkan akibat meremehkan bakat dzakaa’, dapat diperbaiki dengan menguatkan bakat itu sendiri dan bakat lainnya, yaitu antara lain bakat hikmah,",
+            "lebih_arab": "اَهْلُ الرَّأْي",
+            "lebih_nama_lengkap": "Ahlur ra’yi (اَهْلُ الرَّأْي) (pemuja akal)",
+            "lebih_definisi": "mendewakan logika dan akal dalam menghukumi sesuatu sehingga tidak menerima kebenaran yang tidak dapat dilogika",
+            "lebih_perbaiki": "sifat tercela ahlur ra’yi (اَهْلُ الرَّأْي) (pemuja akal) yang ditimbulkan akibat berlebihan dalam bakat dzakaa’, dapat diperbaiki dengan menguatkan bakat tawaadhu’, qanaa’ah, dan hayaa’.",
+            "profesi": "Ahli ilmu (Agama atau umum: Fisika, kimia, dll), Analis, Periset (teknologi, pemasaran, keuangan, atau kesehatan), Manajemen Database, Editor, Manajemen Risiko, Accounting, Programmer",
+            "jurusan": "Jurusan Ilmu Hadits, Ilmu Al Qur’an, Fiqih, atau ilmu Agama lainnya, Teknik kimia, Fisika, Matematika, Teknik Komputer,  IT Programmer, Akuntansi",
+            "lalai_perbaiki_arab": "الذَّكَاء,الحِكْمَة",
+            "lebih_perbaiki_arab": "التَّوَاضُع,القَنَاعَة,الحَيَاء"
+          }
+        },
+        {
+          "questionIndex": "7",
+          "name": "Fashaahah",
+          "pillar": { "no": "22", "group": "40" },
+          "parents": [{ "no": "11", "group": "18" }],
+          "data": {
+            "pilar40": "22",
+            "arab": "الفَصَاحَة",
+            "nama": "komunikatif",
+            "nama_lengkap": "Fashaahah / الفَصَاحَة (fasih bicara)",
+            "label_diri": "fasih berbicara dalam menjelaskan sesuatu",
+            "definisi": "memiliki kemampuan untuk menyampaikan sesuatu dengan ungkapan sederhana, meskipun sebenarnya rumit, sehingga mudah untuk dipahami",
+            "lalai_arab": "العُجْمَة",
+            "lalai_nama_lengkap": "‘Ujmah (العُجْمَة) (gagap)",
+            "lalai_definisi": "kesalahan berbicara yang berupa pengulangan bunyi, suku kata, atau kata-kata, sehingga menjadikan tidak fasih berbicara",
+            "lalai_perbaiki": "Sifat tercela ‘ujmah (العُجْمَة) (gagap) yang ditimbulkan akibat meremehkan bakat fashaahah, dapat diperbaiki dengan menguatkan bakat fashaahah itu sendiri dan bakat lainnya, yaitu antara lain bakat syajaa’ah.",
+            "lebih_arab": "الجِدَال",
+            "lebih_nama_lengkap": "Jidaal (الجِدَال) (berdebat)",
+            "lebih_definisi": "berbantah-bantahan untuk saling menjatuhkan satu dengan lainnya dengan menyalahgunakan kefasihan berbahasa yang dimiliki",
+            "lebih_perbaiki": "sifat tercela jidaal (الجِدَال) (berdebat) yang ditimbulkan akibat berlebihan dalam bakat fashaahah, dapat diperbaiki dengan menguatkan bakat itsaar, hilm, rahmah, dan shabr.",
+            "profesi": "Guru Tajwid Qira’ah, Qari’, Da’i, Guru (pengajar), Dosen, Motivator, Penyuluh Masyarakat, Public Relation, Duta, Sales, Marketing, Humas, Juru Bicara, Presenter, MC, Pengacara, Layanan Pelanggan, Penulis",
+            "jurusan": "Pendidikan Agama, Konseling Keluarga, Keguruan, Ilmu Komunikasi, Hubungan Internasional, Marketing, Manajemen, Manajemen Bisnis",
+            "lalai_perbaiki_arab": "الفَصَاحَة,الشَّجَاعَة",
+            "lebih_perbaiki_arab": "الحِلْم,الاِيْثَار,الرَّحْمَة,الصَّبْر"
+          }
+        },
+        {
+          "questionIndex": "8",
+          "name": "Firaasah",
+          "pillar": { "no": "7", "group": "40" },
+          "parents": [{ "no": "4", "group": "18" }],
+          "data": {
+            "pilar40": "7",
+            "arab": "الفِرَاسَة",
+            "nama": "berfirasat",
+            "nama_lengkap": "Firaasah / الفِرَاسَة (firasat)",
+            "label_diri": "memiliki firasat terhadap sesuatu yang akan terjadi",
+            "definisi": "memiliki ketajaman ilmu yang mampu menyimpulkan perkara batiniyah dengan memperhatikan tanda-tanda lahiriyah yang dapat dilihat, didengar, atau dirasakan",
+            "lalai_arab": "السَّفَه",
+            "lalai_nama_lengkap": "Safah (السَّفَه) (bodoh)",
+            "lalai_definisi": "keyakinan terhadap sesuatu yang bertentangan dengan hakikatnya, sehingga dapat menjadikan seseorang tidak mampu memahami kebenaran yang sangat jelas tanda-tandanya",
+            "lalai_perbaiki": "Sifat tercela ‘ujmah safah (السَّفَه) (bodoh) yang ditimbulkan akibat meremehkan bakat firaasah, dapat diperbaiki dengan menguatkan bakat itu sendiri dan bakat lainnya, yaitu antara lain bakat hikmah dan dzakaa’.",
+            "lebih_arab": "الكَذِب",
+            "lebih_nama_lengkap": "Kadzib (الكَذِب) (dusta)",
+            "lebih_definisi": "mengabarkan sesuatu tidak sesuai dengan yang sebenarnya, baik sengaja atau tidak, baik masa lalu atau masa mendatang",
+            "lebih_perbaiki": "sifat tercela kadzib (الكَذِب) (dusta) yang ditimbulkan akibat berlebihan dalam bakat firaasah, dapat diperbaiki dengan menguatkan bakat shidq, shamt, dan iffah.",
+            "profesi": "Penasehat, Konsultan, Perumus Visi Misi, Entrepreneur, Event Organizer (EO), Tour Leader, Manajer",
+            "jurusan": "Ilmu Aqidah, Ilmu Ushuluddin, Ilmu Jiwa, Manajemen",
+            "lalai_perbaiki_arab": "الفِرَاسَة,الحِكْمَة,الذَّكَاء",
+            "lebih_perbaiki_arab": "الصِّدْق,الصَّمْت,العِفَّة"
+          }
+        },
+        {
+          "questionIndex": "9",
+          "name": "Ghairah",
+          "pillar": { "no": "19", "group": "40" },
+          "parents": [{ "no": "10", "group": "18" }],
+          "data": {
+            "pilar40": "19",
+            "arab": "الغَيْرَة",
+            "nama": "pencemburu",
+            "nama_lengkap": "Ghairah / الغَيْرَة (cemburu)",
+            "label_diri": "memiliki rasa cemburu",
+            "definisi": "memiliki rasa tidak senang jika syariat, aturan, hak, atau ketentuan lain yang telah ditetapkan dilanggar oleh orang lain",
+            "lalai_arab": "الدِّيَاثَة",
+            "lalai_nama_lengkap": "Diyaatsah (الدِّيَاثَة) (permisif)",
+            "lalai_definisi": "tidak ada kepedulian pada diri seorang laki-laki (dan juga perempuan) terhadap kemungkaran yang terjadi dalam keluarganya, lembaga, lingkungan masyarakat, atau lainnya",
+            "lalai_perbaiki": "Sifat tercela diyaatsah (الدِّيَاثَة) (permisif) yang ditimbulkan akibat meremehkan bakat ghairah, dapat diperbaiki dengan menguatkan bakat ghairah itu sendiri dan bakat lainnya, yaitu antara lain bakat munaafasah dan syajaa’ah.",
+            "lebih_arab": "الحَسَد",
+            "lebih_nama_lengkap": "Hasad (الحَسَد) (iri hati)",
+            "lebih_definisi": "mengharap hilangnya nikmat pada orang yang diiri dan berpindah kepada orang yang iri",
+            "lebih_perbaiki": "sifat tercela hasad (الحَسَد) (iri hati) yang ditimbulkan akibat berlebihan dalam bakat ghairah, dapat diperbaiki dengan menguatkan bakat tawaadhu’, qanaa’ah, dan hayaa’.",
+            "profesi": "Penegak Peraturan, Penegak Disiplin, Pengawas, Mandor, Evaluator, Auditor, Supervisor, Manajer.",
+            "jurusan": "Administrasi, manajemen, manajemen bisnis, Sekolah Tinggi Pemerintahan Dalam Negeri, Akademi Militer, Akademi Kepolisian",
+            "lalai_perbaiki_arab": "الغَيْرَة,المُنَافَسَة,الشَّجَاعَة",
+            "lebih_perbaiki_arab": "التَّوَاضُع,القَنَاعَة,الحَيَاء"
+          }
+        },
+        {
+          "questionIndex": "10",
+          "name": "Hayaa’",
+          "pillar": { "no": "15", "group": "40" },
+          "parents": [{ "no": "9", "group": "18" }],
+          "data": {
+            "pilar40": "15",
+            "arab": "الحَيَاء",
+            "nama": "pemalu",
+            "nama_lengkap": "Hayaa’ / الحَيَاء (malu)",
+            "label_diri": "memiliki perasaan malu",
+            "definisi": "merasa betapa besar pemberian/hak yang diterimanya, namun merasa dirinya masih memiliki banyak keterbatasan dan kekurangan, sehingga merasa tidak pantas untuk mendapatkannya",
+            "lalai_arab": "الوَقَاحَة",
+            "lalai_nama_lengkap": "Waqaahah/الوَقَاحَة (tidak tahu malu)",
+            "lalai_definisi": "kadang disebut juga ber “muka tebal”, yaitu tidak malu ketika melanggar syariat Allah",
+            "lalai_perbaiki": "Sifat tercela waqaahah/الوَقَاحَة (tidak tahu malu) yang ditimbulkan akibat meremehkan bakat hayaa’, dapat diperbaiki dengan menguatkan bakat hayaa’ itu sendiri dan bakat lainnya, yaitu antara lain bakat ‘iffah dan shidq.",
+            "lebih_arab": "الدُوْنِيَّة",
+            "lebih_nama_lengkap": "Duuniyyah/الدُوْنِيَّة (rendah diri) atau minder",
+            "lebih_definisi": "tekanan jiwa yang muncul karena adanya konflik dalam diri antara keinginan untuk menjadi unggul dan rasa takut karena merasa dirinya tidak memiliki kemampuan. Dengan kata lain dirinya merasa lebih rendah dari orang lain tetapi takut dianggap rendah",
+            "lebih_perbaiki": "sifat tercela duuniyyah/الدُوْنِيَّة (rendah diri) atau minder yang ditimbulkan akibat berlebihan dalam bakat hayaa’, dapat diperbaiki dengan menguatkan bakat himmah, aziimah, nasyaath, ihsaan, izzah, dan waqaar.",
+            "profesi": "Ahli Hikmah, Sastrawan, Penulis, Designer Fashion, Designer Interior, Arsitek, Kaligrafer, dsb.",
+            "jurusan": "Ilmu Jiwa, Sastra, Arsitektur, Tata Busana, Seni, Desain Komunikasi Visual, Animasi, Fotografi, dsb.",
+            "lalai_perbaiki_arab": "الحَيَاء,العِفَّة,الصِّدْق",
+            "lebih_perbaiki_arab": "الهِمَّة,العَزِيمَة,النَّشَاط,الاِحْسَان,العِزَّة,الوَقَار"
+          }
+        },
+        {
+          "questionIndex": "11",
+          "name": "Hikmah",
+          "pillar": { "no": "11", "group": "40" },
+          "parents": [{ "no": "6", "group": "18" }],
+          "data": {
+            "pilar40": "11",
+            "arab": "الحِكْمَة",
+            "nama": "ahli hikmah",
+            "nama_lengkap": "Hikmah / الحِكْمَة  (hikmah)",
+            "label_diri": "berpikir sangat mendalam untuk mengambil hikmah darinya",
+            "definisi": "memiliki keilmuan yang mendalam tentang suatu pengetahuan hingga dapat menempatkan sesuatu pada kondisi yang sebenarnya",
+            "lalai_arab": "الجَل",
+            "lalai_nama_lengkap": "Jahl/الجَل (kebodohan)",
+            "lalai_definisi": "meyakini sesuatu yang tidak sesuai dengan keadaan sebenarnya, atau tidak mengetahui sesuatu yang sebenarnya",
+            "lalai_perbaiki": "Sifat tercela jahl/الجَل )kebodohan( yang ditimbulkan akibat meremehkan bakat hikmah, dapat diperbaiki dengan menguatkan bakat hikmah itu sendiri dan bakat lainnya, yaitu antara lain bakat dzakaa’, nubl, husnuzhan, dan firaasah.",
+            "lebih_arab": "الكَذِب",
+            "lebih_nama_lengkap": "Kadzib (الكَذِب) (dusta)",
+            "lebih_definisi": "mengabarkan tentang sesuatu peristiwa yang tidak sesuai dengan keadaan sebenarnya, hanya didasari prasangka saja",
+            "lebih_perbaiki": "sifat tercela kadzib (الكَذِب) (dusta) yang ditimbulkan akibat berlebihan dalam bakat hikmah, dapat diperbaiki dengan menguatkan bakat shidq dan ‘iffah.",
+            "profesi": "Kosultan, Konselor, Mufti, Da’i/yah, Psikolog, Petugas Pembinaan Keluarga, Leader dalam membangun team yang berbeda kelompok, atau membantu orang agar merasa berguna",
+            "jurusan": "Ilmu Aqidah, Ilmu Jiwa, Ilmu Adab, Sastra, Syariah, Psikologi, Manajemen",
+            "lalai_perbaiki_arab": "الحِكْمَة,الذَّكَاء,النُّبْل,حُسْنُ الظَّن,الفِرَاسَة",
+            "lebih_perbaiki_arab": "الصِّدْق,العِفَّة"
+          }
+        },
+        {
+          "questionIndex": "12",
+          "name": "Hilm",
+          "pillar": { "no": "39", "group": "40" },
+          "parents": [{ "no": "18", "group": "18" }],
+          "data": {
+            "pilar40": "39",
+            "arab": "الحِلْم",
+            "nama": "santun",
+            "nama_lengkap": "Hilm / الحِلْم (santun)",
+            "label_diri": "mampu untuk tidak membalas perbuatan orang lain",
+            "definisi": "memiliki kemampuan menahan diri untuk tidak memarahi, membalas, atau memberikan hukuman walaupun mampu melakukannya",
+            "lalai_arab": "الغَضَب",
+            "lalai_nama_lengkap": "Ghadhab (الغَضَب) (marah)",
+            "lalai_definisi": "mendidihnya darah dalam hati untuk menahan orang yang mengganggunya atau untuk membalas dendam setelah mengganggunya",
+            "lalai_perbaiki": "Sifat tercela ghadhab (الغَضَب) (marah) yang ditimbulkan akibat meremehkan bakat hilm, dapat diperbaiki dengan menguatkan bakat hilm itu sendiri dan bakat lainnya, yaitu antara lain bakat shabr dan anaah.",
+            "lebih_arab": "الذُّلّ",
+            "lebih_nama_lengkap": "Dzull (الذُّلّ) (lemah)",
+            "lebih_definisi": "kelemahan untuk mempertahankan sesuatu yang seharusnya dipertahankan",
+            "lebih_perbaiki": "sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat berlebihan dalam bakat hilm, dapat diperbaiki dengan menguatkan bakat syajaa’ah, munaafasah, dan ghairah.",
+            "profesi": "Pelayanan Masyarakat Umum, Rahabilitasi Kenakalan Remaja, Perawat Rumah Sakit, Guru (pengajar), Pelayanan Pelanggan (Customer Service), Sales, Manajer, Supervisor",
+            "jurusan": "Keperawatan, Ilmu Komunikasi, Keguruan, Kepariwisataan, Marketing, Manajemen",
+            "lalai_perbaiki_arab": "الحِلْم,الصَّبْر,الاَنَاة",
+            "lebih_perbaiki_arab": "الشَّجَاعَة,المُنَافَسَة,الغَيْرَة"
+          }
+        },
+        {
+          "questionIndex": "13",
+          "name": "Himmah",
+          "pillar": { "no": "1", "group": "40" },
+          "parents": [{ "no": "1", "group": "18" }],
+          "data": {
+            "pilar40": "1",
+            "arab": "الهِمَّة",
+            "nama": "bercita-cita tinggi",
+            "nama_lengkap": "Himmah / الهِمَّة (cita-cita tinggi)",
+            "label_diri": "memiliki cita-cita yang tinggi",
+            "definisi": "memiliki rasa ingin tahu dan gairah yang sangat tinggi untuk mengetahui dan meraih cita-cita yang tertinggi",
+            "lalai_arab": "الفُتُوْر",
+            "lalai_nama_lengkap": "Futuur (الفُتُوْر) (lemah kemauan)",
+            "lalai_definisi": "sikap malas, lesu, lamban dalam meraih sesuatu, padahal sebelumnya bersungguh-sungguh, semangat, dan bergairah",
+            "lalai_perbaiki": "Sifat tercela futuur (الفُتُوْر) (lemah kemauan) yang ditimbulkan akibat meremehkan bakat himmah, dapat diperbaiki dengan menguatkan bakat himmah itu sendiri dan bakat lainnya, yaitu antara lain bakat ‘aziimah dan nasyaath.",
+            "lebih_arab": "طُوْلُ الأَمَلِ",
+            "lebih_nama_lengkap": "Thuulul amal (طُوْلُ الأَمَلِ) (panjang angan-angan)",
+            "lebih_definisi": "keinginan kuat terhadap sesuatu yang kemungkinan kecil untuk dapat diraih",
+            "lebih_perbaiki": "sifat tercela thuulul amal (طُوْلُ الأَمَلِ) (panjang angan-angan) yang ditimbulkan akibat berlebihan dalam bakat himmah, dapat diperbaiki dengan menguatkan bakat  qanaa’ah, tawaadhu’, dan hayaa’.",
+            "profesi": "Team Perumus Visi Misi, Team Litbang Pendidikan atau lembaga lainnya, Pemimpin, Entrepreneur, Perencana Jangka Panjang, Visioner, Pengembang produk baru, Pengembang Perusahaan",
+            "jurusan": "Ekonomi Syariah, Manajemen, Marketing, Manajemen Lingkungan",
+            "lalai_perbaiki_arab": "الهِمَّة,العَزِيمَة,النَّشَاط",
+            "lebih_perbaiki_arab": "القَنَاعَة,التَّوَاضُع,الحَيَاء"
+          }
+        },
+        {
+          "questionIndex": "14",
+          "name": "Husnuzhan",
+          "pillar": { "no": "9", "group": "40" },
+          "parents": [{ "no": "5", "group": "18" }],
+          "data": {
+            "pilar40": "9",
+            "arab": "حُسْنُ الظَّن",
+            "nama": "berprasangka baik",
+            "nama_lengkap": "husnuzhan / حُسْنُ الظَّن (prasangka baik)",
+            "label_diri": "berpikir positif tentang segala sesuatu",
+            "definisi": "memiliki kecenderungan menduga yang baik dari pada yang buruk walaupun fakta yang dilihatnya mendukung kepada dugaan yang buruk",
+            "lalai_arab": "سُوْءُ الظَّن",
+            "lalai_nama_lengkap": "Suu’uzhan (سُوْءُ الظَّن) (prasangka buruk)",
+            "lalai_definisi": "memenuhi hati dengan prasangka buruk, sampai memenuhi juga lisannya dan anggota badannya",
+            "lalai_perbaiki": "Sifat tercela su’uzhan (سُوْءُ الظَّن) (prasangka buruk) yang ditimbulkan akibat meremehkan bakat husnuzhan, dapat diperbaiki dengan menguatkan bakat husnuzhan itu sendiri dan bakat lainnya, yaitu antara lain bakat hikmah, dan firaasah.",
+            "lebih_arab": "التَّقْلِيْد",
+            "lebih_nama_lengkap": "Taqliid (التَّقْلِيْد) (fanatik buta)",
+            "lebih_definisi": "mengikuti dan mempercayai perkataan dan perbuatan orang lain tanpa mempedulikan kebenarannya",
+            "lebih_perbaiki": "sifat tercela taqliid (التَّقْلِيْد) (fanatik buta) yang ditimbulkan akibat berlebihan dalam bakat husnuzhan, dapat diperbaiki dengan menguatkan bakat  himmah, aziimah, ‘izzah, dan waqaar.",
+            "profesi": "Hakim, Pendidik, Guru, Pengajar, Juru Damai, Mediator, Relator, Pelayanan Publik",
+            "jurusan": "Hukum Islam, Keguruan, Manajemen, Ilmu Komunikasi, Manajemen Bisnis",
+            "lalai_perbaiki_arab": "حُسْنُ الظَّن,الحِكْمَة,الفِرَاسَة",
+            "lebih_perbaiki_arab": "العِزَّة,العَزِيمَة,الهِمَّة,الوَقَار"
+          }
+        },
+        {
+          "questionIndex": "15",
+          "name": "‘iffah",
+          "pillar": { "no": "13", "group": "40" },
+          "parents": [{ "no": "8", "group": "18" }],
+          "data": {
+            "pilar40": "13",
+            "arab": "العِفَّة",
+            "nama": "menjaga diri",
+            "nama_lengkap": "‘Iffah / العِفَّة (jaga diri)",
+            "label_diri": "mampu menahan diri untuk tidak menuruti hasrat",
+            "definisi": "mampu menahan diri terhadap dorongan hawa nafsu dalam dirinya sehingga tidak melakukan hal yang dilarang, baik dalam harta, ucapan, atau perbuatan",
+            "lalai_arab": "الفَحْش",
+            "lalai_nama_lengkap": "Fahsy (الفَحْش) (keji)",
+            "lalai_definisi": "segala hal yang mengindikasikan pada wilayah keburukan, kemaksiatan, dan dosa yang keluar pada wilayah batas kewajaran, serta dipandang sangat hina oleh akal sehat manusia dan syariat Islam",
+            "lalai_perbaiki": "Sifat tercela fahsy (الفَحْش) (keji) yang ditimbulkan akibat meremehkan bakat ‘iffah, dapat diperbaiki dengan menguatkan bakat ‘iffah itu sendiri dan bakat lainnya, yaitu antara lain bakat hayaa’, tawaadhu’, qanaa’ah dan shidq.",
+            "lebih_arab": "الذُّلّ",
+            "lebih_nama_lengkap": "Dzull (الذُّلّ) (lemah)",
+            "lebih_definisi": "ketundukan jiwa dikarenakan ketidakmampuan untuk mempertahankan sesuatu, sehingga merendahkan diri sendiri",
+            "lebih_perbaiki": "sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat berlebihan dalam bakat ‘iffah, dapat diperbaiki dengan menguatkan bakat  himmah, aziimah, ‘izzah, dan waqaar.",
+            "profesi": "Pengelola Keuangan Umat, Bendahara, Team Sarana Prasarana, Team Belanja, Pemimpin, Akuntan",
+            "jurusan": "Syariah, Hukum Islam, Manajemen Keuangan, Akuntansi, Administrasi",
+            "lalai_perbaiki_arab": "العِفَّة,الحَيَاء,التَّوَاضُع,القَنَاعَة,الصِّدْق",
+            "lebih_perbaiki_arab": "الهِمَّة,العَزِيمَة,العِزَّة,الوَقَار"
+          }
+        },
+        {
+          "questionIndex": "16",
+          "name": "Ihsaan",
+          "pillar": { "no": "2", "group": "40" },
+          "parents": [{ "no": "1", "group": "18" }],
+          "data": {
+            "pilar40": "2",
+            "arab": "الاِحْسَان",
+            "nama": "perfeksionis",
+            "nama_lengkap": "Ihsaan / الاِحْسَان (perfeksionis)",
+            "label_diri": "perfeksionis",
+            "definisi": "mampu berbuat yang terbaik dalam amalan ibadah maupun dalam memberikan manfaat terhadap diri, orang lain, atau lainnya",
+            "lalai_arab": "الإِسَاءة",
+            "lalai_nama_lengkap": "Isaa’ah (الإِسَاءة) (berbuat kerusakan)",
+            "lalai_definisi": "perbuatan yang menjadikan sesuatu menjadi lebih buruk atau perbuatan yang merusak",
+            "lalai_perbaiki": "Sifat tercela isaa’ah (الإِسَاءة) (berbuat kerusakan) yang ditimbulkan akibat meremehkan bakat ihsaan, dapat diperbaiki dengan menguatkan bakat ihsaan itu sendiri dan bakat lainnya, yaitu antara lain bakat himmah, ‘aziimah, nasyaath, ‘izzah, dan waqaar.",
+            "lebih_arab": "التَّبْذِيْر",
+            "lebih_nama_lengkap": "Tabdziir (التَّبْذِيْر) (boros, berlebihan)",
+            "lebih_definisi": "membelanjakan atau melakukan sesuatu pada hal yang seharusnya tidak diperlukan, berlebihan dalam membelanjakan atau berperilaku",
+            "lebih_perbaiki": "sifat tercela tabdziir (التَّبْذِيْر) (boros, berlebihan) yang ditimbulkan akibat berlebihan dalam bakat ihsaan, dapat diperbaiki dengan menguatkan bakat  qanaa’ah dan tawaadhu’.",
+            "profesi": "Team Penjamin Mutu Pendidikan, Quality Controller (QC), Peran untuk membantu orang hebat menjadi sukses seperti Pelatih, Manajer, Mentor, Guru, Transformational leader",
+            "jurusan": "Tadriibud Du’aat, Hadits, Fiqih, Syariah, Manajemen, Manajemen Bisnis, Ilmu Sains dan Teknologi",
+            "lalai_perbaiki_arab": "الاِحْسَان,الهِمَّة,العَزِيمَة,النَّشَاط,العِزَّة,الوَقَار",
+            "lebih_perbaiki_arab": "القَنَاعَة,التَّوَاضُع"
+          }
+        },
+        {
+          "questionIndex": "17",
+          "name": "Itsaar",
+          "pillar": { "no": "34", "group": "40" },
+          "parents": [{ "no": "16", "group": "18" }],
+          "data": {
+            "pilar40": "34",
+            "arab": "الاِيْثَار",
+            "nama": "melayani",
+            "nama_lengkap": "Itsaar /الاِيْثَار (melayani)",
+            "label_diri": "suka mendahulukan orang lain",
+            "definisi": "memiliki kecenderungan untuk lebih mendahulukan orang lain dari pada dirinya sendiri dan rela berkorban dalam memberikan manfaat atau dalam menghindari sesuatu, walaupun dirinya lebih membutuhkannya",
+            "lalai_arab": "البُخْل",
+            "lalai_nama_lengkap": "Bakhil (البُخْل) (bakhil)",
+            "lalai_definisi": "menahan kepemilikan yang seharusnya tidak dicegah, menahan sesuatu yang seharusnya tidak ditahan, atau menahan sesuatu yang wajib",
+            "lalai_perbaiki": "Sifat tercela bukhl (البُخْل) (bakhil) yang ditimbulkan akibat meremehkan bakat itsaar, dapat diperbaiki dengan menguatkan bakat itsaar itu sendiri dan bakat lainnya, yaitu antara lain bakat juud, nushrah, dan nashiihah.",
+            "lebih_arab": "الذُّلّ",
+            "lebih_nama_lengkap": "Dzull (الذُّلّ) (lemah)",
+            "lebih_definisi": "kelemahan jiwa dikarenakan ketidakmampuan untuk mempertahankan hak pribadinya",
+            "lebih_perbaiki": "sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat berlebihan dalam bakat itsaar, dapat diperbaiki dengan menguatkan bakat syajaa’ah, munaafasah, dan ghairah.",
+            "profesi": "Da’i/da’iyah, Pengelola lembaga sosial seperti panti asuhan, Laziz, Baitul Maal; Konselor, Pelayanan Pelanggan, Maintenance, Perawat, Pekerja Sosial, Relawan, Team Palang Merah",
+            "jurusan": "Tadriibud Du’aat, Tarbiyah, Penyuluh Masyarakat, Kesehatan Masyarakat, Keperawatan, Kebidanan, Kedokteran, Kepalangmerahan",
+            "lalai_perbaiki_arab": "الاِيْثَار,الجُوْد,النُّصْرَة,النَّصِيْحَة",
+            "lebih_perbaiki_arab": "الشَّجَاعَة,المُنَافَسَة,الغَيْرَة"
+          }
+        },
+        {
+          "questionIndex": "18",
+          "name": "‘izzah",
+          "pillar": { "no": "3", "group": "40" },
+          "parents": [{ "no": "2", "group": "18" }],
+          "data": {
+            "pilar40": "3",
+            "arab": "العِزَّة",
+            "nama": "harga diri",
+            "nama_lengkap": "‘Izzah / العِزَّة (harga diri)",
+            "label_diri": "mampu mempertahankan harga diri",
+            "definisi": "mampu bersikap kuat, tegas, dan tangguh dalam mempertahankan kemuliaan atau harga dirinya, sehingga tidak direndahkan dan dapat mengalahkan pihak lain",
+            "lalai_arab": "الذُّلّ",
+            "lalai_nama_lengkap": "Dzull (الذُّلّ) (lemah)",
+            "lalai_definisi": "lemahnya jiwa sehingga tidak mampu mempertahankan prinsipnya",
+            "lalai_perbaiki": "Sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat meremehkan bakat ‘izzah, dapat diperbaiki dengan menguatkan bakat ‘izzah itu sendiri dan bakat lainnya, yaitu antara lain bakat himmah, ‘aziimah, nasyaath, ihsaan, dan waqaar",
+            "lebih_arab": "الكِبْر",
+            "lebih_nama_lengkap": "Kibr (الكِبْر) (sombong)",
+            "lebih_definisi": "karena gengsi dan egonya, sehingga menolak kebenaran dan merendahkan orang lain",
+            "lebih_perbaiki": "sifat tercela kibr (الكِبْر) (sombong) yang ditimbulkan akibat berlebihan dalam bakat ‘izzah, dapat diperbaiki dengan menguatkan bakat   tawaadhu’, qanaa’ah, dan hayaa’.",
+            "profesi": "Utusan, Duta Besar, Da’i, Da’iyah, Guru, Pengajar, Pembawa Misi, Leader",
+            "jurusan": "Ilmu Aqidah, Syariah, Fiqih, Tadriibud Du’aat, Keguruan, Hubungan Internasional, Manajemen",
+            "lalai_perbaiki_arab": "العِزَّة,الهِمَّة,العَزِيمَة,النَّشَاط,الاِحْسَان,الوَقَار",
+            "lebih_perbaiki_arab": "التَّوَاضُع,القَنَاعَة,الحَيَاء"
+          }
+        },
+        {
+          "questionIndex": "19",
+          "name": "Juud",
+          "pillar": { "no": "24", "group": "40" },
+          "parents": [{ "no": "12", "group": "18" }],
+          "data": {
+            "pilar40": "24",
+            "arab": "الجُوْد",
+            "nama": "dermawan",
+            "nama_lengkap": "Juud / الجُوْد (dermawan)",
+            "label_diri": "dermawan terhadap orang lain",
+            "definisi": "senang memberikan sesuatu tanpa diminta dan tidak mengharap ucapan terima kasih atau bentuk balasan lainnya",
+            "lalai_arab": "البُخْل",
+            "lalai_nama_lengkap": "Bukhl (البُخْل) (kikir)",
+            "lalai_definisi": "menahan sesuatu yang seharusnya tidak ditahan bahkan yang seharusnya wajib dikeluarkan",
+            "lalai_perbaiki": "Sifat tercela bukhl (البُخْل)(kikir) yang ditimbulkan akibat meremehkan bakat juud, dapat diperbaiki dengan menguatkan bakat juud itu sendiri dan bakat lainnya, yaitu antara lain bakat nushrah dan nashiihah.",
+            "lebih_arab": "التَّبْذِيْر",
+            "lebih_nama_lengkap": "Tabdzir (التَّبْذِيْر) (boros)",
+            "lebih_definisi": "mengeluarkan sesuatu pada hal-hal yang seharusnya tidak terlalu perlu dan berlebihan dalam membelanjakan sesuatu",
+            "lebih_perbaiki": "sifat tercela tabdzir (التَّبْذِيْر) (boros) yang ditimbulkan akibat berlebihan dalam bakat juud, dapat diperbaiki dengan menguatkan bakat   tawaadhu’, qanaa’ah, dan hayaa’.",
+            "profesi": "Relawan, Petugas Sosial, Konselor, Perawat, Pengelola LAZIZ, Pengelola Baitul Maal, Panitia Bulan Amal, Entrepreneur, Leader, manajer",
+            "jurusan": "Pendidikan Agama Islam, Ilmu Fiqih, Manajemen, Keperawatan, Sosiologi, Bimbingan Konseling, Manajemen Bisnis",
+            "lalai_perbaiki_arab": "الجُوْد,النُّصْرَة,النَّصِيْحَة",
+            "lebih_perbaiki_arab": "القَنَاعَة,التَّوَاضُع,الحَيَاء"
+          }
+        },
+        {
+          "questionIndex": "20",
+          "name": "Kitmaanus sirr",
+          "pillar": { "no": "35", "group": "40" },
+          "parents": [{ "no": "17", "group": "18" }],
+          "data": {
+            "pilar40": "35",
+            "arab": "كِتْمَانُ السِّرِّ",
+            "nama": "penjaga rahasia",
+            "nama_lengkap": "Kitmaanus Sirr / كِتْمَانُ السِّرِّ (jaga rahasia)",
+            "label_diri": "mampu menjaga rahasia meskipun bukan aib",
+            "definisi": "mampu menutupi suatu kabar (bukan aib) agar tidak tersebar untuk mencegah timbulnya keburukan jika tersebar",
+            "lalai_arab": "إِفْشَاءُ السِّرّ",
+            "lalai_nama_lengkap": "Ifsyaa’us sirr  (إِفْشَاءُ السِّرّ) (membocorkan rahasia)",
+            "lalai_definisi": "membocorkan rahasia orang yang memberikan kepercayaan kepadanya",
+            "lalai_perbaiki": "Sifat tercela ifsyaa’us sirr  (إِفْشَاءُ السِّرّ) (membocorkan rahasia) yang ditimbulkan akibat meremehkan bakat kitmaanus sirr, dapat diperbaiki dengan menguatkan bakat kitmaanus sirr itu sendiri dan bakat lainnya, yaitu antara lain bakat amaanah dan satr.",
+            "lebih_arab": "البُخْل",
+            "lebih_nama_lengkap": "Bukhl (البُخْل) (bakhil)",
+            "lebih_definisi": "menahan sesuatu yang seharusnya tidak ditahan untuk dikabarkan",
+            "lebih_perbaiki": "sifat tercela bukhl (البُخْل) (bakhil) yang ditimbulkan akibat berlebihan dalam bakat kitmaanus sirr, dapat diperbaiki dengan menguatkan bakat juud, nushrah, nashiihah dan fashaahah.",
+            "profesi": "Hakim, Pengacara, Konselor, Intelijen, Administrator, Pengelola Dokumen Negara, Psikolog, Kepolisian, Militer, Keuangan Negara",
+            "jurusan": "Hukum Islam, Syariah, Sekolah Tinggi Pertahanan Nasional, Politeknik Keuangan Negara, Akademi Kepolisian, Akademi Militer, Administrasi, Akuntansi",
+            "lalai_perbaiki_arab": "كِتْمَانُ السِّرِّ,الاَمَانَة,السَّتْر",
+            "lebih_perbaiki_arab": "الجُوْد,النُّصْرَة,النَّصِيْحَة,الفَصَاحَة"
+          }
+        },
+        {
+          "questionIndex": "21",
+          "name": "Mahabbah",
+          "pillar": { "no": "33", "group": "40" },
+          "parents": [{ "no": "16", "group": "18" }],
+          "data": {
+            "pilar40": "32",
+            "arab": "المَحَبَّة",
+            "nama": "penuh cinta",
+            "nama_lengkap": "Mahabbah / المَحَبَّة (penuh cinta)",
+            "label_diri": "suka memperdalam hubungan yang telah terjalin",
+            "definisi": "memiliki kecintaan yang mendalam dan khusus terhadap sesuatu untuk memperkuat dan meperdalam hubungan",
+            "lalai_arab": "الكَرَاهِيَة",
+            "lalai_nama_lengkap": "Karaahiyah (الكَرَاهِيَة) (kebencian)",
+            "lalai_definisi": "ketidaksukaan menjalin kedekatan dalam suatu hubungan sehingga mengakibatkan kerenggangan hubungan",
+            "lalai_perbaiki": "Sifat tercela karaahiyah (الكَرَاهِيَة) (kebencian) yang ditimbulkan akibat meremehkan bakat mahabbah, dapat diperbaiki dengan menguatkan bakat mahabbah itu sendiri dan bakat lainnya, yaitu antara lain bakat ulfah, ta’aawun dan basyaasyah.",
+            "lebih_arab": "التَّقْلِيْد",
+            "lebih_nama_lengkap": "Taqliid (التَّقْلِيْد) (fanatik buta)",
+            "lebih_definisi": "mencintai, mengikuti dan mempercayai orang lain atau sesuatu tanpa mempedulikan kebenaran dan manfaatnya",
+            "lebih_perbaiki": "sifat tercela taqliid (التَّقْلِيْد) (fanatik buta) yang ditimbulkan akibat berlebihan dalam bakat mahabbah, dapat diperbaiki dengan menguatkan bakat izzah dan waqaar.",
+            "profesi": "Guru Privat, Terapist, Konselor, Psikolog, Guru PAUD, Peternak Hewan Rumahan, Perawat",
+            "jurusan": "Tarbiyah, Pendidikan Guru TK (PGTK), Keguruan, Pendidikan Terapist, Keperawatan, Peternakan",
+            "lalai_perbaiki_arab": "المَحَبَّة,الاُلْفَة,التَّعَاوُن,البَشَاشَة",
+            "lebih_perbaiki_arab": "العِزَّة,الوَقَار"
+          }
+        },
+        {
+          "questionIndex": "22",
+          "name": "Munaafasah",
+          "pillar": { "no": "20", "group": "40" },
+          "parents": [{ "no": "10", "group": "18" }],
+          "data": {
+            "pilar40": "20",
+            "arab": "المُنَافَسَة",
+            "nama": "kompetitif",
+            "nama_lengkap": "Munaafasah / المُنَافَسَة (kompetisi)",
+            "label_diri": "suka bersaing dengan orang lain",
+            "definisi": "senang bersaing dengan usaha semaksimal mungkin agar dirinya menjadi yang paling unggul dari yang lainnya",
+            "lalai_arab": "الذُّلّ",
+            "lalai_nama_lengkap": "Dzull (الذُّلّ) (lemah)",
+            "lalai_definisi": "tidak mampu untuk bangkit  atau ketakutan dalam menghadapi persaingan dalam kehidupan sehingga menjadi terpuruk",
+            "lalai_perbaiki": "Sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat meremehkan bakat munaafasah, dapat diperbaiki dengan menguatkan bakat munaafasah itu sendiri dan bakat lainnya, yaitu antara lain bakat ghairah, syajaa’ah, himmah, ihsaan, dan nasyaath.",
+            "lebih_arab": "الظُّلْم",
+            "lebih_nama_lengkap": "Zhulm (الظُّلْم)(zhalim)",
+            "lebih_definisi": "berbuat aniaya dan curang kepada orang atau pihak lain hanya karena ingin unggul dari yang lain",
+            "lebih_perbaiki": "sifat tercela zhulm (الظُّلْم)(zhalim) yang ditimbulkan akibat berlebihan dalam bakat munaafasah, dapat diperbaiki dengan menguatkan bakat ‘adaalah, itsaar, rahmah, qanaa’ah, dan tawaadhu’.",
+            "profesi": "Bidang Periklanan, Motivator, Competition Organizer, Team Litbang Perusahaan, Konsultan atau pengelola perusahaan dalam menghadapi persaingan, Sales, Pelatih Olahraga",
+            "jurusan": "Manajemen, Manajemen Bisnis, Olahraga dan Kesehatan, Sekolah Pelatih",
+            "lalai_perbaiki_arab": "المُنَافَسَة,الغَيْرَة,الشَّجَاعَة,الهِمَّة,الاِحْسَان,النَّشَاط",
+            "lebih_perbaiki_arab": "العَدَالَة,الاِيْثَار,الرَّحْمَة,القَنَاعَة,التَّوَاضُع"
+          }
+        },
+        {
+          "questionIndex": "23",
+          "name": "Muzaah",
+          "pillar": { "no": "29", "group": "40" },
+          "parents": [{ "no": "14", "group": "18" }],
+          "data": {
+            "pilar40": "29",
+            "arab": "المُزَاح",
+            "nama": "humoris",
+            "nama_lengkap": "Muzaah / المُزَاح (canda)",
+            "label_diri": "suka bercanda untuk mengakrabkan hubungan",
+            "definisi": "senang bercanda tapi tidak menyinggung orang lain, santai dalam bergaul",
+            "lalai_arab": "الجَفَاء",
+            "lalai_nama_lengkap": "Jafaa’ (الجَفَاء) (kaku)",
+            "lalai_definisi": "bersikap kaku dalam pergaulan sehingga dapat mengurangi keakraban",
+            "lalai_perbaiki": "Sifat tercela jafaa’ (الجَفَاء) (kaku) yang ditimbulkan akibat meremehkan bakat muzaah, dapat diperbaiki dengan menguatkan bakat muzaah itu sendiri dan bakat lainnya, yaitu antara lain bakat basyaasyah, rifq, dan mahabbah.",
+            "lebih_arab": "الاِسْتِهْزَاء",
+            "lebih_nama_lengkap": "Istihzaa’ (الاِسْتِهْزَاء) (mengejek)",
+            "lebih_definisi": "berkata dan berbuat untuk tujuan bermain-main, bukan untuk keseriusan, dengan mengejek sifat dan perilaku orang yang diejek",
+            "lebih_perbaiki": "sifat tercela istihzaa’ (الاِسْتِهْزَاء) (mengejek) yang ditimbulkan akibat berlebihan dalam bakat muzaah, dapat diperbaiki dengan menguatkan bakat shamt, ‘iffah, dan shidq.",
+            "profesi": "MC, Pranata cara (Jawa), Penerima Tamu, Motivator, Comentator",
+            "jurusan": "Ilmu Komunikasi, Marketing, Keguruan",
+            "lalai_perbaiki_arab": "المُزَاح,البَشَاشَة,الرِّفْق,المَحَبَّة",
+            "lebih_perbaiki_arab": "الصَّمْت,العِفَّة,الصِّدْق"
+          }
+        },
+        {
+          "questionIndex": "24",
+          "name": "Nashiihah",
+          "pillar": { "no": "21", "group": "40" },
+          "parents": [{ "no": "11", "group": "18" }],
+          "data": {
+            "pilar40": "21",
+            "arab": "النَّصِيْحَة",
+            "nama": "penasehat",
+            "nama_lengkap": "Nashiihah / النَّصِيْحَة (nasehat)",
+            "label_diri": "suka menasehati orang lain",
+            "definisi": "senang memberikan nasehat, saran, dorongan kepada orang lain agar menjadi lebih baik",
+            "lalai_arab": "الغِشِّ",
+            "lalai_nama_lengkap": "Ghisy (الغِشِّ)(menipu)",
+            "lalai_definisi": "menjerumuskan dan membiarkan seseorang menjadi lebih buruk keadaannya. (Sebagaimana yang dilakukan iblis kepada Adam dan Hawa)",
+            "lalai_perbaiki": "Sifat tercela ghisy (الغِشِّ)(menipu) yang ditimbulkan akibat meremehkan bakat nashiihah, dapat diperbaiki dengan menguatkan bakat nashiihah itu sendiri dan bakat lainnya, yaitu antara lain bakat nushrah dan juud.",
+            "lebih_arab": "التَّنْفِير",
+            "lebih_nama_lengkap": "Tanfiir (التَّنْفِير) (menakut-nakuti)",
+            "lebih_definisi": "menakut-nakuti orang lain sehingga menjadi bosan, lari atau enggan terhadap sesuatu yang dinasehatkan",
+            "lebih_perbaiki": "sifat tercela tanfiir (التَّنْفِير) (menakut-nakuti) yang ditimbulkan akibat berlebihan dalam bakat nashiihah, dapat diperbaiki dengan menguatkan bakat rifq, mahabbah, rahmah, dan itsaar.",
+            "profesi": "Penasehat, Da’i, Da’iyah, Guru, Konselor, Konsultan, Pemimpin, Manajer, Leader, Supervisor, Evaluator, Pengawas, Pelatih, Pelayanan Pelanggan (Customer Service)",
+            "jurusan": "Ilmu Agama, Ilmu Komunikasi, Ilmu Manajemen, Ilmu Hukum, Psikologi, Bimbingan Konseling",
+            "lalai_perbaiki_arab": "النَّصِيْحَة,النُّصْرَة,الجُوْد",
+            "lebih_perbaiki_arab": "الرِّفْق,المَحَبَّة,الرَّحْمَة,الاِيْثَار"
+          }
+        },
+        {
+          "questionIndex": "25",
+          "name": "Nasyaath",
+          "pillar": { "no": "6", "group": "40" },
+          "parents": [{ "no": "3", "group": "18" }],
+          "data": {
+            "pilar40": "6",
+            "arab": "النَّشَاط",
+            "nama": "bersemangat",
+            "nama_lengkap": "Nasyaath / النَّشَاط (semangat)",
+            "label_diri": "bersemangat menyelesaikan pekerjaan",
+            "definisi": "memiliki semangat dan bekerja keras untuk menyelesaikan apa yang sedang dilakukan",
+            "lalai_arab": "الكَسَل",
+            "lalai_nama_lengkap": "Kasal (الكَسَل) (malas)",
+            "lalai_definisi": "merasa berat dan lamban terhadap sesuatu, padahal memiliki kekuatan, karena tidak adanya keinginan untuk berbuat kebaikan",
+            "lalai_perbaiki": "Sifat tercela kasal (الكَسَل) (malas) yang ditimbulkan akibat meremehkan bakat nasyaath, dapat diperbaiki dengan menguatkan bakat nasyaath itu sendiri dan bakat lainnya, yaitu antara lain bakat himmah, ihsaan, dan ‘aziimah.",
+            "lebih_arab": "الطَّمَع",
+            "lebih_nama_lengkap": "Thama’ (الطَّمَع) (serakah)",
+            "lebih_definisi": "keinginan kuat untuk mendapatkan sesuatu yang sebenarnya tidak dibutuhkannya",
+            "lebih_perbaiki": "sifat tercela thama’ (الطَّمَع) (serakah) yang ditimbulkan akibat berlebihan dalam bakat nasyaath, dapat diperbaiki dengan menguatkan bakat qanaa’ah dan tawaadhu’.",
+            "profesi": "Penyelenggara Lembaga pendidikan, Pemborong Proyek, Tenaga Penjual/Sales, Teknisi Proyek, Teknisi Lapangan, Pekerja Lapangan, Relawan, Petugas SAR, Pemadam Kebakaran",
+            "jurusan": "Teknik Sipil, Teknik Permesinan, Teknik Instalasi dan Tenaga Listrik, Teknik perkayuan, Teknik Otomotif, Keperawatan, Kebidanan, Marketing, dan jurusan lain yang banyak menumbuhkan sifat kerja keras",
+            "lalai_perbaiki_arab": "النَّشَاط,الهِمَّة,الاِحْسَان,العَزِيمَة",
+            "lebih_perbaiki_arab": "القَنَاعَة,التَّوَاضُع"
+          }
+        },
+        {
+          "questionIndex": "26",
+          "name": "Nubl",
+          "pillar": { "no": "8", "group": "40" },
+          "parents": [{ "no": "4", "group": "18" }],
+          "data": {
+            "pilar40": "8",
+            "arab": "النُّبْل",
+            "nama": "cerdik",
+            "nama_lengkap": "Nubl / النُّبْل (cerdik)",
+            "label_diri": "banyak akal untuk menemukan solusi masalah",
+            "definisi": "cepat mengerti (tentang situasi dan sebagainya) dan pandai mencari pemecahannya,  panjang atau banyak akalnya",
+            "lalai_arab": "الجَهْل",
+            "lalai_nama_lengkap": "Jahl (الجَهْل) (kebodohan)",
+            "lalai_definisi": "kebingungan dalam menghadapi masalah karena tidak mengetahui solusi atau jalan keluar yang harus ditempuhnya",
+            "lalai_perbaiki": "Sifat tercela jahl (الجَهْل) (kebodohan) yang ditimbulkan akibat meremehkan bakat nubl, dapat diperbaiki dengan menguatkan bakat nubl itu sendiri dan bakat lainnya, yaitu antara lain bakat firaasah dan husnuzhan.",
+            "lebih_arab": "الغِشِّ",
+            "lebih_nama_lengkap": "Ghisy (الغِشِّ)(licik)",
+            "lebih_definisi": "menipu orang lain dengan kemampuannya bersiasat yang tidak diketahui oleh orang lain",
+            "lebih_perbaiki": "sifat tercela Ghisy (الغِشِّ)(licik) yang ditimbulkan akibat berlebihan dalam bakat nubl, dapat diperbaiki dengan menguatkan bakat shidq, shamt, ‘iffah, dan hayaa’.",
+            "profesi": "Konsultan, Konselor, Team Penanganan Masalah, Perencana Strategi, Manajer, Leader, Team Pencari Solusi Bagi Perusahaan/Lembaga Yang Bermasalah",
+            "jurusan": "Ilmu Fiqih, Ekonomi Syariah, Manajemen, Sosiologi, Hubungan Internasional, atau jurusan lain yang banyak menumbuhkan kemampuan untuk menemukan solusi",
+            "lalai_perbaiki_arab": "النُّبْل,الفِرَاسَة,حُسْنُ الظَّن",
+            "lebih_perbaiki_arab": "الصِّدْق,الصَّمْت,العِفَّة,الحَيَاء"
+          }
+        },
+        {
+          "questionIndex": "27",
+          "name": "Nushrah",
+          "pillar": { "no": "23", "group": "40" },
+          "parents": [{ "no": "12", "group": "18" }],
+          "data": {
+            "pilar40": "23",
+            "arab": "النُّصْرَة",
+            "nama": "menolong",
+            "nama_lengkap": "Nushrah / النُّصْرَة (menolong)",
+            "label_diri": "suka menolong orang dari kesulitan",
+            "definisi": "senang membantu orang lain yang mengalami kesusahan (atau terzhalimi) hingga terlepas dari kesusahan tersebut",
+            "lalai_arab": "الخِذْلَان",
+            "lalai_nama_lengkap": "Khidzlaan (الخِذْلَان) (menerlantarkan)",
+            "lalai_definisi": "membiarkan, tidak peduli, tidak memelihara sesuatu yang seharusnya dipelihara",
+            "lalai_perbaiki": "Sifat tercela khidzlaan (الخِذْلَان) (menerlantarkan) yang ditimbulkan akibat meremehkan bakat nushrah, dapat diperbaiki dengan menguatkan bakat nushrah itu sendiri dan bakat lainnya, yaitu antara lain bakat juud dan nashiihah.",
+            "lebih_arab": "الظُّلْم",
+            "lebih_nama_lengkap": "Zhulm (الظُّلْم) (zhalim)",
+            "lebih_definisi": "meletakkan sesuatu bukan pada tempatnya",
+            "lebih_perbaiki": "sifat tercela zhulm (الظُّلْم) (zhalim) yang ditimbulkan akibat berlebihan dalam bakat nushrah, dapat diperbaiki dengan menguatkan bakat ‘adaalah, itsaar, rahmah, qanaa’ah, dan tawaadhu’.",
+            "profesi": "Polisi, Penegak Hukum, Relawan, Pengacara, Lembaga Bantuan Hukum (LBH), Hakim, atau profesi lain yang terkait dengan bantuan terhadap orang yang terzhalimi",
+            "jurusan": "PAI, Syari’ah, Ilmu Hukum, Ilmu Sosial, Akademi Kepolisian, Akademi Militer",
+            "lalai_perbaiki_arab": "النُّصْرَة,الجُوْد,النَّصِيْحَة",
+            "lebih_perbaiki_arab": "العَدَالَة,الاِيْثَار,الرَّحْمَة,القَنَاعَة,التَّوَاضُع"
+          }
+        },
+        {
+          "questionIndex": "28",
+          "name": "Qanaa'ah",
+          "pillar": { "no": "16", "group": "40" },
+          "parents": [{ "no": "9", "group": "18" }],
+          "data": {
+            "pilar40": "16",
+            "arab": "القَنَاعَة",
+            "nama": "sederhana",
+            "nama_lengkap": "Qanaa’ah /  القَنَاعَة (sederhana)",
+            "label_diri": "merasa cukup dengan apa yang telah aku terima",
+            "definisi": "rela menerima apapun yang diberikan kepadanya dan merasa cukup terhadap apa yang telah diterimanya",
+            "lalai_arab": "الطَّمَع",
+            "lalai_nama_lengkap": "Thama’ (الطَّمَع) (serakah, tamak)",
+            "lalai_definisi": "berkeinginan kuat untuk mendapatkan sesuatu yang sebenarnya tidak dibutuhkannya",
+            "lalai_perbaiki": "Sifat tercela thama’ (الطَّمَع) (serakah, tamak) yang ditimbulkan akibat meremehkan bakat qanaa’ah, dapat diperbaiki dengan menguatkan bakat qanaa’ah itu sendiri dan bakat lainnya, yaitu antara lain bakat tawaadhu’.",
+            "lebih_arab": "الذُّلّ",
+            "lebih_nama_lengkap": "Dzull (الذُّلّ) (lemah)",
+            "lebih_definisi": "ketidakmampuan untuk menuntut haknya, sehingga meyusahkan dirinya sendiri",
+            "lebih_perbaiki": "sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat berlebihan dalam bakat qanaa’ah, dapat diperbaiki dengan menguatkan bakat himmah, ihsaan, aziimah, nasyaath, ‘izzah, dan waqaar.",
+            "profesi": "Team Perencana Anggaran Belanja Lembaga, Team Penghemat Anggaran Perusahaan, Petugas Lapangan, Explorer, Relawan",
+            "jurusan": "Ilmu Ekonomi, Manajemen Bisnis, Ilmu Sosial, Ilmu Manajemen Sumber Daya Alam, Akuntansi, atau jurusan lain yang terkait dengan perhitungan nilai ekonomis",
+            "lalai_perbaiki_arab": "القَنَاعَة,التَّوَاضُع",
+            "lebih_perbaiki_arab": "الهِمَّة,الاِحْسَان,العَزِيمَة,النَّشَاط,العِزَّة,الوَقَار"
+          }
+        },
+        {
+          "questionIndex": "29",
+          "name": "Rahmah",
+          "pillar": { "no": "32", "group": "40" },
+          "parents": [{ "no": "15", "group": "18" }],
+          "data": {
+            "pilar40": "33",
+            "arab": "الرَّحْمَة",
+            "nama": "berbelas kasih",
+            "nama_lengkap": "Rahmah / الرَّحْمَة (belas kasih)",
+            "label_diri": "berbelas kasihan kepada orang lain",
+            "definisi": "berbelas kasihan dan bersimpati karena ingin memberikan yang terbaik bagi yang dibelas kasihi",
+            "lalai_arab": "الغِلْظَة",
+            "lalai_nama_lengkap": "Ghilzhah (الغِلْظَة)   (kasar)",
+            "lalai_definisi": "kejam, kurang belas kasih, tidak pengertian dan kurang hasrat untuk kebaikan",
+            "lalai_perbaiki": "Sifat tercela ghilzhah (الغِلْظَة) (kasar) yang ditimbulkan akibat meremehkan bakat rahmah, dapat diperbaiki dengan menguatkan bakat rahmah itu sendiri dan bakat lainnya, yaitu antara lain bakat itsaar dan hilm.",
+            "lebih_arab": "التَّقْلِيْد",
+            "lebih_nama_lengkap": "Taqliid (التَّقْلِيْد) (fanatik buta)",
+            "lebih_definisi": "mengikuti dan menuruti perkataan dan perbuatan orang lain tanpa mempedulikan kebenarannya",
+            "lebih_perbaiki": "sifat tercela taqliid (التَّقْلِيْد) (fanatik buta) yang ditimbulkan akibat berlebihan dalam bakat rahmah, dapat diperbaiki dengan menguatkan bakat ‘izzah dan waqaar.",
+            "profesi": "Konselor, Pembinaan Keluarga Sejahtera, Guru PAUD-TK, Psikolog, Sales, HRD, Perawat, Operator Telepon, Psikiater, Dispatcher, Layanan Pelanggan",
+            "jurusan": "PAI, Keguruan, Tarbiyah, Ilmu Sosial, Manajemen, Manajemen Bisnis, Psikologi, atau jurusan lain yang terkait dengan penguatan empati atau perasaan",
+            "lalai_perbaiki_arab": "الرَّحْمَة,الاِيْثَار,الحِلْم",
+            "lebih_perbaiki_arab": "العِزَّة,الوَقَار"
+          }
+        },
+        {
+          "questionIndex": "30",
+          "name": "Rifq",
+          "pillar": { "no": "31", "group": "40" },
+          "parents": [{ "no": "15", "group": "18" }],
+          "data": {
+            "pilar40": "31",
+            "arab": "الرِّفْق",
+            "nama": "lemah lembut",
+            "nama_lengkap": "Rifq / الرِّفْق (lemah lembut)",
+            "label_diri": "lemah lembut dalam bergaul",
+            "definisi": "mampu mengambil sisi termudah dalam semua urusan, sehingga lemah-lembut dalam perkataan dan perbuatan",
+            "lalai_arab": "العَنْفُ",
+            "lalai_nama_lengkap": "‘Anfu (العَنْفُ) (kasar)",
+            "lalai_definisi": "bersikap kasar kepada orang lain yang melakukan kekeliruan",
+            "lalai_perbaiki": "Sifat tercela ‘anfu (العَنْفُ) (kasar) yang ditimbulkan akibat meremehkan bakat rifq, dapat diperbaiki dengan menguatkan bakat rifq itu sendiri dan bakat lainnya, yaitu antara lain bakat basyaasyah dan mahabbah.",
+            "lebih_arab": "الذُّلّ",
+            "lebih_nama_lengkap": "Dzull (الذُّلّ) (lemah)",
+            "lebih_definisi": "kelemahan jiwa sehingga tidak mampu memperbaiki suatu kesalahan atau pelanggaran yang dilakukan oleh seseorang",
+            "lebih_perbaiki": "sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat berlebihan dalam bakat rifq, dapat diperbaiki dengan menguatkan bakat syajaa’ah, ghairah, dan munaafasah.",
+            "profesi": "Guru, Pendidik, Penasehat, Konsultan, Manajer, Supervisor, Pengawas, Marketing, Customer Service, Leader",
+            "jurusan": "Syari’ah, Keguruan, Psikologi Islam, Manajemen, Manajemen Bisnis",
+            "lalai_perbaiki_arab": "الرِّفْق,البَشَاشَة,المَحَبَّة",
+            "lebih_perbaiki_arab": "الشَّجَاعَة,الغَيْرَة,المُنَافَسَة"
+          }
+        },
+        {
+          "questionIndex": "31",
+          "name": "Satr",
+          "pillar": { "no": "36", "group": "40" },
+          "parents": [{ "no": "17", "group": "18" }],
+          "data": {
+            "pilar40": "36",
+            "arab": "السَّتْر",
+            "nama": "menutup aib",
+            "nama_lengkap": "Satr / السَّتْرُ (menutup aib)",
+            "label_diri": "mampu menutupi aib diri sendiri atau orang lain",
+            "definisi": "mampu menutupi dan tidak menampakkan atau menceritakan aib diri sendiri atau orang lain",
+            "lalai_arab": "الغِيْبَة",
+            "lalai_nama_lengkap": "Ghiibah (الغِيْبَة) (menggunjing)",
+            "lalai_definisi": "menyebarkan aib diri (mujaahir) dan orang lain yang seharusnya ditutupi",
+            "lalai_perbaiki": "Sifat tercela ghiibah (الغِيْبَة) (menggunjing), yaitu menyebarkan aib diri (mujaahir) yang ditimbulkan akibat meremehkan bakat satr, dapat diperbaiki dengan menguatkan bakat satr itu sendiri dan bakat lainnya, yaitu antara lain bakat kitmaanus sirr, amaanah,  dan shabr.",
+            "lebih_arab": "الذُّلّ",
+            "lebih_nama_lengkap": "Dzull (الذُّلّ) (Lemah)",
+            "lebih_definisi": "kelemahan untuk mengatakan sesuatu yang seharusnya dikatakan, sehingga menyembunyikan ilmu yang seharusnya disampaikan",
+            "lebih_perbaiki": "sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat berlebihan dalam bakat satr, dapat diperbaiki dengan menguatkan bakat fashaahah dan nashiihah.",
+            "profesi": "Ajudan, Asisten Pribadi, Sekretaris, Agen Rahasia, Notaris",
+            "jurusan": "Akademi Kepolisian, Akademi Militer, Ilmu Kenotariatan, Administrasi",
+            "lalai_perbaiki_arab": "السَّتْر,كِتْمَانُ السِّرِّ,الاَمَانَة,الصَّبْر",
+            "lebih_perbaiki_arab": "الفَصَاحَة,النَّصِيْحَة"
+          }
+        },
+        {
+          "questionIndex": "32",
+          "name": "Shabr",
+          "pillar": { "no": "17", "group": "40" },
+          "parents": [{ "no": "9", "group": "18" }],
+          "data": {
+            "pilar40": "40",
+            "arab": "الصَّبْر",
+            "nama": "penyabar",
+            "nama_lengkap": "Shabr / الصَّبْر (sabar)",
+            "label_diri": "bersabar terhadap apa yang menimpa",
+            "definisi": "mampu menahan diri untuk tidak bereaksi (menolak/membalas) terhadap apa yang diterimanya, baik berupa tekanan dari luar, kesulitan hidup, maupun berupa hambatan dalam meraih apa yang diharapkan",
+            "lalai_arab": "الجَزَع",
+            "lalai_nama_lengkap": "Jaza’ (الجَزَع) (tidak sabar)",
+            "lalai_definisi": "tampaknya kegelisahan yang menjadikan seseorang bereaksi (menolak/membalas) perlakukan terhadap dirinya sehingga menimbulkan kerusakan yang lebih besar",
+            "lalai_perbaiki": "Sifat tercela jaza’ (الجَزَع) (tidak sabar) yang ditimbulkan akibat meremehkan bakat shabr, dapat diperbaiki dengan menguatkan bakat shabr itu sendiri dan bakat lainnya, yaitu antara lain bakat anaah  dan hilm.",
+            "lebih_arab": "الذُّلّ",
+            "lebih_nama_lengkap": "Dzull (الذُّلّ) (lemah)",
+            "lebih_definisi": "kelemahan untuk mempertahankan dan mendapatkan hak yang seharusnya diambilnya",
+            "lebih_perbaiki": "sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat berlebihan dalam bakat shabr, dapat diperbaiki dengan menguatkan bakat syajaa’ah, ghairah, dan munaafasah.",
+            "profesi": "Da’i, Khadimul Ummah, Public Serving, Pengemban Misi, Pelayanan Pelanggan, Maintenance, Perawat, Pekerja Sosial, Relawan",
+            "jurusan": "Syari’ah, Keperawatan, Kebidanan, Ilmu Sosial, Kepariwisataan, Manajemen",
+            "lalai_perbaiki_arab": "الصَّبْر,الاَنَاة,الحِلْم",
+            "lebih_perbaiki_arab": "الشَّجَاعَة,الغَيْرَة,المُنَافَسَة"
+          }
+        },
+        {
+          "questionIndex": "33",
+          "name": "Shamt",
+          "pillar": { "no": "14", "group": "40" },
+          "parents": [{ "no": "8", "group": "18" }],
+          "data": {
+            "pilar40": "14",
+            "arab": "الصَّمْت",
+            "nama": "pendiam",
+            "nama_lengkap": "Shamt / الصَّمْت (diam)",
+            "label_diri": "mampu menjaga perkataan",
+            "definisi": "memiliki sikap banyak diam dan jika berbicara seperlunya atau yang bermanfaat saja",
+            "lalai_arab": "الغِيْبَة",
+            "lalai_nama_lengkap": "Ghiibah (الغِيْبَة) (menggunjing)",
+            "lalai_definisi": "membicarakan suatu hal pada diri seseorang, baik dengan perkataan, isyarat, atau menirukan, yang apabila dia mengetahuinya, maka dia tidak menyukainya",
+            "lalai_perbaiki": "Sifat tercela ghiibah (الغِيْبَة) (menggunjing) yang ditimbulkan akibat meremehkan bakat shamt, dapat diperbaiki dengan menguatkan bakat shamt itu sendiri dan bakat lainnya, yaitu antara lain bakat shidq, ‘iffah  dan hayaa’.",
+            "lebih_arab": "الجُبْن",
+            "lebih_nama_lengkap": "Jubn (الجُبْن) (penakut)",
+            "lebih_definisi": "takut untuk berbicara yang seharusnya tidak perlu ditakuti",
+            "lebih_perbaiki": "sifat tercela jubn (الجُبْن) (penakut) yang ditimbulkan akibat berlebihan dalam bakat shamt, dapat diperbaiki dengan menguatkan bakat syajaa’ah, ghairah, dan munaafasah.",
+            "profesi": "Pelayan Umat, Ajudan, Pelaksana Lapangan, Penulis, Peneliti, Analis",
+            "jurusan": "Teknik Kimia, Teknik Informatika (IT), Administrasi Perkantoran",
+            "lalai_perbaiki_arab": "الصَّمْت,الصِّدْق,العِفَّة,الحَيَاء",
+            "lebih_perbaiki_arab": "الشَّجَاعَة,الغَيْرَة,المُنَافَسَة"
+          }
+        },
+        {
+          "questionIndex": "34",
+          "name": "Shidq",
+          "pillar": { "no": "12", "group": "40" },
+          "parents": [{ "no": "7", "group": "18" }],
+          "data": {
+            "pilar40": "12",
+            "arab": "الصِّدْق",
+            "nama": "jujur",
+            "nama_lengkap": "Shidq / الصِّدْق (jujur)",
+            "label_diri": "mampu berkata dan berbuat apa adanya",
+            "definisi": "memiliki sikap mudah menerima kebenaran serta berkata dan berbuat  sesuai dengan apa yang sebenarnya",
+            "lalai_arab": "الكَذِب",
+            "lalai_nama_lengkap": "Kadzib (الكَذِب) (dusta)",
+            "lalai_definisi": "mengabarkan dan berperilaku sesuatu yang tidak sesuai dengan yang sebenarnya",
+            "lalai_perbaiki": "Sifat tercela kadzib (الكَذِب) (dusta) yang ditimbulkan akibat meremehkan bakat shidq, dapat diperbaiki dengan menguatkan bakat shidq itu sendiri dan bakat lainnya, yaitu antara lain bakat ‘iffah dan shamt.",
+            "lebih_arab": "إِفْشَاءُ السِّرّ",
+            "lebih_nama_lengkap": "Ifsyaa’us sirr (إِفْشَاءُ السِّرّ) (membocorkan rahasia)",
+            "lebih_definisi": "membocorkan rahasia orang yang memberikan kepercayaan kepadanya",
+            "lebih_perbaiki": "sifat tercela ifsyaa’us sirr (إِفْشَاءُ السِّرّ) (membocorkan rahasia) yang ditimbulkan akibat berlebihan dalam bakat shidq, dapat diperbaiki dengan menguatkan bakat ‘izzah, waqaar dan syajaa’ah.",
+            "profesi": "Pengelola Dana Umat (Donasi), Kurir/Duta, Bidang Keuangan, Pengelola Baitul Mal, Team Belanja (Pengadaan Sarana Prasarana), Hakim, Jaksa",
+            "jurusan": "Administrasi Keuangan, Hukum Islam, Ilmu Hukum, Manajemen",
+            "lalai_perbaiki_arab": "الصِّدْق,العِفَّة,الصَّمْت",
+            "lebih_perbaiki_arab": "العِزَّة,الوَقَار,الشَّجَاعَة"
+          }
+        },
+        {
+          "questionIndex": "35",
+          "name": "Syajaa’ah",
+          "pillar": { "no": "18", "group": "40" },
+          "parents": [{ "no": "10", "group": "18" }],
+          "data": {
+            "pilar40": "18",
+            "arab": "الشَّجَاعَة",
+            "nama": "pemberani",
+            "nama_lengkap": "Syajaa’ah / الشَّجَاعَة (berani)",
+            "label_diri": "berani menghadapi orang secara langsung",
+            "definisi": "teguh dan berani dalam menghadapi orang untuk mengendalikannya, mengaturnya, dan menguasainya",
+            "lalai_arab": "الجُبْن",
+            "lalai_nama_lengkap": "Jubn (الجُبْن) (penakut)",
+            "lalai_definisi": "takut terhadap sesuatu yang seharusnya tidak perlu ditakuti",
+            "lalai_perbaiki": "Sifat tercela jubn (الجُبْن) (penakut) yang ditimbulkan akibat meremehkan bakat syajaa’ah, dapat diperbaiki dengan menguatkan bakat syajaa’ah itu sendiri dan bakat lainnya, yaitu antara lain bakat ghairah, munaafasah, himmah, ihsaan dan ‘aziimah.",
+            "lebih_arab": "التَّهَوُّر",
+            "lebih_nama_lengkap": "Tahawwur (التَّهَوُّر) (ceroboh)",
+            "lebih_definisi": "bertindak tanpa dipikirkan dan dinalar terlebih dahulu, dan tidak peduli dengan apa yang akan terjadi",
+            "lebih_perbaiki": "sifat tercela tahawwur (التَّهَوُّر) (ceroboh) yang ditimbulkan akibat berlebihan dalam bakat syajaa’ah, dapat diperbaiki dengan menguatkan bakat shabr, hilm dan anaah.",
+            "profesi": "Tentara, TNI, Komandan, Pengusaha, Petugas Keamanan, Sales, Negosiator, Wartawan, Pengacara, HRD, Pembelian",
+            "jurusan": "Ilmu Hukum Islam, Syariah, Akademi Militer, Akademi Kepolisian, Manajemen, Manajemen Bisnis",
+            "lalai_perbaiki_arab": "الشَّجَاعَة,الغَيْرَة,المُنَافَسَة,الهِمَّة,الاِحْسَان,العَزِيمَة",
+            "lebih_perbaiki_arab": "الصَّبْر,الحِلْم,الاَنَاة"
+          }
+        },
+        {
+          "questionIndex": "36",
+          "name": "Ta'aawun",
+          "pillar": { "no": "25", "group": "40" },
+          "parents": [{ "no": "13", "group": "18" }],
+          "data": {
+            "pilar40": "25",
+            "arab": "التَّعَاوُن",
+            "nama": "bekerjaasama",
+            "nama_lengkap": "Ta’aawun / التَّعَاوُن (kerjasama)",
+            "label_diri": "mampu bekerjasama dengan orang lain",
+            "definisi": "senang bekerjasama dengan orang lain untuk mencapai tujuan bersama",
+            "lalai_arab": "العُدْوَان",
+            "lalai_nama_lengkap": "‘Udwaan (العُدْوَان) (memusuhi)",
+            "lalai_definisi": "berupa ketidakadilan dalam bermuamalah, seperti merampas hak orang lain, menindas, dll",
+            "lalai_perbaiki": "Sifat tercela ‘udwaan (العُدْوَان) (memusuhi) yang ditimbulkan akibat meremehkan bakat ta’aawun, dapat diperbaiki dengan menguatkan bakat ta’aawun itu sendiri dan bakat lainnya, yaitu antara lain bakat ‘adaalah dan ulfah.",
+            "lebih_arab": "الذُّلّ",
+            "lebih_nama_lengkap": "Dzull (الذُّلّ) (lemah)",
+            "lebih_definisi": "ketundukan jiwa dikarenakan ketidakmampuan untuk mempertahankan sesuatu, sehingga menjadi tidak mandiri dan tergantung pada orang lain",
+            "lebih_perbaiki": "sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat berlebihan dalam bakat ta’aawun, dapat diperbaiki dengan menguatkan bakat syajaa’ah, ghairah dan munaafasah.",
+            "profesi": "Penggerak dakwah, Guru, Pembangun jaringan antara orang-orang dengan cara pandang yang berbeda, Juru Damai, Penasehat, Wirausahawan, Manajer",
+            "jurusan": "Dakwah, Manajemen, Ilmu Komunikasi, Ilmu Ekonomi, Keguruan",
+            "lalai_perbaiki_arab": "التَّعَاوُن,العَدَالَة,الاُلْفَة",
+            "lebih_perbaiki_arab": "الشَّجَاعَة,الغَيْرَة,المُنَافَسَة"
+          }
+        },
+        {
+          "questionIndex": "37",
+          "name": "Tawaadhu'",
+          "pillar": { "no": "40", "group": "40" },
+          "parents": [{ "no": "18", "group": "18" }],
+          "data": {
+            "pilar40": "17",
+            "arab": "التَّوَاضُع",
+            "nama": "rendah hati",
+            "nama_lengkap": "Tawaadhu’ / التَّوَاضُع (rendah hati)",
+            "label_diri": "rendah hati terhadap kehebatan yang dimiliki",
+            "definisi": "memiliki rasa tidak suka menampakkan atau ditampakkan kelebihannya meskipun memiliki kemampuan dan kelebihan",
+            "lalai_arab": "الكِبْر",
+            "lalai_nama_lengkap": "Kibr (الكِبْر) (takabur atau sombong)",
+            "lalai_definisi": "melihat diri lebih besar dari orang lain, sehingga menolak kebenaran dan merendahkan orang lain, tidak menerima nasehat dan suka mencela kelemahan orang lain",
+            "lalai_perbaiki": "Sifat tercela kibr (الكِبْر) (takabur atau sombong) yang ditimbulkan akibat meremehkan bakat tawaadhu’, dapat diperbaiki dengan menguatkan bakat tawaadhu’ itu sendiri dan bakat lainnya, yaitu antara lain bakat qanaa’ah dan hayaa’.",
+            "lebih_arab": "الذُّلّ",
+            "lebih_nama_lengkap": "Dzull (الذُّلّ) (lemah)",
+            "lebih_definisi": "ketidakmampuan untuk mempertahankan dan menuntut sesuatu yang menjadi haknya, sehingga menjadi dihinakan",
+            "lebih_perbaiki": "sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat berlebihan dalam bakat tawaadhu’, dapat diperbaiki dengan menguatkan bakat syajaa’ah, ghairah dan munaafasah.",
+            "profesi": "Guru TK, Konselor, Pemimpin, Relawan, Pengasuh Panti Asuhan, Penasehat, public serving",
+            "jurusan": "Dakwah, Psikologi, Sastra, Sosiologi, Ilmu Komunikasi, Keguruan, Ilmu Kejiwaan",
+            "lalai_perbaiki_arab": "التَّوَاضُع,القَنَاعَة,الحَيَاء",
+            "lebih_perbaiki_arab": "الشَّجَاعَة,الغَيْرَة,المُنَافَسَة"
+          }
+        },
+        {
+          "questionIndex": "38",
+          "name": "Ulfah",
+          "pillar": { "no": "26", "group": "40" },
+          "parents": [{ "no": "13", "group": "18" }],
+          "data": {
+            "pilar40": "26",
+            "arab": "الاُلْفَة",
+            "nama": "bersatu",
+            "nama_lengkap": "Ulfah / الاُلْفَة  (bersatu)",
+            "label_diri": "suka berkumpul dan mengumpulkan orang",
+            "definisi": "senang bersatu dan berkumpul  karena adanya kesamaan",
+            "lalai_arab": "النَّمِيْمَة",
+            "lalai_nama_lengkap": "Namiimah (النَّمِيْمَة) (adu domba)",
+            "lalai_definisi": "menyampaikan perkataan seseorang kepada orang lain dengan tujuan merusak hubungan di antara mereka",
+            "lalai_perbaiki": "Sifat tercela namiimah (النَّمِيْمَة) (adu domba) yang ditimbulkan akibat meremehkan bakat ulfah, dapat diperbaiki dengan menguatkan bakat ulfah itu sendiri dan bakat lainnya, yaitu antara lain bakat ta’aawun dan ‘adaalah.",
+            "lebih_arab": "التَّقْلِيْد",
+            "lebih_nama_lengkap": "Taqliid (التَّقْلِيْد) (fanatik buta)",
+            "lebih_definisi": "mengikuti dan mempercayai perkataan dan perbuatan kebanyakan orang di kelompoknya tanpa mempedulikan kebenarannya",
+            "lebih_perbaiki": "sifat tercela taqliid (التَّقْلِيْد) (fanatik buta) yang ditimbulkan akibat berlebihan dalam bakat ulfah, dapat diperbaiki dengan menguatkan bakat ‘izzah dan waqaar.",
+            "profesi": "Da’i, Marketing, Pengelola lembaga sosial, Motivator kelompok, Wakil suara minoritas, Pemimpin kelompok dengan latar budaya beragam, Mentor bagi mereka yang baru bergabung di dalam organisasi",
+            "jurusan": "Dakwah, Manajemen Pendidikan, Manajemen Bisnis, Sosiologi",
+            "lalai_perbaiki_arab": "الاُلْفَة,التَّعَاوُن,العَدَالَة",
+            "lebih_perbaiki_arab": "العِزَّة,الوَقَار"
+          }
+        },
+        {
+          "questionIndex": "39",
+          "name": "Wafaa'",
+          "pillar": { "no": "28", "group": "40" },
+          "parents": [{ "no": "13", "group": "18" }],
+          "data": {
+            "pilar40": "28",
+            "arab": "الوَفَاء",
+            "nama": "menepati janji",
+            "nama_lengkap": "Wafaa’ / الوَفَاء (tepat janji)",
+            "label_diri": "teguh dalam memenuhi janji",
+            "definisi": "teguh memegang janji yang telah disepakati, walaupun kondisinya sebagai pihak yang dicurangi",
+            "lalai_arab": "الغَدْر",
+            "lalai_nama_lengkap": "Ghadr (الغَدْر) (langar janji)",
+            "lalai_definisi": "melanggar janji yang telah disepakati bersama",
+            "lalai_perbaiki": "Sifat tercela ghadr (الغَدْر) (langar janji) yang ditimbulkan akibat meremehkan bakat wafaa’, dapat diperbaiki dengan menguatkan bakat wafaa’ itu sendiri dan bakat lainnya, yaitu antara lain bakat shidq, hayaa’ dan ‘iffah.",
+            "lebih_arab": "التَّقْلِيْد",
+            "lebih_nama_lengkap": "Taqliid (التَّقْلِيْد) (fanatik buta)",
+            "lebih_definisi": "mengikuti, mempercayai, dan menyepakati perjanjian dengan pihak lain tanpa mempedulikan kerugian dan kebenarannya",
+            "lebih_perbaiki": "sifat tercela taqliid (التَّقْلِيْد) (fanatik buta) yang ditimbulkan akibat berlebihan dalam bakat wafaa’, dapat diperbaiki dengan menguatkan bakat ‘izzah dan waqaar.",
+            "profesi": "Pengajar Aqidah, Pelayanan Masyarakat, Pelayanan Pelanggan, Birokrat, Relator, Account Sales, Manajer, Keuangan, Quality Control, Keamanan",
+            "jurusan": "Ilmu Aqidah, Akuntansi, Administrasi, Manajemen, Sosiologi, Ilmu Hukum",
+            "lalai_perbaiki_arab": "الوَفَاء,الصِّدْق,الحَيَاء,العِفَّة",
+            "lebih_perbaiki_arab": "العِزَّة,الوَقَار"
+          }
+        },
+        {
+          "questionIndex": "40",
+          "name": "Waqaar",
+          "pillar": { "no": "4", "group": "40" },
+          "parents": [{ "no": "2", "group": "18" }],
+          "data": {
+            "pilar40": "4",
+            "arab": "الوَقَار",
+            "nama": "berwibawa",
+            "nama_lengkap": "Waqaar / الوَقَار (wibawa)",
+            "label_diri": "berwibawa",
+            "definisi": "memiliki sikap tenang tapi kelihatan tangguh, tidak banyak bicara, tidak tergesa tapi mendahului dalam melakukan semua urusan",
+            "lalai_arab": "الذُّلّ",
+            "lalai_nama_lengkap": "Dzull (الذُّلّ) (lemah)",
+            "lalai_definisi": "tidak mampu untuk bangkit  atau ketakutan dalam menghadapi persaingan dalam kehidupan sehingga menjadi terpuruk",
+            "lalai_perbaiki": "Sifat tercela dzull (الذُّلّ) (lemah) yang ditimbulkan akibat meremehkan bakat waqaar, dapat diperbaiki dengan menguatkan bakat waqaar itu sendiri dan bakat lainnya, yaitu antara lain bakat Izzah dan Aziimah.",
+            "lebih_arab": "العُجْب",
+            "lebih_nama_lengkap": "Ujb (العُجْب) (bangga diri)",
+            "lebih_definisi": "persepsi tentang tingginya derajat pribadinya, yang sebenarnya tidak layak dinisbatkan kepadanya",
+            "lebih_perbaiki": "sifat tercela ujb (العُجْب) (bangga diri) yang ditimbulkan akibat berlebihan dalam bakat waqaar, dapat diperbaiki dengan menguatkan bakat tawaadhu’ dan qanaa’ah.",
+            "profesi": "Trainer, Pendamping pelatihan, Peningkatan SDM, Konsultan, Team penanganan masalah lembaga/perusahaan",
+            "jurusan": "Teknik Sipil, Teknik Listrik, Teknik Mesin, Manajemen",
+            "lalai_perbaiki_arab": "الوَقَار,العِزَّة,العَزِيمَة",
+            "lebih_perbaiki_arab": "التَّوَاضُع,القَنَاعَة"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,14 +1,31 @@
 var createError = require('http-errors');
+require('dotenv').config();
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var compression = require('compression');
+var helmet = require('helmet');
+var cors = require('cors');
+var rateLimit = require('express-rate-limit');
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: { error: 'Too many requests, please try again later.' }
+});
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+// Security Hardening
+app.use(helmet()); // Basic security headers
+app.use(cors()); // Allow public access (CORS *)
+app.use('/api/', limiter); // Apply rate limiting to API routes
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

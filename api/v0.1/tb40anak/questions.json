@@ -1,0 +1,173 @@
+{
+  "name": "Tafsir Bakat 40 Anak",
+  "version": "0.1",
+  "parts": {
+    "tb40anak": {
+      "name": "Tafsir Bakat 40 Anak",
+      "total_question": 40,
+      "score": { "default": 60, "minimal": 0, "maximal": 100 },
+      "questions": [
+        {
+          "index": "1",
+          "question": "Saat bermain dengan teman, aku selalu mengikuti aturan dan tidak mau curang meskipun aku sangat ingin menang."
+        },
+        {
+          "index": "2",
+          "question": "Aku senang jika diberi tugas oleh Ayah/Ibu seperti merapikan mainan, dan aku melakukannya dengan sungguh-sungguh."
+        },
+        {
+          "index": "3",
+          "question": "Aku selalu berpikir dulu sebelum melakukan sesuatu agar tidak salah atau tidak terluka."
+        },
+        {
+          "index": "4",
+          "question": "Kalau aku ingin mencoba mainan atau permainan baru, aku ingin segera memulainya dan rasanya sulit sekali untuk menunggu."
+        },
+        {
+          "index": "5",
+          "question": "Aku senang tersenyum dan menyapa teman atau guru, serta suka berbicara dengan sopan dan lembut."
+        },
+        {
+          "index": "6",
+          "question": "Aku cepat sekali mengerti pelajaran di sekolah atau cara bermain game baru yang cukup sulit."
+        },
+        {
+          "index": "7",
+          "question": "Aku bisa menjelaskan cara bermain atau bercerita dengan cara yang mudah dimengerti oleh teman-temanku."
+        },
+        {
+          "index": "8",
+          "question": "Aku sering bisa menebak apa yang akan terjadi selanjutnya hanya dengan melihat keadaan di sekitarku."
+        },
+        {
+          "index": "9",
+          "question": "Aku tidak suka kalau ada teman yang mengambil mainanku tanpa izin atau melanggar janji permainan."
+        },
+        {
+          "index": "10",
+          "question": "Aku merasa malu kalau terlalu banyak dipuji, karena aku merasa masih banyak hal yang belum aku bisa."
+        },
+        {
+          "index": "11",
+          "question": "Aku suka memikirkan mengapa sesuatu bisa terjadi, seperti mengapa teman sedang sedih atau mengapa bunga bisa tumbuh."
+        },
+        {
+          "index": "12",
+          "question": "Meskipun ada teman yang membuatku kesal, aku bisa tetap sabar dan tidak membalas dengan marah-marah."
+        },
+        {
+          "index": "13",
+          "question": "Aku punya banyak pertanyaan tentang segala hal karena aku ingin tahu banyak hal dan punya cita-cita yang tinggi."
+        },
+        {
+          "index": "14",
+          "question": "Aku selalu berusaha menganggap temanku baik, meskipun kadang mereka terlihat melakukan kesalahan padaku."
+        },
+        {
+          "index": "15",
+          "question": "Aku merasa sangat menyesal dan sedih jika aku tidak sengaja melanggar aturan di rumah atau di sekolah."
+        },
+        {
+          "index": "16",
+          "question": "Aku ingin hasil gambaranku atau tugas sekolahku terlihat sangat rapi dan sempurna, aku tidak suka jika berantakan."
+        },
+        {
+          "index": "17",
+          "question": "Aku senang berbagi makanan atau mainan dengan teman, meskipun sebenarnya aku juga ingin memilikinya sendiri."
+        },
+        {
+          "index": "18",
+          "question": "Aku tetap pada pendirianku untuk melakukan yang benar, meskipun teman-temanku mengajakku melakukan hal yang salah."
+        },
+        {
+          "index": "19",
+          "question": "Aku suka menolong teman atau memberikan sesuatu tanpa diminta, dan aku tidak mengharapkan pujian."
+        },
+        {
+          "index": "20",
+          "question": "Kalau teman bercerita rahasia kepadaku, aku bisa menyimpannya dengan baik dan tidak menceritakannya ke orang lain."
+        },
+        {
+          "index": "21",
+          "question": "Aku lebih suka bermain sangat akrab dengan beberapa sahabat dekat daripada bermain dengan banyak orang sekaligus."
+        },
+        {
+          "index": "22",
+          "question": "Aku sangat semangat jika ada lomba lari atau kuis di kelas karena aku ingin menjadi yang terbaik."
+        },
+        {
+          "index": "23",
+          "question": "Aku suka bercanda dan membuat teman-temanku tertawa agar suasana menjadi lebih seru."
+        },
+        {
+          "index": "24",
+          "question": "Aku senang memberikan semangat kepada teman yang sedang kesulitan mengerjakan tugas agar mereka tidak menyerah."
+        },
+        {
+          "index": "25",
+          "question": "Aku selalu ingin menyelesaikan tugas atau pekerjaan yang aku mulai sampai benar-benar selesai."
+        },
+        {
+          "index": "26",
+          "question": "Kalau mainanku rusak atau ada masalah, aku dengan mudah menemukan cara baru untuk memperbaikinya."
+        },
+        {
+          "index": "27",
+          "question": "Aku merasa senang sekali jika bisa membantu teman yang sedang kesusahan sampai masalahnya selesai."
+        },
+        {
+          "index": "28",
+          "question": "Aku merasa cukup dan senang dengan mainan atau barang-barang yang sudah aku miliki sekarang."
+        },
+        {
+          "index": "29",
+          "question": "Aku mudah merasa kasihan jika melihat orang atau hewan yang sedang kesusahan dan ingin sekali menolong mereka."
+        },
+        {
+          "index": "30",
+          "question": "Aku lebih suka cara yang damai dan tidak mau ribut, sehingga aku selalu bersikap lembut kepada siapa saja."
+        },
+        {
+          "index": "31",
+          "question": "Aku tidak suka menceritakan kesalahan atau hal memalukan tentang temanku kepada orang lain."
+        },
+        {
+          "index": "32",
+          "question": "Aku bisa tetap tenang dan sabar meskipun harus menunggu lama atau saat sedang menghadapi kesulitan."
+        },
+        {
+          "index": "33",
+          "question": "Aku lebih banyak diam dan hanya berbicara jika memang ada hal penting yang ingin aku sampaikan."
+        },
+        {
+          "index": "34",
+          "question": "Aku mendengarkan nasehat guru atau orang tua dengan baik dan selalu berusaha berkata jujur apa adanya."
+        },
+        {
+          "index": "35",
+          "question": "Aku berani memimpin teman-temanku saat bermain kelompok dan mengatur apa yang harus kami lakukan."
+        },
+        {
+          "index": "36",
+          "question": "Aku senang bekerja sama dengan teman dalam tim dan selalu berusaha agar kami tidak bertengkar."
+        },
+        {
+          "index": "37",
+          "question": "Meskipun aku jago dalam sesuatu, aku tidak suka pamer atau menyombongkan diri di depan teman-teman."
+        },
+        {
+          "index": "38",
+          "question": "Aku senang sekali jika berada di tempat ramai yang banyak orangnya dan ingin kenal dengan banyak teman baru."
+        },
+        {
+          "index": "39",
+          "question": "Aku selalu menepati janjiku kepada teman, meskipun kadang rasanya sulit untuk menepati janji itu."
+        },
+        {
+          "index": "40",
+          "question": "Aku terlihat tenang tapi sebenarnya aku kuat, aku tidak banyak bicara tapi mengerti banyak hal."
+        }
+      ]
+    }
+  }
+}
