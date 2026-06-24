@@ -4,16 +4,11 @@ const winstonLogger = require('../utils/logger');
 
 function evaluateV2(req) {
   const { version, type } = req.params;
-  const { answers, request_precision } = req.body;
+  const { answers } = req.body;
 
   // Load version-specific tiered questions
   const questionsData = JSON.parse(
     fs.readFileSync(path.join(__dirname, `../api/${version}/${type}/questions.json`), 'utf8')
-  );
-
-  // Load original calculation data for pillar metadata and final results
-  const calculationData = JSON.parse(
-    fs.readFileSync(path.join(__dirname, `../api/v0.1/${type}/calculation.json`), 'utf8')
   );
 
   const response = {
@@ -23,68 +18,105 @@ function evaluateV2(req) {
     result: null
   };
 
-  const { tier_1, tier_2, tier_3 } = answers || {};
+  const { tier_1, tier_2 } = answers || {};
 
-  // Step 1: Evaluate Tier 1 (Introvert vs Extrovert)
+  // Step 1: Evaluate Tier 1 (Social Energy Allocation)
   if (!tier_1) {
     response.next_tier = 'tier_1';
+    response.questions = questionsData.tiers.tier_1.questions;
+    response.dimensions = questionsData.tiers.tier_1.dimensions;
     return response;
   }
 
-  // Step 2: Evaluate Tier 2 (Karsa vs Cipta vs Rasa)
+  // Step 2: Evaluate Tier 2 (Talent Orientation Forced Ranking)
   if (!tier_2) {
     response.next_tier = 'tier_2';
+    response.questions = questionsData.tiers.tier_2.questions;
+    response.dimensions = questionsData.tiers.tier_2.dimensions;
     return response;
   }
 
-  // Step 3: Determine Group 6 mapping
-  const groupKey = `${tier_2}_${tier_1}`;
-  const groupInfo = questionsData.tiers.tier_3.mapping[groupKey];
+  // Step 3: Calculate Category Scores
+  const introPct = (tier_1.introvert || 0) / 100;
+  const extroPct = (tier_1.extrovert || 0) / 100;
 
-  if (!groupInfo) {
-    throw new Error(`Invalid tier combination: ${groupKey}`);
+  // tier_2 is an ordered array, e.g., ['karsa', 'cipta', 'rasa']
+  const tier2ScoreMap = {};
+  if (tier_2.length === 3) {
+    tier2ScoreMap[tier_2[0]] = 0.70; // 1st
+    tier2ScoreMap[tier_2[1]] = 0.50; // 2nd
+    tier2ScoreMap[tier_2[2]] = 0.30; // 3rd
   }
 
-  // Step 4: Handle Precision Request (Tier 4)
-  if (request_precision) {
-    response.status = 'precision_requested';
-    response.next_tier = 'tier_4';
-    response.questions = JSON.parse(
-        fs.readFileSync(path.join(__dirname, `../api/v0.1/${type}/questions.json`), 'utf8')
-    ).parts[type === 'tb40anak' ? 'tb40anak' : 'tb40Dewasa'].questions;
-    return response;
-  }
+  const karsaPct = tier2ScoreMap['karsa'] || 0;
+  const ciptaPct = tier2ScoreMap['cipta'] || 0;
+  const rasaPct = tier2ScoreMap['rasa'] || 0;
 
-  // Step 5: Evaluate Tier 3 (Group Specific)
-  if (!tier_3 || Object.keys(tier_3).length < groupInfo.questions.length) {
-    response.status = 'analyzing';
-    response.next_tier = 'tier_3';
-    response.group = groupInfo;
-    
-    // Filter questions for this specific group
-    const allQuestions = JSON.parse(
-        fs.readFileSync(path.join(__dirname, `../api/v0.1/${type}/questions.json`), 'utf8')
-    ).parts[type === 'tb40anak' ? 'tb40anak' : 'tb40Dewasa'].questions;
+  // Group mappings:
+  // 1. Bekerja Keras (Pekerja Keras) -> Introvert * Karsa
+  // 2. Berpikir (Cerdas) -> Introvert * Cipta
+  // 3. Berperasaan -> Introvert * Rasa
+  // 4. Mempengaruhi (Tegas) -> Extrovert * Karsa
+  // 5. Bekerjasama (Gaul) -> Extrovert * Cipta
+  // 6. Melayani (Lembut) -> Extrovert * Rasa
+  const groups = [
+    { no: "1", id: "bekerja_keras", score: introPct * karsaPct },
+    { no: "2", id: "berpikir", score: introPct * ciptaPct },
+    { no: "3", id: "berperasaan", score: introPct * rasaPct },
+    { no: "4", id: "mempengaruhi", score: extroPct * karsaPct },
+    { no: "5", id: "bekerjasama", score: extroPct * ciptaPct },
+    { no: "6", id: "melayani", score: extroPct * rasaPct },
+  ];
 
-    response.questions = allQuestions.filter(q => 
-        groupInfo.questions.includes(`q${q.index}`)
-    );
-    
-    return response;
-  }
+  // Rank them from highest score to lowest
+  groups.sort((a, b) => b.score - a.score);
 
-  // Step 6: Final Result (Complete)
+  // Assign fixed scores based on rank
+  const fixedScores = [90, 75, 60, 45, 30, 15];
+  const groupFixedScores = {};
+  groups.forEach((g, index) => {
+    groupFixedScores[g.no] = fixedScores[index];
+  });
+
+  // Step 4: Map fixed scores to the 40 pillars
+  const calculationData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, `../api/v0.1/${type}/calculation.json`), 'utf8')
+  );
+
+  // Find mapping from group 18 to group 6
+  const partsKey = type === 'tb40anak' ? 'tb40anak' : 'tb40';
+  const pillars18 = calculationData.parts[partsKey].pillars.filter(p => p.pillar.group === "18");
+  const map18To6 = {};
+  pillars18.forEach(p => {
+    const parent6 = p.parents.find(parent => parent.group === "6");
+    if (parent6) {
+      map18To6[p.pillar.no] = parent6.no;
+    }
+  });
+
+  const pillars40 = calculationData.parts[partsKey].pillars.filter(p => p.pillar.group === "40");
+  
+  // Sort by questionIndex to ensure the 40-element array is in the correct order
+  pillars40.sort((a, b) => parseInt(a.questionIndex) - parseInt(b.questionIndex));
+
+  const answers40 = pillars40.map(p => {
+    const parent18 = p.parents.find(parent => parent.group === "18");
+    if (parent18 && map18To6[parent18.no]) {
+      const group6No = map18To6[parent18.no];
+      return groupFixedScores[group6No] || 0;
+    }
+    return 0; // fallback if lineage is broken
+  });
+
+  // Step 5: Final Result
   response.status = 'complete';
   response.result = {
-    primary_group: groupInfo.label,
-    description: `Berdasarkan jawabanmu, kamu termasuk tipe ${groupInfo.label}.`,
-    traits: groupInfo.questions.map(qId => {
-        const index = qId.replace('q', '');
-        return calculationData.parts.tb40.pillars.find(p => p.pillar.group === "40" && p.questionIndex == index);
-    })
+    ranked_categories: groups.map(g => ({ id: g.id, score: g.score })),
+    default_scores: answers40
   };
 
   return response;
 }
 
 module.exports = { evaluateV2 };
+

@@ -1,60 +1,39 @@
 {
-  "name": "Tafsir Bakat 40 v0.2 (Tiered)",
+  "name": "Tafsir Bakat 40 v0.2 (Short Version)",
   "version": "0.2",
   "tiers": {
     "tier_1": {
       "id": "intro_extro",
-      "type": "binary",
+      "type": "allocation",
       "title": "Energi Sosial",
-      "description": "Bagaimana kamu mendapatkan energimu?",
+      "description": "Bagaimana persentase energi sosialmu?",
       "dimensions": [
-        { "id": "introvert", "label": "Introvert", "value": 1 },
-        { "id": "extrovert", "label": "Extrovert", "value": 2 }
+        { "id": "introvert", "label": "Introvert" },
+        { "id": "extrovert", "label": "Extrovert" }
       ],
       "questions": [
         {
           "id": "q1_1",
-          "text": "Apakah kamu merasa lebih bersemangat saat menghabiskan waktu sendiri (Introvert) atau saat bersama banyak orang (Extrovert)?"
+          "text": "Bagi 100% energimu antara Introvert dan Extrovert."
         }
       ]
     },
     "tier_2": {
       "id": "karsa_cipta_rasa",
-      "type": "ternary",
+      "type": "forced_ranking",
       "title": "Orientasi Bakat",
-      "description": "Apa yang paling dominan dalam dirimu?",
+      "description": "Urutkan orientasi bakat yang paling menggambarkan dirimu dari yang pertama hingga terakhir.",
       "dimensions": [
-        { "id": "karsa", "label": "Karsa (Aksi)", "value": 1 },
-        { "id": "cipta", "label": "Cipta (Pikir)", "value": 2 },
-        { "id": "rasa", "label": "Rasa (Hati)", "value": 3 }
+        { "id": "karsa", "label": "Karsa (Aksi)" },
+        { "id": "cipta", "label": "Cipta (Pikir)" },
+        { "id": "rasa", "label": "Rasa (Hati)" }
       ],
       "questions": [
         {
           "id": "q2_1",
-          "text": "Manakah yang paling menggambarkan dirimu? Suka segera bertindak (Karsa), suka memikirkan sesuatu secara mendalam (Cipta), atau sangat peduli dengan perasaan orang lain (Rasa)?"
+          "text": "Urutkan: Suka segera bertindak (Karsa), memikirkan sesuatu secara mendalam (Cipta), dan peduli dengan perasaan orang lain (Rasa)."
         }
       ]
-    },
-    "tier_3": {
-      "id": "group_focus",
-      "type": "grouping",
-      "title": "Fokus Kelompok",
-      "description": "Pendalaman karakter berdasarkan tipe dasar.",
-      "mapping": {
-        "1_1": { "id": "bekerja_keras", "label": "Pekerja Keras", "questions": ["q25", "q26", "q4"] },
-        "2_1": { "id": "berpikir", "label": "Cerdas", "questions": ["q6", "q11", "q8"] },
-        "3_1": { "id": "berperasaan", "label": "Berperasaan", "questions": ["q10", "q29", "q40"] },
-        "1_2": { "id": "mempengaruhi", "label": "Tegas", "questions": ["q35", "q22", "q9"] },
-        "2_2": { "id": "bekerjasama", "label": "Mudah Bergaul", "questions": ["q38", "q36", "q23"] },
-        "3_2": { "id": "melayani", "label": "Lembut", "questions": ["q5", "q17", "q30"] }
-      }
-    },
-    "tier_4": {
-      "id": "precision",
-      "type": "precision",
-      "title": "Akurasi Penuh",
-      "description": "Lengkapi semua pertanyaan untuk hasil yang lebih akurat.",
-      "pool": 40
     }
   }
 }
