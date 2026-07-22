@@ -240,12 +240,68 @@ function calculateInterimResults(tier1, tier2, tier3, type) {
   const topCategories = scaledGroups.slice(0, 3);
   const weakCategories = scaledGroups.slice(-3);
 
+  // Derive Panggilan, Bahasa Hati, Gaya Belajar & SVG Chart for Step 2+ preliminary results
+  const topCategory = scaledGroups[0] ? scaledGroups[0].id : 'bekerja_keras';
+  
+  const panggilanMap = {
+    bekerja_keras: type === 'tb40anak' ? 'Sang Ananda Tangguh & Tekun' : 'Sang Pelaksana Tangguh & Tekun',
+    berpikir: type === 'tb40anak' ? 'Sang Ananda Cerdas & Pemikir' : 'Sang Pemikir Cerdas & Analitis',
+    berperasaan: type === 'tb40anak' ? 'Sang Ananda Pengayom & Peka' : 'Sang Pengayom & Empatis',
+    mempengaruhi: type === 'tb40anak' ? 'Sang Ananda Pemimpin Berani' : 'Sang Pemimpin & Penggerak Tegas',
+    bekerjasama: type === 'tb40anak' ? 'Sang Ananda Ceria & Gaul' : 'Sang Sahabat & Penghubung Gaul',
+    melayani: type === 'tb40anak' ? 'Sang Ananda Penolong Lembut' : 'Sang Pelayan & Penolong Lembut'
+  };
+
+  const bahasaHatiMap = {
+    bekerja_keras: 'Pertolongan Nyata & Aksi Nyata (Acts of Service)',
+    berpikir: 'Penghargaan atas Gagasan & Ide Kreatif',
+    berperasaan: 'Sentuhan Perhatian & Kata-kata Penguatan (Words of Affirmation)',
+    mempengaruhi: 'Kepercayaan & Dukungan Kepemimpinan',
+    bekerjasama: 'Waktu Bersama & Kebersamaan Berkualitas (Quality Time)',
+    melayani: 'Ketulusan Pelayanan & Kepedulian Hati'
+  };
+
+  const gayaBelajarMap = {
+    bekerja_keras: 'Kinestetik & Eksperimen Langsung (Praktik)',
+    berpikir: 'Visual & Analitis (Membaca, Meneliti, & Berpikir Reflektif)',
+    berperasaan: 'Auditori & Emosional (Bercerita & Diskusi Peka)',
+    mempengaruhi: 'Interaktif & Orientasi Tantangan (Simulasi Kepemimpinan)',
+    bekerjasama: 'Auditori & Kolaboratif (Kerja Kelompok & Diskusi Ramai)',
+    melayani: 'Kinestetik & Pelayanan Berbagi (Belajar Sambil Membantu)'
+  };
+
+  const panggilan = panggilanMap[topCategory] || 'Sang Penjelajah Bakat';
+  const bahasaHati = bahasaHatiMap[topCategory] || 'Kata-kata Apresiasi';
+  const gayaBelajar = gayaBelajarMap[topCategory] || 'Visual & Kinestetik';
+
+  const svg = generatePreliminarySVG(scaledGroups, panggilan);
+
   return {
+    panggilan,
+    bahasa_hati: bahasaHati,
+    gaya_belajar: gayaBelajar,
+    svg,
     ranked_categories: scaledGroups,
     top_categories: topCategories,
     weak_categories: weakCategories,
     default_scores: answers40
   };
+}
+
+function generatePreliminarySVG(scaledGroups, panggilan) {
+  const bars = scaledGroups.map((g, index) => {
+    const y = 60 + index * 40;
+    const width = Math.max(20, Math.round((g.score / 100) * 300));
+    return `<text x="20" y="${y + 17}" font-family="Arial, sans-serif" font-size="14" fill="#374151">${g.name}</text>` +
+      `<rect x="150" y="${y}" width="${width}" height="24" rx="4" fill="#4F46E5" />` +
+      `<text x="${160 + width}" y="${y + 17}" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#4F46E5">${g.score}</text>`;
+  }).join('');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="100%" height="100%">` +
+    `<rect width="100%" height="100%" fill="#F9FAFB" rx="8" />` +
+    `<text x="250" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F2937">Peta Bakat Preliminary: ${panggilan}</text>` +
+    bars +
+    `</svg>`;
 }
 
 module.exports = {
