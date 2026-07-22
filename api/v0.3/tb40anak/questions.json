@@ -1,0 +1,94 @@
+{
+  "name": "Tafsir Bakat 40 Anak v0.3 (Adaptive Tiered)",
+  "version": "0.3",
+  "tiers": {
+    "tier_1": {
+      "id": "intro_extro",
+      "type": "allocation",
+      "title": "Energi Bermain & Bersosialisasi",
+      "description": "Bagaimana persentase energi bermainmu?",
+      "image_url": "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&w=800&q=80",
+      "image_alt": "Energi Bermain Anak - Introvert vs Extrovert",
+      "dimensions": [
+        { "id": "introvert", "label": "Tenang / Sendiri" },
+        { "id": "extrovert", "label": "Ramai / Bersama Teman" }
+      ],
+      "questions": [
+        {
+          "id": "q1_1",
+          "text": "Bagi 100% energimu antara bermain tenang sendiri dan bermain ramai bersama teman.",
+          "text_observer": "Bagi 100% energi {{name}} antara bermain tenang sendiri dan bermain ramai bersama teman.",
+          "range_labels": [
+            { "min": 0, "max": 20, "emoji": "🎨", "label": "Lebih nyaman bermain tenang, membaca, atau menggambar sendiri." },
+            { "min": 21, "max": 50, "emoji": "🧩", "label": "Suka bermain sendiri tapi juga mau bergabung jika diajak." },
+            { "min": 51, "max": 80, "emoji": "⚽", "label": "Senang bermain bersama teman-teman sebaya." },
+            { "min": 81, "max": 100, "emoji": "🎪", "label": "Sangat ceria dan bersemangat saat di tengah keramaian teman." }
+          ]
+        }
+      ]
+    },
+    "tier_2": {
+      "id": "karsa_cipta_rasa",
+      "type": "forced_ranking",
+      "title": "Orientasi Bakat Anak",
+      "description": "Urutkan dorongan yang paling menggambarkan anak dari yang pertama hingga ketiga.",
+      "image_url": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80",
+      "image_alt": "Orientasi Bakat Anak - Karsa, Cipta, Rasa",
+      "dimensions": [
+        { "id": "karsa", "label": "Karsa (Bergerak/Aksi)", "emoji": "🏃" },
+        { "id": "cipta", "label": "Cipta (Berpikir/Kreatif)", "emoji": "🎨" },
+        { "id": "rasa", "label": "Rasa (Perasaan/Peduli)", "emoji": "💛" }
+      ],
+      "questions": [
+        {
+          "id": "q2_1",
+          "text": "Urutkan dorongan utamamu: Suka langsung bergerak & beraksi (Karsa), suka cari tahu & berkreasi (Cipta), dan peka pada teman (Rasa).",
+          "text_observer": "Urutkan dorongan utama {{name}}: Suka langsung bergerak & beraksi (Karsa), suka cari tahu & berkreasi (Cipta), dan peka pada teman (Rasa)."
+        }
+      ]
+    },
+    "tier_3": {
+      "id": "subgroup_18",
+      "type": "likert_scale",
+      "title": "Pendalaman 18 Bakat Anak",
+      "description": "Berikan nilai 1 (Sangat Tidak Sesuai) sampai 5 (Sangat Sesuai) untuk 18 kebiasaan anak.",
+      "image_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
+      "image_alt": "Pendalaman 18 Bakat Anak",
+      "scale_options": [
+        { "value": 1, "label": "Sangat Tidak Sesuai", "emoji": "❌" },
+        { "value": 2, "label": "Tidak Sesuai", "emoji": "👎" },
+        { "value": 3, "label": "Netral", "emoji": "😐" },
+        { "value": 4, "label": "Sesuai", "emoji": "👍" },
+        { "value": 5, "label": "Sangat Sesuai", "emoji": "🌟" }
+      ],
+      "questions": [
+        { "id": "sub_1", "subgroup_no": "1", "text": "Saya selalu semangat menyelesaikan permainan atau tugas hingga tuntas.", "text_observer": "{{name}} selalu semangat menyelesaikan permainan atau tugas hingga tuntas." },
+        { "id": "sub_2", "subgroup_no": "2", "text": "Saya anak yang tertib dan taat aturan.", "text_observer": "{{name}} anak yang tertib dan taat aturan." },
+        { "id": "sub_3", "subgroup_no": "3", "text": "Saya suka merapikan mainan atau barang sendiri.", "text_observer": "{{name}} suka merapikan mainan atau barang sendiri." },
+        { "id": "sub_4", "subgroup_no": "4", "text": "Saya suka bertanya dan penasaran mempelajari hal baru.", "text_observer": "{{name}} suka bertanya dan penasaran mempelajari hal baru." },
+        { "id": "sub_5", "subgroup_no": "5", "text": "Saya suka menggambar, membuat kerajinan, atau membayangkan ide baru.", "text_observer": "{{name}} suka menggambar, membuat kerajinan, atau membayangkan ide baru." },
+        { "id": "sub_6", "subgroup_no": "6", "text": "Saya suka merencanakan permainan sebelum bermain.", "text_observer": "{{name}} suka merencanakan permainan sebelum bermain." },
+        { "id": "sub_7", "subgroup_no": "7", "text": "Saya memegang teguh kejujuran dan rasa keadilan.", "text_observer": "{{name}} memegang teguh kejujuran dan rasa keadilan." },
+        { "id": "sub_8", "subgroup_no": "8", "text": "Saya peka ketika melihat teman atau keluarga merasa sedih.", "text_observer": "{{name}} peka ketika melihat teman atau keluarga merasa sedih." },
+        { "id": "sub_9", "subgroup_no": "9", "text": "Saya selalu ceria dan mudah merasa gembira.", "text_observer": "{{name}} selalu ceria dan mudah merasa gembira." },
+        { "id": "sub_10", "subgroup_no": "10", "text": "Saya suka memimpin teman-teman saat bermain.", "text_observer": "{{name}} suka memimpin teman-teman saat bermain." },
+        { "id": "sub_11", "subgroup_no": "11", "text": "Saya berani tampil dan bercerita di depan orang banyak.", "text_observer": "{{name}} berani tampil dan bercerita di depan orang banyak." },
+        { "id": "sub_12", "subgroup_no": "12", "text": "Saya suka mengarahkan jalannya permainan.", "text_observer": "{{name}} suka mengarahkan jalannya permainan." },
+        { "id": "sub_13", "subgroup_no": "13", "text": "Saya mudah berkenalan dan berteman dengan siapa saja.", "text_observer": "{{name}} mudah berkenalan dan berteman dengan siapa saja." },
+        { "id": "sub_14", "subgroup_no": "14", "text": "Saya senang bermain dan bekerja kelompok.", "text_observer": "{{name}} senang bermain dan bekerja kelompok." },
+        { "id": "sub_15", "subgroup_no": "15", "text": "Saya senang mengajak teman yang sendiri agar ikut bergabung.", "text_observer": "{{name}} senang mengajak teman yang sendiri agar ikut bergabung." },
+        { "id": "sub_16", "subgroup_no": "16", "text": "Saya suka membantu orang tua atau teman yang butuh pertolongan.", "text_observer": "{{name}} suka membantu orang tua atau teman yang butuh pertolongan." },
+        { "id": "sub_17", "subgroup_no": "17", "text": "Saya senang membimbing atau mengajari adik / teman.", "text_observer": "{{name}} senang membimbing atau mengajari adik / teman." },
+        { "id": "sub_18", "subgroup_no": "18", "text": "Saya anak yang santun, ramah, dan penurut.", "text_observer": "{{name}} anak yang santun, ramah, dan penurut." }
+      ]
+    },
+    "tier_4": {
+      "id": "precision_40",
+      "type": "precision_mode",
+      "title": "Presisi 40 Pilar Bakat Anak",
+      "description": "Evaluasi presisi penuh untuk 40 pilar bakat anak.",
+      "image_url": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80",
+      "image_alt": "Presisi 40 Pilar Bakat Anak"
+    }
+  }
+}

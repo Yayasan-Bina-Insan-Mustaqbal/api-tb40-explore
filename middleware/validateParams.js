@@ -1,4 +1,4 @@
-const validVersions = ['v0.1', 'v0.2'];
+const validVersions = ['v0.1', 'v0.2', 'v0.3'];
 const validTypes = ['tb40', 'tb40anak', 'raporkarakter'];
 
 function validateParams(req, res, next) {

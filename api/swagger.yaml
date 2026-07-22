@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: API TB40
-  description: RESTful API for Tafsir Bakat 40 personality assessment.
-  version: 0.2.0
+  description: RESTful API for Tafsir Bakat 40 personality assessment with adaptive tiering, state persistence, and continuous scoring.
+  version: 0.3.0
 servers:
   - url: http://localhost:4040
     description: Local development server
@@ -13,15 +13,118 @@ paths:
       responses:
         '200':
           description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                  uptime:
-                    type: number
+  /api/v0.3/submissions:
+    post:
+      summary: Initialize a new submission (v0.3)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum: [tb40, tb40anak]
+                is_anonymous:
+                  type: boolean
+                is_observer:
+                  type: boolean
+                subject_name:
+                  type: string
+                org_id:
+                  type: string
+                event_id:
+                  type: string
+                author_id:
+                  type: string
+      responses:
+        '201':
+          description: Submission created with unique ID and server timestamp
+  /api/v0.3/submissions/{id}:
+    get:
+      summary: Fetch submission state and halfway report (v0.3)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Submission state with halfway report
+  /api/v0.3/submissions/{id}/evaluate:
+    post:
+      summary: Debounced interaction evaluate & state save (v0.3)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sequence_number:
+                  type: integer
+                answers:
+                  type: object
+                request_precision:
+                  type: boolean
+      responses:
+        '200':
+          description: State saved with evaluation status and halfway report
+  /api/v0.3/submissions/{id}/contact:
+    patch:
+      summary: Post-report user contact enrichment (v0.3)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                phone:
+                  type: string
+      responses:
+        '200':
+          description: Contact information updated
+  /api/v0.3/submissions/{id}/share:
+    get:
+      summary: Public view-only result payload (v0.3)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Public report results
+  /api/v0.3/events/{eventId}/submissions:
+    get:
+      summary: Event admin batch export (v0.3)
+      parameters:
+        - name: eventId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of all event submissions
   /api/v0.2/{type}/schema:
     get:
       summary: Get tiered assessment schema (v0.2)
@@ -45,87 +148,25 @@ paths:
           schema:
             type: string
             enum: [tb40, tb40anak]
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                answers:
-                  type: object
-                  properties:
-                    tier_1:
-                      type: integer
-                      description: "1=Introvert, 2=Extrovert"
-                    tier_2:
-                      type: integer
-                      description: "1=Karsa, 2=Cipta, 3=Rasa"
-                    tier_3:
-                      type: object
-                      description: "Answers to specific group questions"
-                request_precision:
-                  type: boolean
       responses:
         '200':
           description: Current evaluation status and next required tier
   /api/{version}/{type}/calculation:
     post:
-      summary: Calculate TB40 results (v0.1 & v0.2)
+      summary: Calculate TB40 results (v0.1, v0.2, v0.3)
       parameters:
         - name: version
           in: path
           required: true
           schema:
             type: string
-            enum: [v0.1, v0.2]
+            enum: [v0.1, v0.2, v0.3]
         - name: type
           in: path
           required: true
           schema:
             type: string
             enum: [tb40, tb40anak, raporkarakter]
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                parts:
-                  type: object
-                  properties:
-                    umum:
-                      type: object
-                      properties:
-                        nama:
-                          type: object
-                          properties:
-                            lengkap:
-                              type: string
-                            panggilan:
-                              type: string
-                        lahir:
-                          type: object
-                          properties:
-                            tanggal:
-                              type: string
-                        tanggal:
-                          type: string
-                    tb40:
-                      type: array
-                      items:
-                        type: number
-                      minItems: 40
-                      maxItems: 40
-                    tb40anak:
-                      type: array
-                      items:
-                        type: number
-                      minItems: 40
-                      maxItems: 40
       responses:
         '200':
           description: Calculation successful
-        '400':
-          description: Invalid request

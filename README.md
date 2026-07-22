@@ -1,22 +1,30 @@
 # API TB40 (Tafsir Bakat 40)
 
-API TB40 is a RESTful API service for calculating and analyzing the TB40 (Tafsir Bakat 40) personality assessment test. It provides endpoints for getting test questions and calculating test results, including detailed analysis and visual representations.
+API TB40 is a RESTful API service for calculating and analyzing the TB40 (Tafsir Bakat 40) personality assessment test. It provides endpoints for question schema retrieval, multi-step stateful evaluation, trait scoring, visual report generation, and batch analytics.
 
 ## Features
 
-- **Tiered Assessment (v0.2)**: New branching logic reduces user friction by starting with high-level questions before drilling down into specific traits.
-- **Multi-Type Assessments**: Supports Adult (`tb40`) and Children (`tb40anak`) versions.
-- **Dynamic Calculation**: Automatic scoring, ranking, and trait categorization.
-- **Visual Representations**: Generates SVG personality maps based on scores or ranks.
-- **Health Monitoring**: Built-in health check endpoint.
+- **Stateful PocketBase Persistence (v0.3)**: Real-time interaction tracking, session recovery, unique submission IDs (`sub_xxxxxxxx`), and optimism concurrency control.
+- **4-Tier Adaptive Progression Engine (v0.3)**:
+  - **Tier 1**: Social Energy Allocation (Introvert vs Extrovert).
+  - **Tier 2**: Talent Orientation Forced Ranking (Karsa ⚡, Cipta 💡, Rasa ❤️).
+  - **Tier 3**: 18 Sub-Group 5-Point Likert Scale Deep-Dive (*Sangat Tidak Setuju* to *Sangat Setuju*).
+  - **Tier 4**: Optional 40-Pillar Precision Mode.
+- **Dynamic Continuous Scoring**: High-resolution continuous probability weighting replacing flat score bands.
+- **Observer Mode & Name Personalization**: Assess yourself or observe someone else (`is_observer: true` & `subject_name: "Ahmad"`) with dynamic `{{name}}` template interpolation.
+- **Qualitative Slider Range Descriptors & Emojis**: Dynamic human-readable state descriptors with expressive emojis (🤫, 🌿, 🤝, 🎉, 🧠).
+- **Real-Time Auto-Save & Halfway Report**: Timestamp confirmation for client auto-saves and partial completion progress auditing.
+- **Strict Anonymous Fast-Track Mode**: Frictionless anonymous evaluation using second-person pronouns (`"Kamu"` for kids, `"Anda"` for adults).
+- **Post-Report Contact Enrichment**: Optional post-report endpoint for attaching email and phone numbers.
+- **Organization & Event Analytics**: Link submissions to events/orgs and batch export results.
+- **Multi-Demographic Support**: Adult (`tb40`) and Children (`tb40anak`) versions.
 - **Production Ready**:
-  - Security hardening with `helmet`.
-  - Publicly accessible via `cors`.
-  - Abuse prevention with `express-rate-limit`.
-  - Environment-based configuration with `dotenv`.
-  - Structured logging with `winston`.
-  - Centralized JSON error handling.
-- **Automated Testing**: Comprehensive test suite with Jest.
+  - Hardened with `helmet`, `cors`, and route-specific `express-rate-limit`.
+  - Structured logging with `winston` and JSON error handling.
+  - Interactive OpenAPI/Swagger UI documentation.
+- **Automated Testing**: 100% passing test coverage with Jest (7 test suites).
+
+---
 
 ## Quick Start
 
@@ -42,9 +50,15 @@ npm start
 ```
 The API will be available at `http://localhost:4040`.
 
+---
+
 ## API Documentation
 
-Interactive documentation is available at `http://localhost:4040/api-docs`.
+Interactive OpenAPI documentation is available at `http://localhost:4040/api-docs`.
+
+### Frontend Integration Guides
+- [v0.3 API Frontend Implementation Guide](file:///home/abuhafi/Project/api-tb40-explore/v0.3%20api%20frontend%20implementation.md)
+- [v0.2 API Frontend Implementation Guide](file:///home/abuhafi/Project/api-tb40-explore/v0.2%20api%20frontend%20implementation.md)
 
 ### Health Check
 ```bash
@@ -52,51 +66,64 @@ GET /health
 ```
 Returns application status, uptime, and timestamp.
 
-### Tiered Evaluation (v0.2)
-**Endpoint:** `POST /api/v0.2/:type/evaluate`
+---
 
-Allows multi-step assessment where each step determines the next set of questions.
+### v0.3 Stateful Submissions API
 
-**Example Payload (Step 1):**
+#### Initialize Submission
+```bash
+POST /api/v0.3/submissions
+```
+Payload:
 ```json
 {
-  "answers": {}
+  "type": "tb40",
+  "is_anonymous": false,
+  "is_observer": true,
+  "subject_name": "Ahmad",
+  "event_id": "event_123"
 }
 ```
-**Response:** Returns `next_tier: "tier_1"` with Introvert/Extrovert dimensions.
 
-**Example Payload (Step 2):**
-```json
-{
-  "answers": { "tier_1": 1 }
-}
+#### Debounced Step Evaluation & Auto-Save
+```bash
+POST /api/v0.3/submissions/:id/evaluate
 ```
-**Response:** Returns `next_tier: "tier_2"` with Karsa/Cipta/Rasa dimensions.
-
-**Precision Mode:** Add `"request_precision": true` to any payload to receive the full 40-question precision set.
-
-### Legacy Calculation (v0.1)
-**Endpoint:** `POST /api/v0.1/:type/calculation`
-
-**Request Body Format:**
+Payload:
 ```json
 {
-  "parts": {
-    "umum": {
-      "nama": { "lengkap": "Full Name", "panggilan": "Nick Name" },
-      "lahir": { "tanggal": "YYYY-MM-DD" },
-      "tanggal": "YYYY-MM-DD"
-    },
-    "tb40anak": [100, 90, ..., 80] // Array of 40 scores (0-100)
+  "sequence_number": 1,
+  "answers": {
+    "tier_1": { "introvert": 70, "extrovert": 30 }
   }
 }
 ```
+Response: Returns `timestamp`, `saved: true`, `next_tier: "tier_2"`, and `halfway_report`.
+
+#### Post-Report Contact Enrichment
+```bash
+PATCH /api/v0.3/submissions/:id/contact
+```
+Payload:
+```json
+{
+  "email": "user@example.com",
+  "phone": "+6281234567890"
+}
+```
+
+#### Public Share Result
+```bash
+GET /api/v0.3/submissions/:id/share
+```
+
+---
 
 ## Development & Testing
 
 ### Running Tests
 ```bash
-# Run all tests
+# Run all automated tests
 npm test
 
 # Run tests in watch mode
@@ -109,14 +136,17 @@ npm run test:coverage
 ### Directory Structure
 ```
 api-tb40/
-├── api/             # Calculation data & assets by version
-├── devlog/          # Project evolution tracking
-├── middleware/      # Request validation & security
-├── routes/          # API endpoints
-├── services/        # Core calculation logic
-├── utils/           # Helper functions (coloring, rendering, logging)
-├── __tests__/       # Automated test suite
-└── app.js           # Application entry point
+├── api/             # Question schemas & calculation rules by version (v0.1, v0.2, v0.3)
+├── devlog/          # Architectural evolution logs (devlog 001 - 010)
+├── middleware/      # Request validation & security rate-limiters
+├── pocketbase/      # PocketBase database schema definitions (pb_schema.json)
+├── public/          # Static assets & swagger.yaml OpenAPI spec
+├── routes/          # Express API endpoints & submissions router
+├── services/        # Calculation engines (v1, v2, v3) & PocketBase client
+├── utils/           # Template rendering, color mapping, winston logger
+├── __tests__/       # Comprehensive Jest test suite (7 suites, 31 tests)
+├── docker-compose.yml
+└── app.js           # Express app entry point
 ```
 
 ## License

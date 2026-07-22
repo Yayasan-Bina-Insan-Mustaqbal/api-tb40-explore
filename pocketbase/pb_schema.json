@@ -1,0 +1,179 @@
+[
+  {
+    "id": "organizations_col",
+    "name": "organizations",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "name": "name",
+        "type": "text",
+        "required": true,
+        "presentable": true
+      },
+      {
+        "name": "code",
+        "type": "text",
+        "required": true,
+        "unique": true,
+        "presentable": true
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": null
+  },
+  {
+    "id": "events_col",
+    "name": "events",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "name": "name",
+        "type": "text",
+        "required": true,
+        "presentable": true
+      },
+      {
+        "name": "code",
+        "type": "text",
+        "required": true,
+        "unique": true,
+        "presentable": true
+      },
+      {
+        "name": "org_id",
+        "type": "relation",
+        "required": false,
+        "options": {
+          "collectionId": "organizations_col",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": ["name"]
+        }
+      },
+      {
+        "name": "start_date",
+        "type": "date",
+        "required": false
+      },
+      {
+        "name": "end_date",
+        "type": "date",
+        "required": false
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": null
+  },
+  {
+    "id": "submissions_col",
+    "name": "submissions",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "name": "type",
+        "type": "select",
+        "required": true,
+        "options": {
+          "maxSelect": 1,
+          "values": ["tb40", "tb40anak"]
+        }
+      },
+      {
+        "name": "status",
+        "type": "select",
+        "required": true,
+        "options": {
+          "maxSelect": 1,
+          "values": ["draft", "incomplete", "complete"]
+        }
+      },
+      {
+        "name": "current_tier",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "sequence_number",
+        "type": "number",
+        "required": false
+      },
+      {
+        "name": "answers",
+        "type": "json",
+        "required": false
+      },
+      {
+        "name": "results",
+        "type": "json",
+        "required": false
+      },
+      {
+        "name": "org_id",
+        "type": "relation",
+        "required": false,
+        "options": {
+          "collectionId": "organizations_col",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1
+        }
+      },
+      {
+        "name": "event_id",
+        "type": "relation",
+        "required": false,
+        "options": {
+          "collectionId": "events_col",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1
+        }
+      },
+      {
+        "name": "author_id",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "is_anonymous",
+        "type": "bool",
+        "required": false
+      },
+      {
+        "name": "is_observer",
+        "type": "bool",
+        "required": false
+      },
+      {
+        "name": "subject_name",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "email",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "phone",
+        "type": "text",
+        "required": false
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": null
+  }
+]

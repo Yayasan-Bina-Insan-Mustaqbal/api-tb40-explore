@@ -1,0 +1,94 @@
+{
+  "name": "Tafsir Bakat 40 v0.3 (Adaptive Tiered)",
+  "version": "0.3",
+  "tiers": {
+    "tier_1": {
+      "id": "intro_extro",
+      "type": "allocation",
+      "title": "Energi Sosial",
+      "description": "Bagaimana persentase energi sosialmu?",
+      "image_url": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80",
+      "image_alt": "Energi Sosial - Introvert vs Extrovert",
+      "dimensions": [
+        { "id": "introvert", "label": "Introvert" },
+        { "id": "extrovert", "label": "Extrovert" }
+      ],
+      "questions": [
+        {
+          "id": "q1_1",
+          "text": "Bagi 100% energimu antara Introvert dan Extrovert.",
+          "text_observer": "Bagi 100% energi {{name}} antara Introvert dan Extrovert.",
+          "range_labels": [
+            { "min": 0, "max": 20, "emoji": "🤫", "label": "Energi sosial lebih banyak dari waktu sendiri dan refleksi mendalam." },
+            { "min": 21, "max": 50, "emoji": "🌿", "label": "Seimbang dengan sedikit kecenderungan fokus pada ketenangan." },
+            { "min": 51, "max": 80, "emoji": "🤝", "label": "Menikmati interaksi sosial dan aktif berkolaborasi." },
+            { "min": 81, "max": 100, "emoji": "🎉", "label": "Sangat berenergi saat berada di tengah banyak orang dan keramaian." }
+          ]
+        }
+      ]
+    },
+    "tier_2": {
+      "id": "karsa_cipta_rasa",
+      "type": "forced_ranking",
+      "title": "Orientasi Bakat",
+      "description": "Urutkan orientasi bakat utama dari yang paling menggambarkan hingga yang terakhir.",
+      "image_url": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+      "image_alt": "Orientasi Bakat - Karsa, Cipta, Rasa",
+      "dimensions": [
+        { "id": "karsa", "label": "Karsa (Aksi)", "emoji": "⚡" },
+        { "id": "cipta", "label": "Cipta (Pikir)", "emoji": "💡" },
+        { "id": "rasa", "label": "Rasa (Hati)", "emoji": "❤️" }
+      ],
+      "questions": [
+        {
+          "id": "q2_1",
+          "text": "Urutkan dorongan utamamu: Suka segera bertindak (Karsa), memikirkan ide mendalam (Cipta), dan peduli pada perasaan orang (Rasa).",
+          "text_observer": "Urutkan dorongan utama {{name}}: Suka segera bertindak (Karsa), memikirkan ide mendalam (Cipta), dan peduli pada perasaan orang (Rasa)."
+        }
+      ]
+    },
+    "tier_3": {
+      "id": "subgroup_18",
+      "type": "likert_scale",
+      "title": "Pendalaman 18 Sub-Kelompok Bakat",
+      "description": "Berikan penilaian dari 1 (Sangat Tidak Setuju) hingga 5 (Sangat Setuju) untuk 18 indikator bakat.",
+      "image_url": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80",
+      "image_alt": "Pendalaman 18 Sub-Kelompok Bakat",
+      "scale_options": [
+        { "value": 1, "label": "Sangat Tidak Setuju", "emoji": "❌" },
+        { "value": 2, "label": "Tidak Setuju", "emoji": "👎" },
+        { "value": 3, "label": "Netral", "emoji": "😐" },
+        { "value": 4, "label": "Setuju", "emoji": "👍" },
+        { "value": 5, "label": "Sangat Setuju", "emoji": "🌟" }
+      ],
+      "questions": [
+        { "id": "sub_1", "subgroup_no": "1", "text": "Saya selalu bersemangat menyelesaikan tugas dengan tuntas dan kerja keras.", "text_observer": "{{name}} selalu bersemangat menyelesaikan tugas dengan tuntas dan kerja keras." },
+        { "id": "sub_2", "subgroup_no": "2", "text": "Saya terbiasa bertindak disiplin dan mengikuti aturan yang konsisten.", "text_observer": "{{name}} terbiasa bertindak disiplin dan mengikuti aturan yang konsisten." },
+        { "id": "sub_3", "subgroup_no": "3", "text": "Saya suka menata dan merapikan sesuatu secara teratur.", "text_observer": "{{name}} suka menata dan merapikan sesuatu secara teratur." },
+        { "id": "sub_4", "subgroup_no": "4", "text": "Saya senang menganalisis informasi dan berpikir secara mendalam.", "text_observer": "{{name}} senang menganalisis informasi dan berpikir secara mendalam." },
+        { "id": "sub_5", "subgroup_no": "5", "text": "Saya mudah menemukan ide-ide kreatif dan solusi baru.", "text_observer": "{{name}} mudah menemukan ide-ide kreatif dan solusi baru." },
+        { "id": "sub_6", "subgroup_no": "6", "text": "Saya suka merencanakan strategi jangka panjang.", "text_observer": "{{name}} suka merencanakan strategi jangka panjang." },
+        { "id": "sub_7", "subgroup_no": "7", "text": "Saya memiliki keyakinan nilai moral yang kuat.", "text_observer": "{{name}} memiliki keyakinan nilai moral yang kuat." },
+        { "id": "sub_8", "subgroup_no": "8", "text": "Saya peka memahami perasaan dan emosi orang lain.", "text_observer": "{{name}} peka memahami perasaan dan emosi orang lain." },
+        { "id": "sub_9", "subgroup_no": "9", "text": "Saya selalu bersyukur dan melihat sisi positif kehidupan.", "text_observer": "{{name}} selalu bersyukur dan melihat sisi positif kehidupan." },
+        { "id": "sub_10", "subgroup_no": "10", "text": "Saya berani memimpin dan mengambil keputusan penting.", "text_observer": "{{name}} berani memimpin dan mengambil keputusan penting." },
+        { "id": "sub_11", "subgroup_no": "11", "text": "Saya berani berbicara dan meyakinkan orang lain.", "text_observer": "{{name}} berani berbicara dan meyakinkan orang lain." },
+        { "id": "sub_12", "subgroup_no": "12", "text": "Saya suka mengarahkan dan mengendalikan jalannya kegiatan.", "text_observer": "{{name}} suka mengarahkan dan mengendalikan jalannya kegiatan." },
+        { "id": "sub_13", "subgroup_no": "13", "text": "Saya mudah bergaul dan membangun jaringan dengan orang baru.", "text_observer": "{{name}} mudah bergaul dan membangun jaringan dengan orang baru." },
+        { "id": "sub_14", "subgroup_no": "14", "text": "Saya senang bekerja sama dalam tim.", "text_observer": "{{name}} senang bekerja sama dalam tim." },
+        { "id": "sub_15", "subgroup_no": "15", "text": "Saya bisa merangkul orang lain agar merasa diterima.", "text_observer": "{{name}} bisa merangkul orang lain agar merasa diterima." },
+        { "id": "sub_16", "subgroup_no": "16", "text": "Saya suka membantu dan melayani kebutuhan orang lain.", "text_observer": "{{name}} suka membantu dan melayani kebutuhan orang lain." },
+        { "id": "sub_17", "subgroup_no": "17", "text": "Saya senang mengayomi dan membimbing perkembangan sesama.", "text_observer": "{{name}} senang mengayomi dan membimbing perkembangan sesama." },
+        { "id": "sub_18", "subgroup_no": "18", "text": "Saya bersikap ramah, santun, dan menjaga ketenangan.", "text_observer": "{{name}} bersikap ramah, santun, dan menjaga ketenangan." }
+      ]
+    },
+    "tier_4": {
+      "id": "precision_40",
+      "type": "precision_mode",
+      "title": "Presisi 40 Pilar Bakat",
+      "description": "Evaluasi presisi penuh untuk 40 pilar bakat.",
+      "image_url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+      "image_alt": "Presisi 40 Pilar Bakat"
+    }
+  }
+}
