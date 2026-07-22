@@ -4,25 +4,26 @@ API TB40 is a RESTful API service for calculating and analyzing the TB40 (Tafsir
 
 ## Features
 
-- **Stateful PocketBase Persistence (v0.3)**: Real-time interaction tracking, session recovery, unique submission IDs (`sub_xxxxxxxx`), and optimism concurrency control.
+- **Stateful PocketBase Persistence (v0.3)**: Real-time interaction tracking, session recovery, unique submission IDs (`sub_xxxxxxxx`), and optimistic concurrency control.
+- **Automatic Age Detection (v0.3)**: Calculates user age from birthdate (`birth_date` or `age`). Automatically selects `"tb40anak"` for age < 15 and `"tb40"` for age ≥ 15.
 - **4-Tier Adaptive Progression Engine (v0.3)**:
   - **Tier 1**: Social Energy Allocation (Introvert vs Extrovert).
   - **Tier 2**: Talent Orientation Forced Ranking (Karsa ⚡, Cipta 💡, Rasa ❤️).
   - **Tier 3**: 18 Sub-Group 5-Point Likert Scale Deep-Dive (*Sangat Tidak Setuju* to *Sangat Setuju*).
   - **Tier 4**: Optional 40-Pillar Precision Mode.
+- **Fast-Track Anonymous & Profile Boundary (v0.3)**: Users can start assessments blindly and complete Tier 1 and Tier 2 anonymously. Unlocking Tier 3 requires completing profile info (`subject_name`, `birth_date`/`age`) via `PATCH /submissions/:id/profile`.
 - **Dynamic Continuous Scoring**: High-resolution continuous probability weighting replacing flat score bands.
 - **Observer Mode & Name Personalization**: Assess yourself or observe someone else (`is_observer: true` & `subject_name: "Ahmad"`) with dynamic `{{name}}` template interpolation.
 - **Qualitative Slider Range Descriptors & Emojis**: Dynamic human-readable state descriptors with expressive emojis (🤫, 🌿, 🤝, 🎉, 🧠).
 - **Real-Time Auto-Save & Halfway Report**: Timestamp confirmation for client auto-saves and partial completion progress auditing.
-- **Strict Anonymous Fast-Track Mode**: Frictionless anonymous evaluation using second-person pronouns (`"Kamu"` for kids, `"Anda"` for adults).
-- **Post-Report Contact Enrichment**: Optional post-report endpoint for attaching email and phone numbers.
+- **Post-Report Contact Enrichment**: Optional post-report endpoint (`PATCH /submissions/:id/contact`) for attaching email and phone numbers.
 - **Organization & Event Analytics**: Link submissions to events/orgs and batch export results.
 - **Multi-Demographic Support**: Adult (`tb40`) and Children (`tb40anak`) versions.
 - **Production Ready**:
   - Hardened with `helmet`, `cors`, and route-specific `express-rate-limit`.
   - Structured logging with `winston` and JSON error handling.
   - Interactive OpenAPI/Swagger UI documentation.
-- **Automated Testing**: 100% passing test coverage with Jest (7 test suites).
+- **Automated Testing**: 100% passing test coverage with Jest (7 test suites, 35 tests).
 
 ---
 
@@ -70,18 +71,31 @@ Returns application status, uptime, and timestamp.
 
 ### v0.3 Stateful Submissions API
 
-#### Initialize Submission
+#### Initialize Submission (Explicit or Age Auto-Detect)
 ```bash
 POST /api/v0.3/submissions
 ```
-Payload:
+Payload (Auto-Detect Age):
 ```json
 {
-  "type": "tb40",
+  "birth_date": "2015-05-10",
   "is_anonymous": false,
   "is_observer": true,
   "subject_name": "Ahmad",
   "event_id": "event_123"
+}
+```
+Response:
+```json
+{
+  "id": "sub_1784758720942_ozijb",
+  "type": "tb40anak",
+  "determined_by": "age_detection",
+  "detected_age": 11,
+  "status": "incomplete",
+  "current_tier": "tier_1",
+  "saved": true,
+  "timestamp": "2026-07-23T05:18:40.956Z"
 }
 ```
 
@@ -98,7 +112,19 @@ Payload:
   }
 }
 ```
-Response: Returns `timestamp`, `saved: true`, `next_tier: "tier_2"`, and `halfway_report`.
+
+#### Profile Completion (Unlocking Tier 3 for Anonymous Users)
+```bash
+PATCH /api/v0.3/submissions/:id/profile
+```
+Payload:
+```json
+{
+  "subject_name": "Ahmad",
+  "birth_date": "2015-05-10",
+  "is_observer": true
+}
+```
 
 #### Post-Report Contact Enrichment
 ```bash
@@ -144,7 +170,7 @@ api-tb40/
 ├── routes/          # Express API endpoints & submissions router
 ├── services/        # Calculation engines (v1, v2, v3) & PocketBase client
 ├── utils/           # Template rendering, color mapping, winston logger
-├── __tests__/       # Comprehensive Jest test suite (7 suites, 31 tests)
+├── __tests__/       # Comprehensive Jest test suite (7 suites, 35 tests)
 ├── docker-compose.yml
 └── app.js           # Express app entry point
 ```

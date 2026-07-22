@@ -85,8 +85,26 @@ function evaluateV3(req) {
     return response;
   }
 
-  // Step 3: Tier 3 (18 Sub-Groups Deep-Dive)
+  // Step 3: Tier 3 (18 Sub-Groups Deep-Dive) - Profile Required Boundary
+  // Anonymous / fast-track tests can ONLY proceed through Tier 1 and Tier 2.
+  // To unlock Tier 3 and beyond, user MUST provide personal profile data.
+  const hasProfile = Boolean(subject_name && subject_name.trim() && !is_anonymous);
+
   if (!tier_3) {
+    if (is_anonymous || !hasProfile) {
+      response.next_tier = 'profile_required';
+      response.missing_profile = ['subject_name', 'birth_date_or_age'];
+      response.message = 'Lengkapi profil pengguna (nama, usia/tanggal lahir) untuk melanjutkan ke Tier 3.';
+      response.halfway_report = {
+        completion_percentage: 50,
+        completed_tiers: ['tier_1', 'tier_2'],
+        pending_tiers: ['profile_required', 'tier_3', 'tier_4'],
+        missing_questions: ['profile'],
+        preliminary_results: calculateInterimResults(tier_1, tier_2, null, type)
+      };
+      return response;
+    }
+
     response.next_tier = 'tier_3';
     response.questions = processedSchema.tiers.tier_3.questions;
     response.scale_options = processedSchema.tiers.tier_3.scale_options;

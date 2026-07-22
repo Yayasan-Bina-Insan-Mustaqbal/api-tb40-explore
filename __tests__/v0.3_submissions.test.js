@@ -68,6 +68,21 @@ describe('v0.3 Submissions Router Endpoints', () => {
     expect(response.body.halfway_report.completion_percentage).toBe(25);
   });
 
+  it('PATCH /api/v0.3/submissions/:id/profile should update profile data and auto-detect age', async () => {
+    const response = await request(app)
+      .patch(`/api/v0.3/submissions/${createdSubmissionId}/profile`)
+      .send({
+        subject_name: 'Ahmad Profile Updated',
+        birth_date: '2016-01-01'
+      });
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body.saved).toBe(true);
+    expect(response.body.subject_name).toBe('Ahmad Profile Updated');
+    expect(response.body.type).toBe('tb40anak');
+    expect(response.body.determined_by).toBe('age_detection');
+  });
+
   it('PATCH /api/v0.3/submissions/:id/contact should enrich submission with email and phone', async () => {
     const response = await request(app)
       .patch(`/api/v0.3/submissions/${createdSubmissionId}/contact`)
@@ -87,7 +102,7 @@ describe('v0.3 Submissions Router Endpoints', () => {
     expect(response.statusCode).toBe(200);
     expect(response.body.id).toBe(createdSubmissionId);
     expect(response.body.is_observer).toBe(true);
-    expect(response.body.subject_name).toBe('Budi Test');
+    expect(response.body.subject_name).toBe('Ahmad Profile Updated');
   });
 
   it('GET /api/v0.3/events/:eventId/submissions should return array of submissions for event', async () => {

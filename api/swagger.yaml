@@ -78,6 +78,33 @@ paths:
       responses:
         '200':
           description: State saved with evaluation status and halfway report
+  /api/v0.3/submissions/{id}/profile:
+    patch:
+      summary: Update profile data and unlock Tier 3 (v0.3)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                subject_name:
+                  type: string
+                birth_date:
+                  type: string
+                age:
+                  type: integer
+                is_observer:
+                  type: boolean
+      responses:
+        '200':
+          description: Profile updated and next tier unlocked
   /api/v0.3/submissions/{id}/contact:
     patch:
       summary: Post-report user contact enrichment (v0.3)

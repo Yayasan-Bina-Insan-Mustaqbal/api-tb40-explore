@@ -60,10 +60,29 @@ describe('v0.3 Evaluation Engine & Personalization Tests', () => {
     expect(result.halfway_report.completion_percentage).toBe(25);
   });
 
-  it('should return tier_3 Likert questions after tier_2 is answered', () => {
+  it('should return profile_required after tier_2 if user is anonymous or missing subject_name', () => {
     const req = {
       params: { version: 'v0.3', type: 'tb40' },
       body: {
+        is_anonymous: true,
+        answers: {
+          tier_1: { introvert: 70, extrovert: 30 },
+          tier_2: ['karsa', 'cipta', 'rasa']
+        }
+      }
+    };
+    const result = evaluateV3(req);
+    expect(result.status).toBe('incomplete');
+    expect(result.next_tier).toBe('profile_required');
+    expect(result.missing_profile).toContain('subject_name');
+  });
+
+  it('should return tier_3 Likert questions after tier_2 is answered and profile is provided', () => {
+    const req = {
+      params: { version: 'v0.3', type: 'tb40' },
+      body: {
+        subject_name: 'Budi',
+        is_anonymous: false,
         answers: {
           tier_1: { introvert: 70, extrovert: 30 },
           tier_2: ['karsa', 'cipta', 'rasa']
@@ -108,6 +127,7 @@ describe('v0.3 Evaluation Engine & Personalization Tests', () => {
     const response = await request(app)
       .post('/api/v0.3/tb40/evaluate')
       .send({
+        subject_name: 'Budi',
         answers: {
           tier_1: { introvert: 80, extrovert: 20 },
           tier_2: ['cipta', 'karsa', 'rasa']
