@@ -265,9 +265,51 @@ function calculateInterimResults(tier1, tier2, tier3, type, showText = true) {
     answers40 = Array(40).fill(50);
   }
 
-  // Extract top 3 dominant and bottom 3 weak pillar categories
-  const topCategories = scaledGroups.slice(0, 3);
-  const weakCategories = scaledGroups.slice(-3);
+  // Calculate 18 Sub-Groups scores & rankings
+  const subgroupDefinitions = [
+    { no: "1", id: "sub_1", name: "Pekerja Keras & Penuntas Tugas", group_id: "bekerja_keras", group_name: "Pekerja Keras", group_no: "1" },
+    { no: "2", id: "sub_2", name: "Kedisiplinan & Kepatuhan Aturan", group_id: "bekerja_keras", group_name: "Pekerja Keras", group_no: "1" },
+    { no: "3", id: "sub_3", name: "Kerapian & Keteraturan Tata Kelola", group_id: "bekerja_keras", group_name: "Pekerja Keras", group_no: "1" },
+    { no: "4", id: "sub_4", name: "Analitis & Berpikir Mendalam", group_id: "berpikir", group_name: "Cerdas", group_no: "2" },
+    { no: "5", id: "sub_5", name: "Inovasi Ide & Kreativitas Solusi", group_id: "berpikir", group_name: "Cerdas", group_no: "2" },
+    { no: "6", id: "sub_6", name: "Perencanaan Strategis Jangka Panjang", group_id: "berpikir", group_name: "Cerdas", group_no: "2" },
+    { no: "7", id: "sub_7", name: "Keyakinan Moral & Prinsip Hidup", group_id: "berperasaan", group_name: "Berperasaan", group_no: "3" },
+    { no: "8", id: "sub_8", name: "Kepekaan Empati & Perasaan Sesama", group_id: "berperasaan", group_name: "Berperasaan", group_no: "3" },
+    { no: "9", id: "sub_9", name: "Rasa Syukur & Sikap Positif", group_id: "berperasaan", group_name: "Berperasaan", group_no: "3" },
+    { no: "10", id: "sub_10", name: "Keberanian Memimpin & Mengambil Keputusan", group_id: "mempengaruhi", group_name: "Tegas", group_no: "4" },
+    { no: "11", id: "sub_11", name: "Komunikasi Komunikatif & Persuasi", group_id: "mempengaruhi", group_name: "Tegas", group_no: "4" },
+    { no: "12", id: "sub_12", name: "Pengarahan & Kendali Kegiatan", group_id: "mempengaruhi", group_name: "Tegas", group_no: "4" },
+    { no: "13", id: "sub_13", name: "Kemampuan Bergaul & Jejaring Sosial", group_id: "bekerjasama", group_name: "Gaul", group_no: "5" },
+    { no: "14", id: "sub_14", name: "Kolaborasi & Kerjasama Tim", group_id: "bekerjasama", group_name: "Gaul", group_no: "5" },
+    { no: "15", id: "sub_15", name: "Kehangatan Merangkul & Inklusi", group_id: "bekerjasama", group_name: "Gaul", group_no: "5" },
+    { no: "16", id: "sub_16", name: "Kerelaan Membantu & Melayani", group_id: "melayani", group_name: "Lembut", group_no: "6" },
+    { no: "17", id: "sub_17", name: "Pengayoman & Pembimbingan Sesama", group_id: "melayani", group_name: "Lembut", group_no: "6" },
+    { no: "18", id: "sub_18", name: "Keramahan & Kesantunan Menjaga Ketenangan", group_id: "melayani", group_name: "Lembut", group_no: "6" }
+  ];
+
+  const calculatedSubgroups18 = subgroupDefinitions.map(sub => {
+    const parentBaseScore = groupFixedScores[sub.group_no] || 50;
+    let likertRating = 3;
+    if (tier3 && tier3[sub.id] !== undefined) {
+      likertRating = parseInt(tier3[sub.id]) || 3;
+    }
+    const modifier = (likertRating - 3) * 6; // -12, -6, 0, +6, +12 modifier
+    const finalScore = Math.min(99, Math.max(15, Math.round(parentBaseScore + modifier)));
+    return {
+      no: sub.no,
+      id: sub.id,
+      name: sub.name,
+      group_id: sub.group_id,
+      group_name: sub.group_name,
+      rating: likertRating,
+      score: finalScore
+    };
+  });
+
+  calculatedSubgroups18.sort((a, b) => b.score - a.score);
+
+  const topSubgroups18 = calculatedSubgroups18.slice(0, 5); // Top 5 best
+  const weakSubgroups18 = calculatedSubgroups18.slice(-5); // Bottom 5 worst
 
   // Derive Panggilan, Bahasa Hati, Gaya Belajar & SVG Chart for Step 2+ preliminary results
   const topCategory = scaledGroups[0] ? scaledGroups[0].id : 'bekerja_keras';
@@ -300,19 +342,41 @@ function calculateInterimResults(tier1, tier2, tier3, type, showText = true) {
   };
 
   const panggilan = panggilanMap[topCategory] || 'Sang Penjelajah Bakat';
-  const bahasaHati = bahasaHatiMap[topCategory] || 'Kata-kata Apresiasi';
-  const gayaBelajar = gayaBelajarMap[topCategory] || 'Visual & Kinestetik';
+  const highestBahasaHati = bahasaHatiMap[topCategory] || 'Kata-kata Apresiasi';
+  const highestGayaBelajar = gayaBelajarMap[topCategory] || 'Visual & Kinestetik';
+
+  const fullBahasaHati = scaledGroups.map(g => ({
+    category_id: g.id,
+    category_name: g.name,
+    bahasa_hati: bahasaHatiMap[g.id],
+    score: g.score
+  }));
+
+  const fullGayaBelajar = scaledGroups.map(g => ({
+    category_id: g.id,
+    category_name: g.name,
+    gaya_belajar: gayaBelajarMap[g.id],
+    score: g.score
+  }));
 
   const svg = generatePreliminarySVG(scaledGroups, panggilan, showText);
 
+  const topCategories = scaledGroups.slice(0, 3);
+  const weakCategories = scaledGroups.slice(-3);
+
   return {
     panggilan,
-    bahasa_hati: bahasaHati,
-    gaya_belajar: gayaBelajar,
-    svg,
+    highest_bahasa_hati: highestBahasaHati,
+    highest_gaya_belajar: highestGayaBelajar,
+    bahasa_hati: fullBahasaHati,
+    gaya_belajar: fullGayaBelajar,
+    top_subgroups_18: topSubgroups18,
+    weak_subgroups_18: weakSubgroups18,
+    ranked_subgroups_18: calculatedSubgroups18,
     ranked_categories: scaledGroups,
     top_categories: topCategories,
     weak_categories: weakCategories,
+    svg,
     default_scores: answers40
   };
 }

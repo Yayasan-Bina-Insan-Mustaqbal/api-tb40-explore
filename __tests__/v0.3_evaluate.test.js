@@ -128,6 +128,7 @@ describe('v0.3 Evaluation Engine & Personalization Tests', () => {
       params: { version: 'v0.3', type: 'tb40' },
       body: {
         subject_name: 'Budi',
+        is_anonymous: false,
         answers: {
           tier_1: { introvert: 70, extrovert: 30 },
           tier_2: ['karsa', 'cipta', 'rasa'],
@@ -140,6 +141,13 @@ describe('v0.3 Evaluation Engine & Personalization Tests', () => {
     expect(result.halfway_report.completion_percentage).toBe(100);
     expect(result.result.ranked_categories).toBeDefined();
     expect(result.result.top_categories).toHaveLength(3);
+    expect(result.result.highest_bahasa_hati).toBeDefined();
+    expect(result.result.bahasa_hati).toHaveLength(6);
+    expect(result.result.highest_gaya_belajar).toBeDefined();
+    expect(result.result.gaya_belajar).toHaveLength(6);
+    expect(result.result.top_subgroups_18).toHaveLength(5);
+    expect(result.result.weak_subgroups_18).toHaveLength(5);
+    expect(result.result.ranked_subgroups_18).toHaveLength(18);
     expect(result.result.default_scores).toHaveLength(40);
   });
 
@@ -155,6 +163,7 @@ describe('v0.3 Evaluation Engine & Personalization Tests', () => {
       .post('/api/v0.3/tb40/evaluate')
       .send({
         subject_name: 'Budi',
+        is_anonymous: false,
         answers: {
           tier_1: { introvert: 80, extrovert: 20 },
           tier_2: ['cipta', 'karsa', 'rasa']
