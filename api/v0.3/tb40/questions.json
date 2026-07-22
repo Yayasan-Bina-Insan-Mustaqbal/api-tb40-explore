@@ -49,17 +49,16 @@
     },
     "tier_3": {
       "id": "subgroup_18",
-      "type": "likert_scale",
+      "type": "range_slider",
       "title": "Pendalaman 18 Sub-Kelompok Bakat",
-      "description": "Berikan penilaian dari 1 (Sangat Tidak Setuju) hingga 5 (Sangat Setuju) untuk 18 indikator bakat.",
+      "description": "Geser slider (0-100%) sesuai persentase dorongan bakatmu pada 18 indikator ini.",
       "image_url": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80",
       "image_alt": "Pendalaman 18 Sub-Kelompok Bakat",
-      "scale_options": [
-        { "value": 1, "label": "Sangat Tidak Setuju", "emoji": "❌" },
-        { "value": 2, "label": "Tidak Setuju", "emoji": "👎" },
-        { "value": 3, "label": "Netral", "emoji": "😐" },
-        { "value": 4, "label": "Setuju", "emoji": "👍" },
-        { "value": 5, "label": "Sangat Setuju", "emoji": "🌟" }
+      "range_labels": [
+        { "min": 0, "max": 25, "emoji": "🤫", "label": "Jarang / Sangat Lemah" },
+        { "min": 26, "max": 50, "emoji": "🌿", "label": "Kadang-kadang / Netral" },
+        { "min": 51, "max": 75, "emoji": "👍", "label": "Sering / Cukup Kuat" },
+        { "min": 76, "max": 100, "emoji": "🌟", "label": "Sangat Sering / Sangat Dominan" }
       ],
       "questions": [
         { "id": "sub_1", "subgroup_no": "1", "text": "Saya selalu bersemangat menyelesaikan tugas dengan tuntas dan kerja keras.", "text_observer": "{{name}} selalu bersemangat menyelesaikan tugas dengan tuntas dan kerja keras." },

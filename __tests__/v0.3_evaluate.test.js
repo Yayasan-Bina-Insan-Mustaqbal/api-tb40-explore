@@ -151,6 +151,31 @@ describe('v0.3 Evaluation Engine & Personalization Tests', () => {
     expect(result.result.default_scores).toHaveLength(40);
   });
 
+  it('should return Part 1 of 18 for Tier 4 precision mode when request_precision is true', () => {
+    const tier3All = {};
+    for (let i = 1; i <= 18; i++) tier3All[`sub_${i}`] = 75;
+
+    const req = {
+      params: { version: 'v0.3', type: 'tb40' },
+      body: {
+        subject_name: 'Budi',
+        is_anonymous: false,
+        request_precision: true,
+        answers: {
+          tier_1: { introvert: 70, extrovert: 30 },
+          tier_2: ['karsa', 'cipta', 'rasa'],
+          tier_3: tier3All
+        }
+      }
+    };
+    const result = evaluateV3(req);
+    expect(result.status).toBe('incomplete');
+    expect(result.next_tier).toBe('tier_4');
+    expect(result.current_part).toBe(1);
+    expect(result.total_parts).toBe(18);
+    expect(result.halfway_report.completion_percentage).toBe(75);
+  });
+
   it('GET /api/v0.3/tb40/schema should return v0.3 schema', async () => {
     const response = await request(app).get('/api/v0.3/tb40/schema');
     expect(response.statusCode).toBe(200);

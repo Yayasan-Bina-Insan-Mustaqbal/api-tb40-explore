@@ -120,7 +120,7 @@ function evaluateV3(req) {
     response.completed_subgroups_count = answeredSubgroupsCount;
     response.total_subgroups_count = 18;
     response.questions = nextQuestions;
-    response.scale_options = processedSchema.tiers.tier_3.scale_options;
+    response.range_labels = processedSchema.tiers.tier_3.range_labels;
     response.halfway_report = {
       completion_percentage: compPct,
       completed_tiers: ['tier_1', 'tier_2'],
@@ -131,29 +131,67 @@ function evaluateV3(req) {
     return response;
   }
 
-  // Step 4: Tier 4 Check (Full 40 Precision Mode)
-  if (request_precision && !tier_4) {
-    response.next_tier = 'tier_4';
-    response.questions = processedSchema.tiers.tier_4 ? processedSchema.tiers.tier_4.questions : [];
-    response.halfway_report = {
-      completion_percentage: 75,
-      completed_tiers: ['tier_1', 'tier_2', 'tier_3'],
-      pending_tiers: ['tier_4'],
-      missing_questions: ['tier_4'],
-      preliminary_results: calculateInterimResults(tier_1, tier_2, tier_3, type, false)
+  // Generate tier_4 questions if missing in schema (40 pillars)
+  if (!processedSchema.tiers.tier_4) {
+    processedSchema.tiers.tier_4 = {
+      id: "precision_40",
+      type: "range_slider",
+      title: "Presisi 40 Pilar Bakat",
+      description: "Evaluasi presisi penuh untuk 40 pilar bakat."
     };
-    return response;
+  }
+  if (!processedSchema.tiers.tier_4.questions || processedSchema.tiers.tier_4.questions.length === 0) {
+    processedSchema.tiers.tier_4.questions = Array.from({ length: 40 }, (_, i) => {
+      const pNo = i + 1;
+      return {
+        id: `p_${pNo}`,
+        pillar_no: `${pNo}`,
+        text: `Seberapa kuat dorongan pilar bakat ke-${pNo} dalam aktivitasmu sehari-hari?`,
+        text_observer: `Seberapa kuat dorongan pilar bakat ke-${pNo} {{name}} dalam aktivitasnya sehari-hari?`
+      };
+    });
   }
 
-  // Step 5: Final Evaluation Calculation (Full 100% Completion)
-  const finalResults = calculateInterimResults(tier_1, tier_2, tier_3, type, true); // Full SVG with text scores
+  // Step 4: Tier 4 Check (Full 40 Precision Mode in 18 Parts)
+  const answeredPillarsCount = tier_4 ? Object.keys(tier_4).length : 0;
+
+  if (request_precision || (tier_4 && answeredPillarsCount < 40)) {
+    if (answeredPillarsCount < 40) {
+      const allTier4Questions = processedSchema.tiers.tier_4.questions;
+      // 18 parts across 40 pillars (approx 2 to 3 questions per part)
+      const currentPartIndex = Math.min(17, Math.floor((answeredPillarsCount / 40) * 18));
+      const partSize = Math.ceil(40 / 18);
+      const nextQuestions = allTier4Questions.slice(currentPartIndex * partSize, (currentPartIndex + 1) * partSize);
+      const compPct = 75 + Math.round((answeredPillarsCount / 40) * 25);
+
+      response.status = 'incomplete';
+      response.next_tier = 'tier_4';
+      response.current_part = currentPartIndex + 1;
+      response.total_parts = 18;
+      response.completed_pillars_count = answeredPillarsCount;
+      response.total_pillars_count = 40;
+      response.questions = nextQuestions;
+      response.range_labels = processedSchema.tiers.tier_4.range_labels;
+      response.halfway_report = {
+        completion_percentage: compPct,
+        completed_tiers: ['tier_1', 'tier_2', 'tier_3'],
+        pending_tiers: ['tier_4'],
+        missing_questions: ['tier_4'],
+        preliminary_results: calculateInterimResults(tier_1, tier_2, tier_3, type, false, tier_4)
+      };
+      return response;
+    }
+  }
+
+  // Step 5: Final Evaluation Calculation (Full Completion)
+  const finalResults = calculateInterimResults(tier_1, tier_2, tier_3, type, true, tier_4); // Full SVG with text scores
 
   response.status = 'complete';
   response.next_tier = 'tier_4'; // Opt-in option for precision mode
   response.result = finalResults;
   response.halfway_report = {
     completion_percentage: 100,
-    completed_tiers: ['tier_1', 'tier_2', 'tier_3'],
+    completed_tiers: ['tier_1', 'tier_2', 'tier_3', ...(tier_4 ? ['tier_4'] : [])],
     pending_tiers: [],
     missing_questions: [],
     preliminary_results: finalResults
@@ -162,7 +200,7 @@ function evaluateV3(req) {
   return response;
 }
 
-function calculateInterimResults(tier1, tier2, tier3, type, showText = true) {
+function calculateInterimResults(tier1, tier2, tier3, type, showText = true, tier4 = null) {
   const introPct = ((tier1 && tier1.introvert) || 50) / 100;
   const extroPct = ((tier1 && tier1.extrovert) || 50) / 100;
 
@@ -195,11 +233,14 @@ function calculateInterimResults(tier1, tier2, tier3, type, showText = true) {
     const groupAdjustments = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
     const groupCounts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
 
-    Object.entries(tier3).forEach(([subKey, rating]) => {
+    Object.entries(tier3).forEach(([subKey, val]) => {
       const subNum = parseInt(subKey.replace('sub_', ''));
       if (!isNaN(subNum) && subNum >= 1 && subNum <= 18) {
         const grpNo = Math.ceil(subNum / 3);
-        groupAdjustments[grpNo] += (rating - 3) * 0.05;
+        const ratingVal = parseFloat(val);
+        // Normalize 0-100 slider or 1-5 rating to adjustment delta
+        const normDelta = ratingVal > 5 ? (ratingVal - 50) / 500 : (ratingVal - 3) * 0.05;
+        groupAdjustments[grpNo] += normDelta;
         groupCounts[grpNo]++;
       }
     });
@@ -231,39 +272,10 @@ function calculateInterimResults(tier1, tier2, tier3, type, showText = true) {
 
   scaledGroups.sort((a, b) => b.score - a.score);
 
-  // Group 6 to 18 sub-group mapping & calculation
   const groupFixedScores = {};
   scaledGroups.forEach(g => {
     groupFixedScores[g.no] = g.score;
   });
-
-  // Read calculation data for 40 pillars mapping
-  const calcDataPath = path.join(__dirname, `../api/v0.1/${type}/calculation.json`);
-  let answers40 = [];
-  if (fs.existsSync(calcDataPath)) {
-    const calcData = JSON.parse(fs.readFileSync(calcDataPath, 'utf8'));
-    const partsKey = type === 'tb40anak' ? 'tb40anak' : 'tb40';
-    const pillars18 = calcData.parts[partsKey].pillars.filter(p => p.pillar.group === "18");
-    const map18To6 = {};
-    pillars18.forEach(p => {
-      const parent6 = p.parents.find(parent => parent.group === "6");
-      if (parent6) map18To6[p.pillar.no] = parent6.no;
-    });
-
-    const pillars40 = calcData.parts[partsKey].pillars.filter(p => p.pillar.group === "40");
-    pillars40.sort((a, b) => parseInt(a.questionIndex) - parseInt(b.questionIndex));
-
-    answers40 = pillars40.map(p => {
-      const parent18No = p.parents.find(parent => parent.group === "18")?.no;
-      const parent6No = parent18No ? map18To6[parent18No] : "1";
-      const baseGroupScore = groupFixedScores[parent6No] || 50;
-
-      let jitter = Math.floor(Math.sin(parseInt(p.questionIndex) * 99) * 8);
-      return Math.min(99, Math.max(1, baseGroupScore + jitter));
-    });
-  } else {
-    answers40 = Array(40).fill(50);
-  }
 
   // Calculate 18 Sub-Groups scores & rankings
   const subgroupDefinitions = [
@@ -289,22 +301,68 @@ function calculateInterimResults(tier1, tier2, tier3, type, showText = true) {
 
   const calculatedSubgroups18 = subgroupDefinitions.map(sub => {
     const parentBaseScore = groupFixedScores[sub.group_no] || 50;
-    let likertRating = 3;
+    let finalScore = parentBaseScore;
+
     if (tier3 && tier3[sub.id] !== undefined) {
-      likertRating = parseInt(tier3[sub.id]) || 3;
+      const val = parseFloat(tier3[sub.id]);
+      if (val > 5) {
+        finalScore = Math.round(val);
+      } else {
+        const modifier = (val - 3) * 6;
+        finalScore = Math.min(99, Math.max(15, Math.round(parentBaseScore + modifier)));
+      }
     }
-    const modifier = (likertRating - 3) * 6; // -12, -6, 0, +6, +12 modifier
-    const finalScore = Math.min(99, Math.max(15, Math.round(parentBaseScore + modifier)));
+
     return {
       no: sub.no,
       id: sub.id,
       name: sub.name,
       group_id: sub.group_id,
       group_name: sub.group_name,
-      rating: likertRating,
+      rating: tier3 && tier3[sub.id] !== undefined ? tier3[sub.id] : 50,
       score: finalScore
     };
   });
+
+  calculatedSubgroups18.sort((a, b) => b.score - a.score);
+
+  const subgroupScoreMap = {};
+  calculatedSubgroups18.forEach(sub => {
+    subgroupScoreMap[sub.no] = sub.score;
+  });
+
+  // Read calculation data for 40 pillars mapping (Tier 3 adjusts default scores of 40 pillars!)
+  const calcDataPath = path.join(__dirname, `../api/v0.1/${type}/calculation.json`);
+  let answers40 = [];
+  if (fs.existsSync(calcDataPath)) {
+    const calcData = JSON.parse(fs.readFileSync(calcDataPath, 'utf8'));
+    const partsKey = type === 'tb40anak' ? 'tb40anak' : 'tb40';
+    const pillars18 = calcData.parts[partsKey].pillars.filter(p => p.pillar.group === "18");
+    const map18To6 = {};
+    pillars18.forEach(p => {
+      const parent6 = p.parents.find(parent => parent.group === "6");
+      if (parent6) map18To6[p.pillar.no] = parent6.no;
+    });
+
+    const pillars40 = calcData.parts[partsKey].pillars.filter(p => p.pillar.group === "40");
+    pillars40.sort((a, b) => parseInt(a.questionIndex) - parseInt(b.questionIndex));
+
+    answers40 = pillars40.map(p => {
+      const pIndex = parseInt(p.questionIndex);
+      if (tier4 && (tier4[`p_${pIndex}`] !== undefined || tier4[pIndex] !== undefined)) {
+        const directVal = tier4[`p_${pIndex}`] !== undefined ? tier4[`p_${pIndex}`] : tier4[pIndex];
+        return Math.min(99, Math.max(1, parseInt(directVal)));
+      }
+
+      const parent18No = p.parents.find(parent => parent.group === "18")?.no || "1";
+      const baseSubgroupScore = subgroupScoreMap[parent18No] || 50;
+
+      let jitter = Math.floor(Math.sin(pIndex * 99) * 6);
+      return Math.min(99, Math.max(1, baseSubgroupScore + jitter));
+    });
+  } else {
+    answers40 = Array(40).fill(50);
+  }
 
   calculatedSubgroups18.sort((a, b) => b.score - a.score);
 
