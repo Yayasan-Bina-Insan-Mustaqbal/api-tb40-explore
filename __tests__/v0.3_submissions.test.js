@@ -20,6 +20,30 @@ describe('v0.3 Submissions Router Endpoints', () => {
     createdSubmissionId = response.body.id;
   });
 
+  it('POST /api/v0.3/submissions should auto-detect tb40anak for age < 15', async () => {
+    const response = await request(app)
+      .post('/api/v0.3/submissions')
+      .send({
+        birth_date: '2015-05-10' // ~11 years old
+      });
+
+    expect(response.statusCode).toBe(201);
+    expect(response.body.type).toBe('tb40anak');
+    expect(response.body.determined_by).toBe('age_detection');
+  });
+
+  it('POST /api/v0.3/submissions should auto-detect tb40 for age >= 15', async () => {
+    const response = await request(app)
+      .post('/api/v0.3/submissions')
+      .send({
+        birth_date: '1998-03-25' // ~28 years old
+      });
+
+    expect(response.statusCode).toBe(201);
+    expect(response.body.type).toBe('tb40');
+    expect(response.body.determined_by).toBe('age_detection');
+  });
+
   it('GET /api/v0.3/submissions/:id should return submission state and halfway_report', async () => {
     const response = await request(app).get(`/api/v0.3/submissions/${createdSubmissionId}`);
     expect(response.statusCode).toBe(200);

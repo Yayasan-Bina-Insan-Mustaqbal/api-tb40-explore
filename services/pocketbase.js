@@ -26,6 +26,8 @@ async function createSubmission(data) {
     is_anonymous: Boolean(data.is_anonymous),
     is_observer: Boolean(data.is_observer),
     subject_name: data.subject_name || null,
+    birth_date: data.birth_date || null,
+    age: data.age !== undefined ? data.age : null,
     email: data.email || null,
     phone: data.phone || null
   };

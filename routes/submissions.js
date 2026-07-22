@@ -29,13 +29,42 @@ function checkFastTrackLimiter(req, res, next) {
   next();
 }
 
+// Helper function to determine whether to use adult ('tb40') or child ('tb40anak') version
+function determineAssessmentType({ type, birth_date, age }) {
+  if (type === 'tb40' || type === 'tb40anak') {
+    return { type, determined_by: 'explicit_selection' };
+  }
+
+  let computedAge = age;
+  if (birth_date && (computedAge === undefined || computedAge === null)) {
+    const dob = new Date(birth_date);
+    if (!isNaN(dob.getTime())) {
+      const today = new Date();
+      computedAge = today.getFullYear() - dob.getFullYear();
+      const m = today.getMonth() - dob.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+        computedAge--;
+      }
+    }
+  }
+
+  if (typeof computedAge === 'number' && !isNaN(computedAge)) {
+    const detectedType = computedAge < 15 ? 'tb40anak' : 'tb40';
+    return { type: detectedType, determined_by: 'age_detection', detected_age: computedAge };
+  }
+
+  return { type: 'tb40', determined_by: 'default' };
+}
+
 /* POST /api/v0.3/submissions - Initialize new submission */
 router.post('/submissions', checkFastTrackLimiter, async (req, res) => {
   try {
-    const { type, is_anonymous, is_observer, subject_name, org_id, event_id, author_id } = req.body;
+    const { type, birth_date, age, is_anonymous, is_observer, subject_name, org_id, event_id, author_id } = req.body;
+    
+    const typeInfo = determineAssessmentType({ type, birth_date, age });
     
     const record = await createSubmission({
-      type: type || 'tb40',
+      type: typeInfo.type,
       status: is_anonymous ? 'complete' : 'incomplete',
       current_tier: 'tier_1',
       sequence_number: 1,
@@ -43,6 +72,8 @@ router.post('/submissions', checkFastTrackLimiter, async (req, res) => {
       is_anonymous: Boolean(is_anonymous),
       is_observer: Boolean(is_observer),
       subject_name,
+      birth_date,
+      age: typeInfo.detected_age !== undefined ? typeInfo.detected_age : age,
       org_id,
       event_id,
       author_id
@@ -51,6 +82,8 @@ router.post('/submissions', checkFastTrackLimiter, async (req, res) => {
     res.status(201).json({
       id: record.id,
       type: record.type,
+      determined_by: typeInfo.determined_by,
+      detected_age: typeInfo.detected_age,
       status: record.status,
       current_tier: record.current_tier,
       saved: true,

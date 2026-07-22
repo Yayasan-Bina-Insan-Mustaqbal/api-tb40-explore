@@ -160,6 +160,16 @@
         "required": false
       },
       {
+        "name": "birth_date",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "age",
+        "type": "number",
+        "required": false
+      },
+      {
         "name": "email",
         "type": "text",
         "required": false
