@@ -97,14 +97,41 @@ describe('v0.3 Evaluation Engine & Personalization Tests', () => {
     expect(result.halfway_report.preliminary_results.ranked_categories).toHaveLength(6);
   });
 
-  it('should complete evaluation after tier_3 is answered with Likert ratings', () => {
+  it('should return Part 2 questions (batch 2 of 6) after Part 1 (3 sub-groups) is answered in tier_3', () => {
     const req = {
       params: { version: 'v0.3', type: 'tb40' },
       body: {
+        subject_name: 'Budi',
         answers: {
           tier_1: { introvert: 70, extrovert: 30 },
           tier_2: ['karsa', 'cipta', 'rasa'],
           tier_3: { sub_1: 5, sub_2: 4, sub_3: 3 }
+        }
+      }
+    };
+    const result = evaluateV3(req);
+    expect(result.status).toBe('incomplete');
+    expect(result.next_tier).toBe('tier_3');
+    expect(result.current_part).toBe(2);
+    expect(result.total_parts).toBe(6);
+    expect(result.questions).toHaveLength(3);
+    expect(result.questions[0].id).toBe('sub_4');
+    expect(result.halfway_report.completion_percentage).toBe(58);
+    expect(result.halfway_report.preliminary_results.svg).toContain('<svg');
+  });
+
+  it('should complete evaluation after all 18 tier_3 sub-groups are answered', () => {
+    const tier3All = {};
+    for (let i = 1; i <= 18; i++) tier3All[`sub_${i}`] = 4;
+
+    const req = {
+      params: { version: 'v0.3', type: 'tb40' },
+      body: {
+        subject_name: 'Budi',
+        answers: {
+          tier_1: { introvert: 70, extrovert: 30 },
+          tier_2: ['karsa', 'cipta', 'rasa'],
+          tier_3: tier3All
         }
       }
     };

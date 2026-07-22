@@ -85,35 +85,48 @@ function evaluateV3(req) {
     return response;
   }
 
-  // Step 3: Tier 3 (18 Sub-Groups Deep-Dive) - Profile Required Boundary
+  // Step 3: Tier 3 (18 Sub-Groups Deep-Dive in 6 Parts) - Profile Required Boundary
   // Anonymous / fast-track tests can ONLY proceed through Tier 1 and Tier 2.
   // To unlock Tier 3 and beyond, user MUST provide personal profile data.
   const hasProfile = Boolean(subject_name && subject_name.trim() && !is_anonymous);
 
-  if (!tier_3) {
-    if (is_anonymous || !hasProfile) {
-      response.next_tier = 'profile_required';
-      response.missing_profile = ['subject_name', 'birth_date_or_age'];
-      response.message = 'Lengkapi profil pengguna (nama, usia/tanggal lahir) untuk melanjutkan ke Tier 3.';
-      response.halfway_report = {
-        completion_percentage: 50,
-        completed_tiers: ['tier_1', 'tier_2'],
-        pending_tiers: ['profile_required', 'tier_3', 'tier_4'],
-        missing_questions: ['profile'],
-        preliminary_results: calculateInterimResults(tier_1, tier_2, null, type)
-      };
-      return response;
-    }
-
-    response.next_tier = 'tier_3';
-    response.questions = processedSchema.tiers.tier_3.questions;
-    response.scale_options = processedSchema.tiers.tier_3.scale_options;
+  if (is_anonymous || !hasProfile) {
+    response.next_tier = 'profile_required';
+    response.missing_profile = ['subject_name', 'birth_date_or_age'];
+    response.message = 'Lengkapi profil pengguna (nama, usia/tanggal lahir) untuk melanjutkan ke Tier 3.';
     response.halfway_report = {
       completion_percentage: 50,
       completed_tiers: ['tier_1', 'tier_2'],
+      pending_tiers: ['profile_required', 'tier_3', 'tier_4'],
+      missing_questions: ['profile'],
+      preliminary_results: calculateInterimResults(tier_1, tier_2, null, type, false)
+    };
+    return response;
+  }
+
+  const answeredSubgroupsCount = tier_3 ? Object.keys(tier_3).length : 0;
+
+  // If Tier 3 is still incomplete (fewer than 18 sub-groups answered)
+  if (answeredSubgroupsCount < 18) {
+    const allTier3Questions = processedSchema.tiers.tier_3.questions || [];
+    const currentPartIndex = Math.floor(answeredSubgroupsCount / 3);
+    const nextQuestions = allTier3Questions.slice(currentPartIndex * 3, (currentPartIndex + 1) * 3);
+    const compPct = 50 + Math.round((answeredSubgroupsCount / 18) * 50);
+
+    response.status = 'incomplete';
+    response.next_tier = 'tier_3';
+    response.current_part = currentPartIndex + 1;
+    response.total_parts = 6;
+    response.completed_subgroups_count = answeredSubgroupsCount;
+    response.total_subgroups_count = 18;
+    response.questions = nextQuestions;
+    response.scale_options = processedSchema.tiers.tier_3.scale_options;
+    response.halfway_report = {
+      completion_percentage: compPct,
+      completed_tiers: ['tier_1', 'tier_2'],
       pending_tiers: ['tier_3', 'tier_4'],
       missing_questions: ['tier_3'],
-      preliminary_results: calculateInterimResults(tier_1, tier_2, null, type)
+      preliminary_results: calculateInterimResults(tier_1, tier_2, tier_3, type, false) // Progress SVG without text scores
     };
     return response;
   }
@@ -127,13 +140,13 @@ function evaluateV3(req) {
       completed_tiers: ['tier_1', 'tier_2', 'tier_3'],
       pending_tiers: ['tier_4'],
       missing_questions: ['tier_4'],
-      preliminary_results: calculateInterimResults(tier_1, tier_2, tier_3, type)
+      preliminary_results: calculateInterimResults(tier_1, tier_2, tier_3, type, false)
     };
     return response;
   }
 
-  // Step 5: Final Evaluation Calculation
-  const finalResults = calculateInterimResults(tier_1, tier_2, tier_3, type);
+  // Step 5: Final Evaluation Calculation (Full 100% Completion)
+  const finalResults = calculateInterimResults(tier_1, tier_2, tier_3, type, true); // Full SVG with text scores
 
   response.status = 'complete';
   response.next_tier = 'tier_4'; // Opt-in option for precision mode
@@ -149,9 +162,9 @@ function evaluateV3(req) {
   return response;
 }
 
-function calculateInterimResults(tier1, tier2, tier3, type) {
-  const introPct = (tier1.introvert || 50) / 100;
-  const extroPct = (tier1.extrovert || 50) / 100;
+function calculateInterimResults(tier1, tier2, tier3, type, showText = true) {
+  const introPct = ((tier1 && tier1.introvert) || 50) / 100;
+  const extroPct = ((tier1 && tier1.extrovert) || 50) / 100;
 
   const tier2ScoreMap = {};
   if (Array.isArray(tier2) && tier2.length === 3) {
@@ -176,6 +189,29 @@ function calculateInterimResults(tier1, tier2, tier3, type) {
     { no: "5", id: "bekerjasama", name: "Gaul", score: extroPct * ciptaPct },
     { no: "6", id: "melayani", name: "Lembut", score: extroPct * rasaPct },
   ];
+
+  // Refine group scores if partial/full tier_3 answers are present
+  if (tier3 && typeof tier3 === 'object' && Object.keys(tier3).length > 0) {
+    const groupAdjustments = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+    const groupCounts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+
+    Object.entries(tier3).forEach(([subKey, rating]) => {
+      const subNum = parseInt(subKey.replace('sub_', ''));
+      if (!isNaN(subNum) && subNum >= 1 && subNum <= 18) {
+        const grpNo = Math.ceil(subNum / 3);
+        groupAdjustments[grpNo] += (rating - 3) * 0.05;
+        groupCounts[grpNo]++;
+      }
+    });
+
+    rawGroups.forEach(g => {
+      const grpNo = parseInt(g.no);
+      if (groupCounts[grpNo] > 0) {
+        const avgAdj = groupAdjustments[grpNo] / groupCounts[grpNo];
+        g.score = Math.max(0.01, g.score + avgAdj);
+      }
+    });
+  }
 
   // Dynamic continuous score scaling (map range to 15..95)
   const maxRaw = Math.max(...rawGroups.map(g => g.score)) || 1;
@@ -218,25 +254,18 @@ function calculateInterimResults(tier1, tier2, tier3, type) {
     pillars40.sort((a, b) => parseInt(a.questionIndex) - parseInt(b.questionIndex));
 
     answers40 = pillars40.map(p => {
-      const parent18 = p.parents.find(parent => parent.group === "18");
-      if (parent18 && map18To6[parent18.no]) {
-        const group6No = map18To6[parent18.no];
-        let baseScore = groupFixedScores[group6No] || 50;
+      const parent18No = p.parents.find(parent => parent.group === "18")?.no;
+      const parent6No = parent18No ? map18To6[parent18No] : "1";
+      const baseGroupScore = groupFixedScores[parent6No] || 50;
 
-        // Apply Tier 3 Likert modifier if answered
-        if (tier3 && tier3[`sub_${parent18.no}`]) {
-          const likertVal = parseInt(tier3[`sub_${parent18.no}`]) || 3;
-          const modifier = (likertVal - 3) * 5; // -10, -5, 0, +5, +10
-          baseScore = Math.min(100, Math.max(0, baseScore + modifier));
-        }
-
-        return baseScore;
-      }
-      return 50; // Fallback neutral score
+      let jitter = Math.floor(Math.sin(parseInt(p.questionIndex) * 99) * 8);
+      return Math.min(99, Math.max(1, baseGroupScore + jitter));
     });
+  } else {
+    answers40 = Array(40).fill(50);
   }
 
-  // Extract top 7 dominant and bottom 7 weak pillar categories
+  // Extract top 3 dominant and bottom 3 weak pillar categories
   const topCategories = scaledGroups.slice(0, 3);
   const weakCategories = scaledGroups.slice(-3);
 
@@ -274,7 +303,7 @@ function calculateInterimResults(tier1, tier2, tier3, type) {
   const bahasaHati = bahasaHatiMap[topCategory] || 'Kata-kata Apresiasi';
   const gayaBelajar = gayaBelajarMap[topCategory] || 'Visual & Kinestetik';
 
-  const svg = generatePreliminarySVG(scaledGroups, panggilan);
+  const svg = generatePreliminarySVG(scaledGroups, panggilan, showText);
 
   return {
     panggilan,
@@ -288,18 +317,23 @@ function calculateInterimResults(tier1, tier2, tier3, type) {
   };
 }
 
-function generatePreliminarySVG(scaledGroups, panggilan) {
+function generatePreliminarySVG(scaledGroups, panggilan, showText = true) {
   const bars = scaledGroups.map((g, index) => {
     const y = 60 + index * 40;
     const width = Math.max(20, Math.round((g.score / 100) * 300));
-    return `<text x="20" y="${y + 17}" font-family="Arial, sans-serif" font-size="14" fill="#374151">${g.name}</text>` +
-      `<rect x="150" y="${y}" width="${width}" height="24" rx="4" fill="#4F46E5" />` +
-      `<text x="${160 + width}" y="${y + 17}" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#4F46E5">${g.score}</text>`;
+    const textLabel = showText ? `<text x="20" y="${y + 17}" font-family="Arial, sans-serif" font-size="14" fill="#374151">${g.name}</text>` : '';
+    const scoreLabel = showText ? `<text x="${160 + width}" y="${y + 17}" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#4F46E5">${g.score}</text>` : '';
+    
+    return `${textLabel}` +
+      `<rect x="${showText ? 150 : 30}" y="${y}" width="${width}" height="24" rx="4" fill="#4F46E5" fill-opacity="${showText ? '1.0' : '0.85'}" />` +
+      `${scoreLabel}`;
   }).join('');
+
+  const title = showText ? `Peta Bakat: ${panggilan}` : `Progres Visual Peta Bakat`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="100%" height="100%">` +
     `<rect width="100%" height="100%" fill="#F9FAFB" rx="8" />` +
-    `<text x="250" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F2937">Peta Bakat Preliminary: ${panggilan}</text>` +
+    `<text x="250" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F2937">${title}</text>` +
     bars +
     `</svg>`;
 }
