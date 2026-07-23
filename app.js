@@ -15,7 +15,7 @@ var errorHandler = require('./middleware/errorHandler');
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
+  max: process.env.NODE_ENV === 'production' ? 100 : 2000, // limit each IP to 2000 requests in dev/test
   message: { error: 'Too many requests, please try again later.' },
   handler: (req, res, next, options) => {
     winstonLogger.warn(`Rate limit exceeded for IP: ${req.ip}`);
@@ -29,30 +29,12 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-// Security Hardening
-app.use(helmet()); // Basic security headers
-app.use(cors()); // Allow public access (CORS *)
-app.use('/api/', limiter); // Apply rate limiting to API routes
-
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
-// Enable compression
-app.use(compression());
-
-// HTTP Request Logging (Morgan + Winston)
-app.use(logger('combined', { stream: { write: message => winstonLogger.info(message.trim()) } }));
-
-// Swagger Documentation
-const swaggerDocument = YAML.load(path.join(__dirname, 'public/api/swagger.yaml'));
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-
+app.use(helmet({ crossOriginResourcePolicy: false })); // Allow cross-origin API requests
+app.use(cors()); // Allow CORS *
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use('/api/', limiter); // Apply rate limiting to API routes
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);

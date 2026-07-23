@@ -13,7 +13,7 @@ const { evaluateV3 } = require('../services/calculation_v3');
 // Dedicated rate limiter for fast-track anonymous submissions
 const fastTrackLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 15, // limit each IP to 15 fast-track creations per 15 minutes
+  max: process.env.NODE_ENV === 'production' ? 30 : 500, // allow higher limit for testing
   message: { error: 'Too many anonymous submissions created from this IP. Please try again later.' },
   handler: (req, res, next, options) => {
     winstonLogger.warn(`Fast-track rate limit exceeded for IP: ${req.ip}`);
@@ -179,6 +179,15 @@ router.post('/submissions/:id/evaluate', async (req, res) => {
       status: evalResponse.status,
       next_tier: evalResponse.next_tier,
       sequence_number: incomingSeq,
+      current_part: evalResponse.current_part,
+      total_parts: evalResponse.total_parts,
+      part_title: evalResponse.part_title,
+      completed_subgroups_count: evalResponse.completed_subgroups_count,
+      total_subgroups_count: evalResponse.total_subgroups_count,
+      completed_pillars_count: evalResponse.completed_pillars_count,
+      total_pillars_count: evalResponse.total_pillars_count,
+      questions: evalResponse.questions,
+      range_labels: evalResponse.range_labels,
       halfway_report: evalResponse.halfway_report,
       result: evalResponse.result
     });
@@ -233,7 +242,17 @@ router.patch('/submissions/:id/profile', async (req, res) => {
       detected_age: typeInfo.detected_age,
       subject_name: updatedRecord.subject_name,
       is_observer: updatedRecord.is_observer,
+      status: evalResponse.status,
       next_tier: evalResponse.next_tier,
+      current_part: evalResponse.current_part,
+      total_parts: evalResponse.total_parts,
+      part_title: evalResponse.part_title,
+      completed_subgroups_count: evalResponse.completed_subgroups_count,
+      total_subgroups_count: evalResponse.total_subgroups_count,
+      questions: evalResponse.questions,
+      range_labels: evalResponse.range_labels,
+      halfway_report: evalResponse.halfway_report,
+      result: evalResponse.result,
       saved: true,
       timestamp: updatedRecord.updated || new Date().toISOString()
     });

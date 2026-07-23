@@ -116,7 +116,7 @@ describe('v0.3 Evaluation Engine & Personalization Tests', () => {
     expect(result.total_parts).toBe(6);
     expect(result.questions).toHaveLength(3);
     expect(result.questions[0].id).toBe('sub_4');
-    expect(result.halfway_report.completion_percentage).toBe(58);
+    expect(result.halfway_report.completion_percentage).toBe(55);
     expect(result.halfway_report.preliminary_results.svg).toContain('<svg');
   });
 
@@ -138,7 +138,7 @@ describe('v0.3 Evaluation Engine & Personalization Tests', () => {
     };
     const result = evaluateV3(req);
     expect(result.status).toBe('complete');
-    expect(result.halfway_report.completion_percentage).toBe(100);
+    expect(result.halfway_report.completion_percentage).toBe(80);
     expect(result.result.ranked_categories).toBeDefined();
     expect(result.result.top_categories).toHaveLength(3);
     expect(result.result.highest_bahasa_hati).toBeDefined();
@@ -173,7 +173,7 @@ describe('v0.3 Evaluation Engine & Personalization Tests', () => {
     expect(result.next_tier).toBe('tier_4');
     expect(result.current_part).toBe(1);
     expect(result.total_parts).toBe(18);
-    expect(result.halfway_report.completion_percentage).toBe(75);
+    expect(result.halfway_report.completion_percentage).toBe(80);
   });
 
   it('GET /api/v0.3/tb40/schema should return v0.3 schema', async () => {

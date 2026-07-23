@@ -10,8 +10,14 @@
       "image_url": "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&w=800&q=80",
       "image_alt": "Energi Bermain Anak - Introvert vs Extrovert",
       "dimensions": [
-        { "id": "introvert", "label": "Tenang / Sendiri" },
-        { "id": "extrovert", "label": "Ramai / Bersama Teman" }
+        {
+          "id": "introvert",
+          "label": "Tenang / Sendiri"
+        },
+        {
+          "id": "extrovert",
+          "label": "Ramai / Bersama Teman"
+        }
       ],
       "questions": [
         {
@@ -19,10 +25,30 @@
           "text": "Bagi 100% energimu antara bermain tenang sendiri dan bermain ramai bersama teman.",
           "text_observer": "Bagi 100% energi {{name}} antara bermain tenang sendiri dan bermain ramai bersama teman.",
           "range_labels": [
-            { "min": 0, "max": 20, "emoji": "🎨", "label": "Lebih nyaman bermain tenang, membaca, atau menggambar sendiri." },
-            { "min": 21, "max": 50, "emoji": "🧩", "label": "Suka bermain sendiri tapi juga mau bergabung jika diajak." },
-            { "min": 51, "max": 80, "emoji": "⚽", "label": "Senang bermain bersama teman-teman sebaya." },
-            { "min": 81, "max": 100, "emoji": "🎪", "label": "Sangat ceria dan bersemangat saat di tengah keramaian teman." }
+            {
+              "min": 0,
+              "max": 20,
+              "emoji": "🎨",
+              "label": "Lebih nyaman bermain tenang, membaca, atau menggambar sendiri."
+            },
+            {
+              "min": 21,
+              "max": 50,
+              "emoji": "🧩",
+              "label": "Suka bermain sendiri tapi juga mau bergabung jika diajak."
+            },
+            {
+              "min": 51,
+              "max": 80,
+              "emoji": "⚽",
+              "label": "Senang bermain bersama teman-teman sebaya."
+            },
+            {
+              "min": 81,
+              "max": 100,
+              "emoji": "🎪",
+              "label": "Sangat ceria dan bersemangat saat di tengah keramaian teman."
+            }
           ]
         }
       ]
@@ -35,9 +61,21 @@
       "image_url": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80",
       "image_alt": "Orientasi Bakat Anak - Karsa, Cipta, Rasa",
       "dimensions": [
-        { "id": "karsa", "label": "Karsa (Bergerak/Aksi)", "emoji": "🏃" },
-        { "id": "cipta", "label": "Cipta (Berpikir/Kreatif)", "emoji": "🎨" },
-        { "id": "rasa", "label": "Rasa (Perasaan/Peduli)", "emoji": "💛" }
+        {
+          "id": "karsa",
+          "label": "Karsa (Bergerak/Aksi)",
+          "emoji": "🏃"
+        },
+        {
+          "id": "cipta",
+          "label": "Cipta (Berpikir/Kreatif)",
+          "emoji": "🎨"
+        },
+        {
+          "id": "rasa",
+          "label": "Rasa (Perasaan/Peduli)",
+          "emoji": "💛"
+        }
       ],
       "questions": [
         {
@@ -55,30 +93,158 @@
       "image_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
       "image_alt": "Pendalaman 18 Bakat Anak",
       "range_labels": [
-        { "min": 0, "max": 25, "emoji": "🤫", "label": "Jarang / Sangat Lemah" },
-        { "min": 26, "max": 50, "emoji": "🌿", "label": "Kadang-kadang / Netral" },
-        { "min": 51, "max": 75, "emoji": "👍", "label": "Sering / Cukup Kuat" },
-        { "min": 76, "max": 100, "emoji": "🌟", "label": "Sangat Sering / Sangat Dominan" }
+        {
+          "min": 0,
+          "max": 25,
+          "emoji": "🤫",
+          "label": "Jarang / Sangat Lemah"
+        },
+        {
+          "min": 26,
+          "max": 50,
+          "emoji": "🌿",
+          "label": "Kadang-kadang / Netral"
+        },
+        {
+          "min": 51,
+          "max": 75,
+          "emoji": "👍",
+          "label": "Sering / Cukup Kuat"
+        },
+        {
+          "min": 76,
+          "max": 100,
+          "emoji": "🌟",
+          "label": "Sangat Sering / Sangat Dominan"
+        }
       ],
       "questions": [
-        { "id": "sub_1", "subgroup_no": "1", "text": "Saya selalu semangat menyelesaikan permainan atau tugas hingga tuntas.", "text_observer": "{{name}} selalu semangat menyelesaikan permainan atau tugas hingga tuntas." },
-        { "id": "sub_2", "subgroup_no": "2", "text": "Saya anak yang tertib dan taat aturan.", "text_observer": "{{name}} anak yang tertib dan taat aturan." },
-        { "id": "sub_3", "subgroup_no": "3", "text": "Saya suka merapikan mainan atau barang sendiri.", "text_observer": "{{name}} suka merapikan mainan atau barang sendiri." },
-        { "id": "sub_4", "subgroup_no": "4", "text": "Saya suka bertanya dan penasaran mempelajari hal baru.", "text_observer": "{{name}} suka bertanya dan penasaran mempelajari hal baru." },
-        { "id": "sub_5", "subgroup_no": "5", "text": "Saya suka menggambar, membuat kerajinan, atau membayangkan ide baru.", "text_observer": "{{name}} suka menggambar, membuat kerajinan, atau membayangkan ide baru." },
-        { "id": "sub_6", "subgroup_no": "6", "text": "Saya suka merencanakan permainan sebelum bermain.", "text_observer": "{{name}} suka merencanakan permainan sebelum bermain." },
-        { "id": "sub_7", "subgroup_no": "7", "text": "Saya memegang teguh kejujuran dan rasa keadilan.", "text_observer": "{{name}} memegang teguh kejujuran dan rasa keadilan." },
-        { "id": "sub_8", "subgroup_no": "8", "text": "Saya peka ketika melihat teman atau keluarga merasa sedih.", "text_observer": "{{name}} peka ketika melihat teman atau keluarga merasa sedih." },
-        { "id": "sub_9", "subgroup_no": "9", "text": "Saya selalu ceria dan mudah merasa gembira.", "text_observer": "{{name}} selalu ceria dan mudah merasa gembira." },
-        { "id": "sub_10", "subgroup_no": "10", "text": "Saya suka memimpin teman-teman saat bermain.", "text_observer": "{{name}} suka memimpin teman-teman saat bermain." },
-        { "id": "sub_11", "subgroup_no": "11", "text": "Saya berani tampil dan bercerita di depan orang banyak.", "text_observer": "{{name}} berani tampil dan bercerita di depan orang banyak." },
-        { "id": "sub_12", "subgroup_no": "12", "text": "Saya suka mengarahkan jalannya permainan.", "text_observer": "{{name}} suka mengarahkan jalannya permainan." },
-        { "id": "sub_13", "subgroup_no": "13", "text": "Saya mudah berkenalan dan berteman dengan siapa saja.", "text_observer": "{{name}} mudah berkenalan dan berteman dengan siapa saja." },
-        { "id": "sub_14", "subgroup_no": "14", "text": "Saya senang bermain dan bekerja kelompok.", "text_observer": "{{name}} senang bermain dan bekerja kelompok." },
-        { "id": "sub_15", "subgroup_no": "15", "text": "Saya senang mengajak teman yang sendiri agar ikut bergabung.", "text_observer": "{{name}} senang mengajak teman yang sendiri agar ikut bergabung." },
-        { "id": "sub_16", "subgroup_no": "16", "text": "Saya suka membantu orang tua atau teman yang butuh pertolongan.", "text_observer": "{{name}} suka membantu orang tua atau teman yang butuh pertolongan." },
-        { "id": "sub_17", "subgroup_no": "17", "text": "Saya senang membimbing atau mengajari adik / teman.", "text_observer": "{{name}} senang membimbing atau mengajari adik / teman." },
-        { "id": "sub_18", "subgroup_no": "18", "text": "Saya anak yang santun, ramah, dan penurut.", "text_observer": "{{name}} anak yang santun, ramah, dan penurut." }
+        {
+          "id": "sub_1",
+          "subgroup_no": "1",
+          "category_no": "1",
+          "text": "Saya selalu semangat menyelesaikan permainan atau tugas hingga tuntas.",
+          "text_observer": "{{name}} selalu semangat menyelesaikan permainan atau tugas hingga tuntas."
+        },
+        {
+          "id": "sub_2",
+          "subgroup_no": "2",
+          "category_no": "1",
+          "text": "Saya anak yang tertib, berwibawa, dan taat aturan.",
+          "text_observer": "{{name}} anak yang tertib, berwibawa, dan taat aturan."
+        },
+        {
+          "id": "sub_3",
+          "subgroup_no": "3",
+          "category_no": "1",
+          "text": "Saya giat belajar dan bekerja keras menyelesaikan kewajiban.",
+          "text_observer": "{{name}} giat belajar dan bekerja keras menyelesaikan kewajiban."
+        },
+        {
+          "id": "sub_4",
+          "subgroup_no": "4",
+          "category_no": "2",
+          "text": "Saya suka menggambar, membayangkan ide baru, dan berimajinasi.",
+          "text_observer": "{{name}} suka menggambar, membayangkan ide baru, dan berimajinasi."
+        },
+        {
+          "id": "sub_5",
+          "subgroup_no": "5",
+          "category_no": "2",
+          "text": "Saya selalu berpikir positif, ceria, dan melihat kebaikan.",
+          "text_observer": "{{name}} selalu berpikir positif, ceria, dan melihat kebaikan."
+        },
+        {
+          "id": "sub_6",
+          "subgroup_no": "6",
+          "category_no": "2",
+          "text": "Saya suka bertanya, menganalisis, dan penasaran mempelajari hal baru.",
+          "text_observer": "{{name}} suka bertanya, menganalisis, dan penasaran mempelajari hal baru."
+        },
+        {
+          "id": "sub_7",
+          "subgroup_no": "7",
+          "category_no": "3",
+          "text": "Saya memegang teguh kejujuran dan rasa keadilan apa adanya.",
+          "text_observer": "{{name}} memegang teguh kejujuran dan rasa keadilan apa adanya."
+        },
+        {
+          "id": "sub_8",
+          "subgroup_no": "8",
+          "category_no": "3",
+          "text": "Saya anak yang tenang, pendiam, dan suka menyendiri.",
+          "text_observer": "{{name}} anak yang tenang, pendiam, dan suka menyendiri."
+        },
+        {
+          "id": "sub_9",
+          "subgroup_no": "9",
+          "category_no": "3",
+          "text": "Saya bersikap santun, rendah hati, dan tidak suka pamer.",
+          "text_observer": "{{name}} bersikap santun, rendah hati, dan tidak suka pamer."
+        },
+        {
+          "id": "sub_10",
+          "subgroup_no": "10",
+          "category_no": "4",
+          "text": "Saya berani memimpin teman-teman dan mengarahkan kegiatan.",
+          "text_observer": "{{name}} berani memimpin teman-teman dan mengarahkan kegiatan."
+        },
+        {
+          "id": "sub_11",
+          "subgroup_no": "11",
+          "category_no": "4",
+          "text": "Saya berani tampil, bercerita, dan memotivasi teman.",
+          "text_observer": "{{name}} berani tampil, bercerita, dan memotivasi teman."
+        },
+        {
+          "id": "sub_12",
+          "subgroup_no": "12",
+          "category_no": "4",
+          "text": "Saya suka menolong dan mengarahkan perkelompokan.",
+          "text_observer": "{{name}} suka menolong dan mengarahkan perkelompokan."
+        },
+        {
+          "id": "sub_13",
+          "subgroup_no": "13",
+          "category_no": "5",
+          "text": "Saya suka memanfaatkan ikatan pertemanan yang sudah ada.",
+          "text_observer": "{{name}} suka memanfaatkan ikatan pertemanan yang sudah ada."
+        },
+        {
+          "id": "sub_14",
+          "subgroup_no": "14",
+          "category_no": "5",
+          "text": "Saya mudah berkenalan dan membuat teman baru.",
+          "text_observer": "{{name}} mudah berkenalan dan membuat teman baru."
+        },
+        {
+          "id": "sub_15",
+          "subgroup_no": "15",
+          "category_no": "5",
+          "text": "Saya senang mengeratkan keakraban dan mengajak teman yang sendiri.",
+          "text_observer": "{{name}} senang mengeratkan keakraban dan mengajak teman yang sendiri."
+        },
+        {
+          "id": "sub_16",
+          "subgroup_no": "16",
+          "category_no": "6",
+          "text": "Saya suka melayani dan membantu teman dengan memberi pertolongan.",
+          "text_observer": "{{name}} suka melayani dan membantu teman dengan memberi pertolongan."
+        },
+        {
+          "id": "sub_17",
+          "subgroup_no": "17",
+          "category_no": "6",
+          "text": "Saya suka melayani dengan cara menjaga dan membimbing adik/teman.",
+          "text_observer": "{{name}} suka melayani dengan cara menjaga dan membimbing adik/teman."
+        },
+        {
+          "id": "sub_18",
+          "subgroup_no": "18",
+          "category_no": "6",
+          "text": "Saya suka melayani dengan cara mengalah dan menjaga ketenangan.",
+          "text_observer": "{{name}} suka melayani dengan cara mengalah dan menjaga ketenangan."
+        }
       ]
     },
     "tier_4": {
@@ -87,7 +253,315 @@
       "title": "Presisi 40 Pilar Bakat Anak",
       "description": "Evaluasi presisi penuh untuk 40 pilar bakat anak.",
       "image_url": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80",
-      "image_alt": "Presisi 40 Pilar Bakat Anak"
+      "image_alt": "Presisi 40 Pilar Bakat Anak",
+      "range_labels": [
+        {
+          "min": 0,
+          "max": 25,
+          "emoji": "🤫",
+          "label": "Jarang / Sangat Lemah"
+        },
+        {
+          "min": 26,
+          "max": 50,
+          "emoji": "🌿",
+          "label": "Kadang-kadang / Netral"
+        },
+        {
+          "min": 51,
+          "max": 75,
+          "emoji": "👍",
+          "label": "Sering / Cukup Kuat"
+        },
+        {
+          "min": 76,
+          "max": 100,
+          "emoji": "🌟",
+          "label": "Sangat Sering / Sangat Dominan"
+        }
+      ],
+      "questions": [
+        {
+          "id": "p_1",
+          "pillar_no": "1",
+          "subgroup_no": "13",
+          "text": "Ketika menghadapi orang lain, saya tidak berat sebelah dalam bersikap, tidak memihak, bersikap tengah-tengah, adil, dan fair dalam “permainan”.",
+          "text_observer": "Ketika menghadapi orang lain, {{name}} tidak berat sebelah dalam bersikap, tidak memihak, bersikap tengah-tengah, adil, dan fair dalam “permainan”."
+        },
+        {
+          "id": "p_2",
+          "pillar_no": "2",
+          "subgroup_no": "18",
+          "text": "Saya senang jika diberi tugas atau tanggung jawab atau amanah, dan saya berusaha melaksanakannya dengan sebaik-baiknya.",
+          "text_observer": "{{name}} senang jika diberi tugas atau tanggung jawab atau amanah, dan {{name}} berusaha melaksanakannya dengan sebaik-baiknya."
+        },
+        {
+          "id": "p_3",
+          "pillar_no": "3",
+          "subgroup_no": "18",
+          "text": "Saya tidak tergesa-gesa ketika akan bertindak dan terlebih dahulu mempertimbangkan berbagai hal agar tidak terjadi kesalahan.",
+          "text_observer": "{{name}} tidak tergesa-gesa ketika akan bertindak dan terlebih dahulu mempertimbangkan berbagai hal agar tidak terjadi kesalahan."
+        },
+        {
+          "id": "p_4",
+          "pillar_no": "4",
+          "subgroup_no": "3",
+          "text": "Ketika akan melakukan suatu pekerjaan, saya memiliki tekad yang kuat untuk segera memulainya dan kadang seperti orang yang tidak sabaran.",
+          "text_observer": "Ketika akan melakukan suatu pekerjaan, {{name}} memiliki tekad yang kuat untuk segera memulainya dan kadang seperti orang yang tidak sabaran."
+        },
+        {
+          "id": "p_5",
+          "pillar_no": "5",
+          "subgroup_no": "14",
+          "text": "Saya senang beramah tamah dan tersenyum kepada orang lain, berkata lembut, dan senang memberikan penyambutan sebaik-baiknya.",
+          "text_observer": "{{name}} senang beramah tamah dan tersenyum kepada orang lain, berkata lembut, dan senang memberikan penyambutan sebaik-baiknya."
+        },
+        {
+          "id": "p_6",
+          "pillar_no": "6",
+          "subgroup_no": "6",
+          "text": "Saya termasuk orang yang cepat dan mudah dalam memahami sesuatu yang dihadapkan kepadaku, seperti menghitung, menganalisa dll.",
+          "text_observer": "{{name}} termasuk orang yang cepat dan mudah dalam memahami sesuatu yang dihadapkan kepada {{name}}, seperti menghitung, menganalisa dll."
+        },
+        {
+          "id": "p_7",
+          "pillar_no": "7",
+          "subgroup_no": "11",
+          "text": "Saya mampu menjelaskan sesuatu yang rumit menjadi mudah dipahami meskipun dengan ungkapan yang sederhana, baik lisan maupun tulisan.",
+          "text_observer": "{{name}} mampu menjelaskan sesuatu yang rumit menjadi mudah dipahami meskipun dengan ungkapan yang sederhana, baik lisan maupun tulisan."
+        },
+        {
+          "id": "p_8",
+          "pillar_no": "8",
+          "subgroup_no": "4",
+          "text": "Saya memiliki firasat kuat sehingga mampu menduga sesuatu yang akan terjadi dengan memperhatikan tanda-tanda yang tampak.",
+          "text_observer": "{{name}} memiliki firasat kuat sehingga mampu menduga sesuatu yang akan terjadi dengan memperhatikan tanda-tanda yang tampak."
+        },
+        {
+          "id": "p_9",
+          "pillar_no": "9",
+          "subgroup_no": "10",
+          "text": "Saya tidak senang jika ada yang menyaingiku, melanggar hakku, atau ada yang melanggar aturan dan kesepakatan yang telah ditetapkan.",
+          "text_observer": "{{name}} tidak senang jika ada yang menyaingiku, melanggar hak {{name}}, atau ada yang melanggar aturan dan kesepakatan yang telah ditetapkan."
+        },
+        {
+          "id": "p_10",
+          "pillar_no": "10",
+          "subgroup_no": "9",
+          "text": "Saya merasa memiliki kekurangan dan merasa apa yang telah saya terima melebihi hakku sehingga menjadikan saya merasa malu.",
+          "text_observer": "{{name}} merasa memiliki kekurangan dan merasa apa yang telah {{name}} terima melebihi hak {{name}} sehingga menjadikan {{name}} merasa malu."
+        },
+        {
+          "id": "p_11",
+          "pillar_no": "11",
+          "subgroup_no": "6",
+          "text": "Saya senang memikirkan sesuatu secara mendalam sehingga saya mampu menemukan hikmah dari sesuatu (peristiwa) yang telah terjadi.",
+          "text_observer": "{{name}} senang memikirkan sesuatu secara mendalam sehingga {{name}} mampu menemukan hikmah dari sesuatu (peristiwa) yang telah terjadi."
+        },
+        {
+          "id": "p_12",
+          "pillar_no": "12",
+          "subgroup_no": "18",
+          "text": "Saya mampu menahan diri untuk tidak memarahi atau membalas orang yang bersalah meskipun saya mampu melakukannya, dan saya tetap santun.",
+          "text_observer": "{{name}} mampu menahan diri untuk tidak memarahi atau membalas orang yang bersalah meskipun {{name}} mampu melakukannya, dan {{name}} tetap santun."
+        },
+        {
+          "id": "p_13",
+          "pillar_no": "13",
+          "subgroup_no": "1",
+          "text": "Saya memiliki rasa ingin tahu yang tinggi terhadap sesuatu sehingga saya memiliki gairah untuk meraih mimpi (cita-cita) yang tertinggi.",
+          "text_observer": "{{name}} memiliki rasa ingin tahu yang tinggi terhadap sesuatu sehingga {{name}} memiliki gairah untuk meraih mimpi (cita-cita) yang tertinggi."
+        },
+        {
+          "id": "p_14",
+          "pillar_no": "14",
+          "subgroup_no": "5",
+          "text": "Saya selalu berprasangka baik terhadap orang lain meskipun fakta yang saya ketahui mendukung kepada dugaan yang buruk.",
+          "text_observer": "{{name}} selalu berprasangka baik terhadap orang lain meskipun fakta yang {{name}} ketahui mendukung kepada dugaan yang buruk."
+        },
+        {
+          "id": "p_15",
+          "pillar_no": "15",
+          "subgroup_no": "8",
+          "text": "Saya mampu menjaga diri sehingga saya sangat menyesal jika terlanjur melakukan suatu pelanggaran atau larangan karena menuruti hasratku.",
+          "text_observer": "{{name}} mampu menjaga diri sehingga {{name}} sangat menyesal jika terlanjur melakukan suatu pelanggaran atau larangan karena menuruti hasratku."
+        },
+        {
+          "id": "p_16",
+          "pillar_no": "16",
+          "subgroup_no": "1",
+          "text": "Saya memiliki sifat perfeksionis sehingga saya selalu ingin segala sesuatu harus sempurna dan lebih sempurna lagi, dan saya tidak ingin seadanya.",
+          "text_observer": "{{name}} memiliki sifat perfeksionis sehingga {{name}} selalu ingin segala sesuatu harus sempurna dan lebih sempurna lagi, dan {{name}} tidak ingin seadanya."
+        },
+        {
+          "id": "p_17",
+          "pillar_no": "17",
+          "subgroup_no": "16",
+          "text": "Saya senang mendahulukan orang lain meskipun sebenarnya saya lebih membutuhkannya sehingga saya menjadi orang yang senang melayani.",
+          "text_observer": "{{name}} senang mendahulukan orang lain meskipun sebenarnya {{name}} lebih membutuhkannya sehingga {{name}} menjadi orang yang senang melayani."
+        },
+        {
+          "id": "p_18",
+          "pillar_no": "18",
+          "subgroup_no": "2",
+          "text": "Saya memiliki prinsip yang kujadikan sebagai harga diriku dan saya mampu mempertahankannya meskipun dalam tekanan yang sangat berat.",
+          "text_observer": "{{name}} memiliki prinsip yang kujadikan sebagai harga diri {{name}} dan {{name}} mampu mempertahankannya meskipun dalam tekanan yang sangat berat."
+        },
+        {
+          "id": "p_19",
+          "pillar_no": "19",
+          "subgroup_no": "12",
+          "text": "Saya senang memberikan sesuatu tanpa diminta kepada siapapun dan saya tidak mengharap balasan atau ucapan terima kasih.",
+          "text_observer": "{{name}} senang memberikan sesuatu tanpa diminta kepada siapapun dan {{name}} tidak mengharap balasan atau ucapan terima kasih."
+        },
+        {
+          "id": "p_20",
+          "pillar_no": "20",
+          "subgroup_no": "17",
+          "text": "Saya mampu menahan diri untuk tidak menyebarkan kabar (yang bukan aib) karena saya anggap sebagai privasi bagi orang yang bersangkutan.",
+          "text_observer": "{{name}} mampu menahan diri untuk tidak menyebarkan kabar (yang bukan aib) karena {{name}} anggap sebagai privasi bagi orang yang bersangkutan."
+        },
+        {
+          "id": "p_21",
+          "pillar_no": "21",
+          "subgroup_no": "16",
+          "text": "Saya senang memperdalam hubungan yang sudah terjalin, dengan memberikan kasih sayang secara khusus kepada yang bersangkutan.",
+          "text_observer": "{{name}} senang memperdalam hubungan yang sudah terjalin, dengan memberikan kasih sayang secara khusus kepada yang bersangkutan."
+        },
+        {
+          "id": "p_22",
+          "pillar_no": "22",
+          "subgroup_no": "10",
+          "text": "Saya senang bersaing, berlomba atau berkompetisi agar saya menjadi yang paling unggul dari yang lainnya.",
+          "text_observer": "{{name}} senang bersaing, berlomba atau berkompetisi agar {{name}} menjadi yang paling unggul dari yang lainnya."
+        },
+        {
+          "id": "p_23",
+          "pillar_no": "23",
+          "subgroup_no": "14",
+          "text": "Saya senang bercanda dan mengungkapkan kata-kata jenaka sehingga suasana menjadi lebih ceria dan lebih akrab.",
+          "text_observer": "{{name}} senang bercanda dan mengungkapkan kata-kata jenaka sehingga suasana menjadi lebih ceria dan lebih akrab."
+        },
+        {
+          "id": "p_24",
+          "pillar_no": "24",
+          "subgroup_no": "11",
+          "text": "Saya senang memberikan motivasi atau dorongan, saran-saran atau nasehat kepada orang lain agar menjadi lebih baik.",
+          "text_observer": "{{name}} senang memberikan motivasi atau dorongan, saran-saran atau nasehat kepada orang lain agar menjadi lebih baik."
+        },
+        {
+          "id": "p_25",
+          "pillar_no": "25",
+          "subgroup_no": "3",
+          "text": "Saya selalu ingin menyelesaikan suatu pekerjaan yang sedang saya lakukan dengan penuh semangat dan kerja keras.",
+          "text_observer": "{{name}} selalu ingin menyelesaikan suatu pekerjaan yang sedang {{name}} lakukan dengan penuh semangat dan kerja keras."
+        },
+        {
+          "id": "p_26",
+          "pillar_no": "26",
+          "subgroup_no": "4",
+          "text": "Ketika saya mengalami suatu kesulitan, saya dengan mudah menemukan  peluang-peluang yang dapat dijadikan sebagai solusinya.",
+          "text_observer": "Ketika {{name}} mengalami suatu kesulitan, {{name}} dengan mudah menemukan  peluang-peluang yang dapat dijadikan sebagai solusinya."
+        },
+        {
+          "id": "p_27",
+          "pillar_no": "27",
+          "subgroup_no": "12",
+          "text": "Saya senang membantu orang lain yang mengalami kesusahan sampai  terlepas dari kesusahan tersebut.",
+          "text_observer": "{{name}} senang membantu orang lain yang mengalami kesusahan sampai  terlepas dari kesusahan tersebut."
+        },
+        {
+          "id": "p_28",
+          "pillar_no": "28",
+          "subgroup_no": "9",
+          "text": "Saya merasa cukup dengan apa yang telah saya miliki dan rela menerima apapun yang diberikan kepadaku.",
+          "text_observer": "{{name}} merasa cukup dengan apa yang telah {{name}} miliki dan rela menerima apapun yang diberikan kepada {{name}}."
+        },
+        {
+          "id": "p_29",
+          "pillar_no": "29",
+          "subgroup_no": "15",
+          "text": "Saya mudah merasa kasihan dan bersimpati kepada orang yang mengalami kesusahan dan berkeinginan untuk memberikan yang terbaik kepadanya.",
+          "text_observer": "{{name}} mudah merasa kasihan dan bersimpati kepada orang yang mengalami kesusahan dan berkeinginan untuk memberikan yang terbaik kepadanya."
+        },
+        {
+          "id": "p_30",
+          "pillar_no": "30",
+          "subgroup_no": "15",
+          "text": "Saya selalu mengambil sisi termudah dalam menyikapi semua urusan, sehingga saya selalu lemah lembut dalam berbuat maupun berkata.",
+          "text_observer": "{{name}} selalu mengambil sisi termudah dalam menyikapi semua urusan, sehingga {{name}} selalu lemah lembut dalam berbuat maupun berkata."
+        },
+        {
+          "id": "p_31",
+          "pillar_no": "31",
+          "subgroup_no": "17",
+          "text": "Saya mampu menutupi dan tidak menampakkan atau menceritakan aib diri sendiri atau orang lain.",
+          "text_observer": "{{name}} mampu menutupi dan tidak menampakkan atau menceritakan aib diri sendiri atau orang lain."
+        },
+        {
+          "id": "p_32",
+          "pillar_no": "32",
+          "subgroup_no": "9",
+          "text": "Saya mampu menahan diri untuk tidak bereaksi dan sabar terhadap tekanan, kesulitan atau apapun yang menimpa diriku.",
+          "text_observer": "{{name}} mampu menahan diri untuk tidak bereaksi dan sabar terhadap tekanan, kesulitan atau apapun yang menimpa diri {{name}}."
+        },
+        {
+          "id": "p_33",
+          "pillar_no": "33",
+          "subgroup_no": "8",
+          "text": "Saya cenderung banyak diam dan berbicara seperlunya, sehingga yang saya ucapkan hanya ucapan yang diperlukan saja.",
+          "text_observer": "{{name}} cenderung banyak diam dan berbicara seperlunya, sehingga yang {{name}} ucapkan hanya ucapan yang diperlukan saja."
+        },
+        {
+          "id": "p_34",
+          "pillar_no": "34",
+          "subgroup_no": "7",
+          "text": "Saya mudah menerima saran dan masukan serta berkata dan berbuat sesuai dengan apa yang sebenarnya.",
+          "text_observer": "{{name}} mudah menerima saran dan masukan serta berkata dan berbuat sesuai dengan apa yang sebenarnya."
+        },
+        {
+          "id": "p_35",
+          "pillar_no": "35",
+          "subgroup_no": "10",
+          "text": "Saya berani menghadapi orang secara langsung, untuk berbicara kepadanya, memerintah, mengatur, atau menguasainya.",
+          "text_observer": "{{name}} berani menghadapi orang secara langsung, untuk berbicara kepadanya, memerintah, mengatur, atau menguasainya."
+        },
+        {
+          "id": "p_36",
+          "pillar_no": "36",
+          "subgroup_no": "13",
+          "text": "Saya senang menjalin kerjasama dengan orang lain, berdamai, dan menghindari konflik, untuk mencapai tujuan bersama.",
+          "text_observer": "{{name}} senang menjalin kerjasama dengan orang lain, berdamai, dan menghindari konflik, untuk mencapai tujuan bersama."
+        },
+        {
+          "id": "p_37",
+          "pillar_no": "37",
+          "subgroup_no": "18",
+          "text": "Saya tidak suka menampakkan atau ditampakkan kehebatanku meskipun saya memilikinya, sehingga ada orang lain yang menyebutku rendah hati.",
+          "text_observer": "{{name}} tidak suka menampakkan atau ditampakkan kehebatanku meskipun {{name}} memilikinya, sehingga ada orang lain yang menyebutku rendah hati."
+        },
+        {
+          "id": "p_38",
+          "pillar_no": "38",
+          "subgroup_no": "13",
+          "text": "Saya senang berkumpul dengan orang banyak dan berusaha menambah anggota perkumpulan sebanyak-banyaknya.",
+          "text_observer": "{{name}} senang berkumpul dengan orang banyak dan berusaha menambah anggota perkumpulan sebanyak-banyaknya."
+        },
+        {
+          "id": "p_39",
+          "pillar_no": "39",
+          "subgroup_no": "13",
+          "text": "Saya memegang teguh janji yang telah disepakati bersama, meskipun posisiku sebagai pihak yang dicurangi.",
+          "text_observer": "{{name}} memegang teguh janji yang telah disepakati bersama, meskipun posisiku sebagai pihak yang dicurangi."
+        },
+        {
+          "id": "p_40",
+          "pillar_no": "40",
+          "subgroup_no": "2",
+          "text": "Saya tampak tenang tapi tangguh, tidak banyak bicara tapi bisa memahamkan, tidak tergesa tapi mendahului dalam semua urusan.",
+          "text_observer": "{{name}} tampak tenang tapi tangguh, tidak banyak bicara tapi bisa memahamkan, tidak tergesa tapi mendahului dalam semua urusan."
+        }
+      ]
     }
   }
 }

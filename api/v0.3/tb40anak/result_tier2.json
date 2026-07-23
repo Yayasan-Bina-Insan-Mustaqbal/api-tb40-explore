@@ -1,0 +1,734 @@
+{
+  "message": "Evaluation for tb40anak v0.3",
+  "status": "incomplete",
+  "next_tier": "tier_3",
+  "saved": true,
+  "timestamp": "2026-07-23T22:54:19.657Z",
+  "halfway_report": {
+    "completion_percentage": 50,
+    "completed_tiers": [
+      "tier_1",
+      "tier_2"
+    ],
+    "pending_tiers": [
+      "tier_3",
+      "tier_4"
+    ],
+    "missing_questions": [
+      "tier_3"
+    ],
+    "preliminary_results": {
+      "julukan": "'Pekerja Keras yang Cerdas'",
+      "panggilan": "'Pekerja Keras yang Cerdas'",
+      "highest_bahasa_hati": "Pertolongan Nyata & Aksi Nyata (Acts of Service)",
+      "highest_gaya_belajar": "Kinestetik & Eksperimen Langsung (Praktik)",
+      "highest_gaya_belajar_arab": "Al Fuad (الفُؤَاد) - Kinestetik",
+      "highest_gaya_belajar_tempat": "Tempat belajar yang nyaman: di alam terbuka, lapangan, bengkel, atau lokasi yang memungkinkan banyak gerakan.",
+      "bahasa_hati": [
+        {
+          "category_id": "bekerja_keras",
+          "category_name": "Pekerja Keras",
+          "bahasa_hati": "Pertolongan Nyata & Aksi Nyata (Acts of Service)",
+          "score": 95
+        },
+        {
+          "category_id": "berpikir",
+          "category_name": "Cerdas",
+          "bahasa_hati": "Penghargaan atas Gagasan & Ide Kreatif",
+          "score": 63
+        },
+        {
+          "category_id": "mempengaruhi",
+          "category_name": "Tegas",
+          "bahasa_hati": "Kepercayaan & Dukungan Kepemimpinan",
+          "score": 58
+        },
+        {
+          "category_id": "bekerjasama",
+          "category_name": "Gaul",
+          "bahasa_hati": "Waktu Bersama & Kebersamaan Berkualitas (Quality Time)",
+          "score": 36
+        },
+        {
+          "category_id": "berperasaan",
+          "category_name": "Berperasaan",
+          "bahasa_hati": "Sentuhan Perhatian & Kata-kata Penguatan (Words of Affirmation)",
+          "score": 31
+        },
+        {
+          "category_id": "melayani",
+          "category_name": "Lembut",
+          "bahasa_hati": "Ketulusan Pelayanan & Kepedulian Hati",
+          "score": 15
+        }
+      ],
+      "gaya_belajar": [
+        {
+          "category_id": "bekerja_keras",
+          "category_name": "Pekerja Keras",
+          "gaya_belajar": "Kinestetik & Eksperimen Langsung (Praktik)",
+          "score": 95
+        },
+        {
+          "category_id": "berpikir",
+          "category_name": "Cerdas",
+          "gaya_belajar": "Visual & Analitis (Membaca, Meneliti, & Berpikir Reflektif)",
+          "score": 63
+        },
+        {
+          "category_id": "mempengaruhi",
+          "category_name": "Tegas",
+          "gaya_belajar": "Interaktif & Orientasi Tantangan (Simulasi Kepemimpinan)",
+          "score": 58
+        },
+        {
+          "category_id": "bekerjasama",
+          "category_name": "Gaul",
+          "gaya_belajar": "Auditori & Kolaboratif (Kerja Kelompok & Diskusi Ramai)",
+          "score": 36
+        },
+        {
+          "category_id": "berperasaan",
+          "category_name": "Berperasaan",
+          "gaya_belajar": "Auditori & Emosional (Bercerita & Diskusi Peka)",
+          "score": 31
+        },
+        {
+          "category_id": "melayani",
+          "category_name": "Lembut",
+          "gaya_belajar": "Kinestetik & Pelayanan Berbagi (Belajar Sambil Membantu)",
+          "score": 15
+        }
+      ],
+      "top_subgroups_18": [
+        {
+          "no": "1",
+          "id": "sub_1",
+          "name": "Berambisi",
+          "group_id": "bekerja_keras",
+          "group_name": "Pekerja Keras",
+          "score": 95
+        },
+        {
+          "no": "2",
+          "id": "sub_2",
+          "name": "Berwibawa",
+          "group_id": "bekerja_keras",
+          "group_name": "Pekerja Keras",
+          "score": 95
+        },
+        {
+          "no": "3",
+          "id": "sub_3",
+          "name": "Giat bekerja",
+          "group_id": "bekerja_keras",
+          "group_name": "Pekerja Keras",
+          "score": 95
+        },
+        {
+          "no": "4",
+          "id": "sub_4",
+          "name": "Suka berpikir imajinatif",
+          "group_id": "berpikir",
+          "group_name": "Cerdas",
+          "score": 63
+        },
+        {
+          "no": "5",
+          "id": "sub_5",
+          "name": "Suka berpikir positif",
+          "group_id": "berpikir",
+          "group_name": "Cerdas",
+          "score": 63
+        }
+      ],
+      "weak_subgroups_18": [
+        {
+          "no": "8",
+          "id": "sub_8",
+          "name": "Pendiam",
+          "group_id": "berperasaan",
+          "group_name": "Berperasaan",
+          "score": 31
+        },
+        {
+          "no": "9",
+          "id": "sub_9",
+          "name": "Suka merendah",
+          "group_id": "berperasaan",
+          "group_name": "Berperasaan",
+          "score": 31
+        },
+        {
+          "no": "16",
+          "id": "sub_16",
+          "name": "Suka melayani dengan cara memberi",
+          "group_id": "melayani",
+          "group_name": "Lembut",
+          "score": 15
+        },
+        {
+          "no": "17",
+          "id": "sub_17",
+          "name": "Suka melayani dengan cara menjaga",
+          "group_id": "melayani",
+          "group_name": "Lembut",
+          "score": 15
+        },
+        {
+          "no": "18",
+          "id": "sub_18",
+          "name": "Suka melayani dengan cara mengalah",
+          "group_id": "melayani",
+          "group_name": "Lembut",
+          "score": 15
+        }
+      ],
+      "bakat_kekuatan": [
+        {
+          "no": "1",
+          "id": "sub_1",
+          "name": "Berambisi",
+          "group_id": "bekerja_keras",
+          "group_name": "Pekerja Keras",
+          "score": 95
+        },
+        {
+          "no": "2",
+          "id": "sub_2",
+          "name": "Berwibawa",
+          "group_id": "bekerja_keras",
+          "group_name": "Pekerja Keras",
+          "score": 95
+        },
+        {
+          "no": "3",
+          "id": "sub_3",
+          "name": "Giat bekerja",
+          "group_id": "bekerja_keras",
+          "group_name": "Pekerja Keras",
+          "score": 95
+        },
+        {
+          "no": "4",
+          "id": "sub_4",
+          "name": "Suka berpikir imajinatif",
+          "group_id": "berpikir",
+          "group_name": "Cerdas",
+          "score": 63
+        },
+        {
+          "no": "5",
+          "id": "sub_5",
+          "name": "Suka berpikir positif",
+          "group_id": "berpikir",
+          "group_name": "Cerdas",
+          "score": 63
+        }
+      ],
+      "bakat_kelemahan": [
+        {
+          "no": "8",
+          "id": "sub_8",
+          "name": "Pendiam",
+          "group_id": "berperasaan",
+          "group_name": "Berperasaan",
+          "score": 31
+        },
+        {
+          "no": "9",
+          "id": "sub_9",
+          "name": "Suka merendah",
+          "group_id": "berperasaan",
+          "group_name": "Berperasaan",
+          "score": 31
+        },
+        {
+          "no": "16",
+          "id": "sub_16",
+          "name": "Suka melayani dengan cara memberi",
+          "group_id": "melayani",
+          "group_name": "Lembut",
+          "score": 15
+        },
+        {
+          "no": "17",
+          "id": "sub_17",
+          "name": "Suka melayani dengan cara menjaga",
+          "group_id": "melayani",
+          "group_name": "Lembut",
+          "score": 15
+        },
+        {
+          "no": "18",
+          "id": "sub_18",
+          "name": "Suka melayani dengan cara mengalah",
+          "group_id": "melayani",
+          "group_name": "Lembut",
+          "score": 15
+        }
+      ],
+      "ranked_subgroups_18": [
+        {
+          "no": "1",
+          "id": "sub_1",
+          "name": "Berambisi",
+          "group_id": "bekerja_keras",
+          "group_name": "Pekerja Keras",
+          "score": 95
+        },
+        {
+          "no": "2",
+          "id": "sub_2",
+          "name": "Berwibawa",
+          "group_id": "bekerja_keras",
+          "group_name": "Pekerja Keras",
+          "score": 95
+        },
+        {
+          "no": "3",
+          "id": "sub_3",
+          "name": "Giat bekerja",
+          "group_id": "bekerja_keras",
+          "group_name": "Pekerja Keras",
+          "score": 95
+        },
+        {
+          "no": "4",
+          "id": "sub_4",
+          "name": "Suka berpikir imajinatif",
+          "group_id": "berpikir",
+          "group_name": "Cerdas",
+          "score": 63
+        },
+        {
+          "no": "5",
+          "id": "sub_5",
+          "name": "Suka berpikir positif",
+          "group_id": "berpikir",
+          "group_name": "Cerdas",
+          "score": 63
+        },
+        {
+          "no": "6",
+          "id": "sub_6",
+          "name": "Suka berpikir analitis",
+          "group_id": "berpikir",
+          "group_name": "Cerdas",
+          "score": 63
+        },
+        {
+          "no": "10",
+          "id": "sub_10",
+          "name": "Suka menguasai",
+          "group_id": "mempengaruhi",
+          "group_name": "Tegas",
+          "score": 58
+        },
+        {
+          "no": "11",
+          "id": "sub_11",
+          "name": "Suka memotivasi",
+          "group_id": "mempengaruhi",
+          "group_name": "Tegas",
+          "score": 58
+        },
+        {
+          "no": "12",
+          "id": "sub_12",
+          "name": "Suka menolong",
+          "group_id": "mempengaruhi",
+          "group_name": "Tegas",
+          "score": 58
+        },
+        {
+          "no": "13",
+          "id": "sub_13",
+          "name": "Suka menggunakan hubungan yang ada",
+          "group_id": "bekerjasama",
+          "group_name": "Gaul",
+          "score": 36
+        },
+        {
+          "no": "14",
+          "id": "sub_14",
+          "name": "Suka membuat hubungan baru",
+          "group_id": "bekerjasama",
+          "group_name": "Gaul",
+          "score": 36
+        },
+        {
+          "no": "15",
+          "id": "sub_15",
+          "name": "Suka mengeratkan hubungan yang sudah ada",
+          "group_id": "bekerjasama",
+          "group_name": "Gaul",
+          "score": 36
+        },
+        {
+          "no": "7",
+          "id": "sub_7",
+          "name": "Suka apa adanya",
+          "group_id": "berperasaan",
+          "group_name": "Berperasaan",
+          "score": 31
+        },
+        {
+          "no": "8",
+          "id": "sub_8",
+          "name": "Pendiam",
+          "group_id": "berperasaan",
+          "group_name": "Berperasaan",
+          "score": 31
+        },
+        {
+          "no": "9",
+          "id": "sub_9",
+          "name": "Suka merendah",
+          "group_id": "berperasaan",
+          "group_name": "Berperasaan",
+          "score": 31
+        },
+        {
+          "no": "16",
+          "id": "sub_16",
+          "name": "Suka melayani dengan cara memberi",
+          "group_id": "melayani",
+          "group_name": "Lembut",
+          "score": 15
+        },
+        {
+          "no": "17",
+          "id": "sub_17",
+          "name": "Suka melayani dengan cara menjaga",
+          "group_id": "melayani",
+          "group_name": "Lembut",
+          "score": 15
+        },
+        {
+          "no": "18",
+          "id": "sub_18",
+          "name": "Suka melayani dengan cara mengalah",
+          "group_id": "melayani",
+          "group_name": "Lembut",
+          "score": 15
+        }
+      ],
+      "ranked_categories": [
+        {
+          "no": "1",
+          "id": "bekerja_keras",
+          "name": "Pekerja Keras",
+          "raw_score": 0.42,
+          "score": 95
+        },
+        {
+          "no": "2",
+          "id": "berpikir",
+          "name": "Cerdas",
+          "raw_score": 0.3,
+          "score": 63
+        },
+        {
+          "no": "4",
+          "id": "mempengaruhi",
+          "name": "Tegas",
+          "raw_score": 0.28,
+          "score": 58
+        },
+        {
+          "no": "5",
+          "id": "bekerjasama",
+          "name": "Gaul",
+          "raw_score": 0.2,
+          "score": 36
+        },
+        {
+          "no": "3",
+          "id": "berperasaan",
+          "name": "Berperasaan",
+          "raw_score": 0.18,
+          "score": 31
+        },
+        {
+          "no": "6",
+          "id": "melayani",
+          "name": "Lembut",
+          "raw_score": 0.12,
+          "score": 15
+        }
+      ],
+      "actual_categories": [
+        {
+          "no": "1",
+          "id": "bekerja_keras",
+          "name": "Pekerja Keras",
+          "raw_score": 0.42,
+          "score": 95
+        },
+        {
+          "no": "2",
+          "id": "berpikir",
+          "name": "Cerdas",
+          "raw_score": 0.3,
+          "score": 63
+        },
+        {
+          "no": "3",
+          "id": "berperasaan",
+          "name": "Berperasaan",
+          "raw_score": 0.18,
+          "score": 31
+        },
+        {
+          "no": "4",
+          "id": "mempengaruhi",
+          "name": "Tegas",
+          "raw_score": 0.28,
+          "score": 58
+        },
+        {
+          "no": "5",
+          "id": "bekerjasama",
+          "name": "Gaul",
+          "raw_score": 0.2,
+          "score": 36
+        },
+        {
+          "no": "6",
+          "id": "melayani",
+          "name": "Lembut",
+          "raw_score": 0.12,
+          "score": 15
+        }
+      ],
+      "top_categories": [
+        {
+          "no": "1",
+          "id": "bekerja_keras",
+          "name": "Pekerja Keras",
+          "raw_score": 0.42,
+          "score": 95
+        },
+        {
+          "no": "2",
+          "id": "berpikir",
+          "name": "Cerdas",
+          "raw_score": 0.3,
+          "score": 63
+        },
+        {
+          "no": "4",
+          "id": "mempengaruhi",
+          "name": "Tegas",
+          "raw_score": 0.28,
+          "score": 58
+        }
+      ],
+      "weak_categories": [
+        {
+          "no": "5",
+          "id": "bekerjasama",
+          "name": "Gaul",
+          "raw_score": 0.2,
+          "score": 36
+        },
+        {
+          "no": "3",
+          "id": "berperasaan",
+          "name": "Berperasaan",
+          "raw_score": 0.18,
+          "score": 31
+        },
+        {
+          "no": "6",
+          "id": "melayani",
+          "name": "Lembut",
+          "raw_score": 0.12,
+          "score": 15
+        }
+      ],
+      "recommended_profesi": [
+        "Pemborong Proyek",
+        "Teknisi Proyek",
+        "Pekerja Lapangan",
+        "Relawan",
+        "Petugas SAR",
+        "Peneliti",
+        "Analis Data",
+        "Perencana Strategis",
+        "Konsultan",
+        "Programmer",
+        "Manajer / Pemimpin",
+        "Public Speaker",
+        "Pengacara",
+        "Politisi",
+        "Negosiator"
+      ],
+      "recommended_jurusan": [
+        "Teknik Sipil",
+        "Teknik Permesinan",
+        "Keperawatan",
+        "Marketing",
+        "Ilmu Komputer",
+        "Sains Data",
+        "Matematika",
+        "Fisika",
+        "Filsafat",
+        "Hukum",
+        "Ilmu Komunikasi",
+        "Manajemen",
+        "Ilmu Politik"
+      ],
+      "lalai_warnings": [
+        {
+          "category_id": "bekerja_keras",
+          "category_name": "Pekerja Keras",
+          "nama": "Kasal (malas)",
+          "definisi": "Merasa berat dan lamban karena tidak mengoptimalkan dorongan kerja keras.",
+          "solusi_perbaiki": "Perbaiki dengan menguatkan tekad dan amanah."
+        },
+        {
+          "category_id": "berpikir",
+          "category_name": "Cerdas",
+          "nama": "Ahlu Ra'yi (mengandalkan akal berlebih)",
+          "definisi": "Mengabaikan intuisi atau perasaan karena terlalu lama menganalisis.",
+          "solusi_perbaiki": "Perbaiki dengan menguatkan hikmah dan empati."
+        },
+        {
+          "category_id": "mempengaruhi",
+          "category_name": "Tegas",
+          "nama": "Istibdad (otoriter)",
+          "definisi": "Memaksakan kehendak tanpa mendengar pendapat orang lain.",
+          "solusi_perbaiki": "Perbaiki dengan menguatkan syura (musyawarah) dan hilm (kesantunan)."
+        }
+      ],
+      "lebih_warnings": [
+        {
+          "category_id": "bekerja_keras",
+          "category_name": "Pekerja Keras",
+          "nama": "Thama' (serakah/ambisi berlebih)",
+          "definisi": "Berlebihan menuntut hasil tanpa memperhatikan batas kemampuan.",
+          "solusi_perbaiki": "Perbaiki dengan menguatkan qanaa'ah (merasa cukup) dan tawaadhu'."
+        },
+        {
+          "category_id": "berpikir",
+          "category_name": "Cerdas",
+          "nama": "Jahl (kebodohan merasa paling paham)",
+          "definisi": "Merasa paling mengerti sehingga mengabaikan fakta di luar gagasannya.",
+          "solusi_perbaiki": "Perbaiki dengan menguatkan sikap belajar dan mendengar."
+        },
+        {
+          "category_id": "mempengaruhi",
+          "category_name": "Tegas",
+          "nama": "Kibr (sombong)",
+          "definisi": "Merasa lebih unggul dan meremehkan peran orang lain.",
+          "solusi_perbaiki": "Perbaiki dengan menguatkan tawadhu' dan merendah."
+        }
+      ],
+      "svg_actual": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 320\" width=\"100%\" height=\"100%\"><rect width=\"100%\" height=\"100%\" fill=\"#F9FAFB\" rx=\"8\" /><text x=\"250\" y=\"35\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"16\" font-weight=\"bold\" fill=\"#1F2937\">Progres Visual Peta Bakat</text><text x=\"20\" y=\"77\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Pekerja Keras</text><rect x=\"150\" y=\"60\" width=\"285\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"117\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Cerdas</text><rect x=\"150\" y=\"100\" width=\"189\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"157\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Berperasaan</text><rect x=\"150\" y=\"140\" width=\"93\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"197\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Tegas</text><rect x=\"150\" y=\"180\" width=\"174\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"237\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Gaul</text><rect x=\"150\" y=\"220\" width=\"108\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"277\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Lembut</text><rect x=\"150\" y=\"260\" width=\"45\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /></svg>",
+      "svg_ranked": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 320\" width=\"100%\" height=\"100%\"><rect width=\"100%\" height=\"100%\" fill=\"#F9FAFB\" rx=\"8\" /><text x=\"250\" y=\"35\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"16\" font-weight=\"bold\" fill=\"#1F2937\">Progres Visual Peta Bakat</text><text x=\"20\" y=\"77\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Pekerja Keras</text><rect x=\"150\" y=\"60\" width=\"285\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"117\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Cerdas</text><rect x=\"150\" y=\"100\" width=\"189\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"157\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Tegas</text><rect x=\"150\" y=\"140\" width=\"174\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"197\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Gaul</text><rect x=\"150\" y=\"180\" width=\"108\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"237\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Berperasaan</text><rect x=\"150\" y=\"220\" width=\"93\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"277\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Lembut</text><rect x=\"150\" y=\"260\" width=\"45\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /></svg>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 320\" width=\"100%\" height=\"100%\"><rect width=\"100%\" height=\"100%\" fill=\"#F9FAFB\" rx=\"8\" /><text x=\"250\" y=\"35\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"16\" font-weight=\"bold\" fill=\"#1F2937\">Progres Visual Peta Bakat</text><text x=\"20\" y=\"77\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Pekerja Keras</text><rect x=\"150\" y=\"60\" width=\"285\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"117\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Cerdas</text><rect x=\"150\" y=\"100\" width=\"189\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"157\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Tegas</text><rect x=\"150\" y=\"140\" width=\"174\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"197\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Gaul</text><rect x=\"150\" y=\"180\" width=\"108\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"237\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Berperasaan</text><rect x=\"150\" y=\"220\" width=\"93\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /><text x=\"20\" y=\"277\" font-family=\"Arial, sans-serif\" font-size=\"14\" fill=\"#374151\">Lembut</text><rect x=\"150\" y=\"260\" width=\"45\" height=\"24\" rx=\"4\" fill=\"#4F46E5\" fill-opacity=\"0.85\" /></svg>",
+      "default_scores": [
+        30,
+        14,
+        20,
+        95,
+        30,
+        61,
+        63,
+        64,
+        52,
+        28,
+        68,
+        17,
+        89,
+        59,
+        35,
+        98,
+        10,
+        91,
+        62,
+        19,
+        10,
+        53,
+        39,
+        62,
+        91,
+        57,
+        60,
+        36,
+        33,
+        30,
+        16,
+        36,
+        29,
+        25,
+        59,
+        41,
+        14,
+        30,
+        36,
+        99
+      ]
+    }
+  },
+  "result": null,
+  "current_part": 1,
+  "total_parts": 6,
+  "part_title": "Pendalaman Indikator Bakat (Pekerja Keras)",
+  "completed_subgroups_count": 0,
+  "total_subgroups_count": 18,
+  "questions": [
+    {
+      "id": "sub_1",
+      "subgroup_no": "1",
+      "category_no": "1",
+      "text": "Saya selalu semangat menyelesaikan permainan atau tugas hingga tuntas.",
+      "text_observer": "{{name}} selalu semangat menyelesaikan permainan atau tugas hingga tuntas.",
+      "default_value": 95
+    },
+    {
+      "id": "sub_2",
+      "subgroup_no": "2",
+      "category_no": "1",
+      "text": "Saya anak yang tertib, berwibawa, dan taat aturan.",
+      "text_observer": "{{name}} anak yang tertib, berwibawa, dan taat aturan.",
+      "default_value": 95
+    },
+    {
+      "id": "sub_3",
+      "subgroup_no": "3",
+      "category_no": "1",
+      "text": "Saya giat belajar dan bekerja keras menyelesaikan kewajiban.",
+      "text_observer": "{{name}} giat belajar dan bekerja keras menyelesaikan kewajiban.",
+      "default_value": 95
+    }
+  ],
+  "range_labels": [
+    {
+      "min": 0,
+      "max": 25,
+      "emoji": "🤫",
+      "label": "Jarang / Sangat Lemah"
+    },
+    {
+      "min": 26,
+      "max": 50,
+      "emoji": "🌿",
+      "label": "Kadang-kadang / Netral"
+    },
+    {
+      "min": 51,
+      "max": 75,
+      "emoji": "👍",
+      "label": "Sering / Cukup Kuat"
+    },
+    {
+      "min": 76,
+      "max": 100,
+      "emoji": "🌟",
+      "label": "Sangat Sering / Sangat Dominan"
+    }
+  ]
+}
