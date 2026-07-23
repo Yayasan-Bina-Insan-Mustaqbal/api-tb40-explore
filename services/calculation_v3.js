@@ -297,15 +297,26 @@ function calculateInterimResults(tier1, tier2, tier3, type, showText = true, tie
   const maxRaw = Math.max(...rawGroups.map(g => g.score)) || 1;
   const minRaw = Math.min(...rawGroups.map(g => g.score)) || 0;
 
+  function getKekuatanAndColor(score) {
+    if (score > 80) return { kekuatan: "Sangat Kuat", color: "rgb(255, 100, 100)" };
+    if (score > 60) return { kekuatan: "Kuat", color: "rgb(255, 225, 98)" };
+    if (score > 40) return { kekuatan: "Sedang", color: "rgb(145, 196, 131)" };
+    if (score > 20) return { kekuatan: "Lemah", color: "rgb(187, 187, 187)" };
+    return { kekuatan: "Sangat Lemah", color: "rgb(136, 136, 136)" };
+  }
+
   const scaledGroups = rawGroups.map(g => {
     let normalized = (g.score - minRaw) / (maxRaw - minRaw || 1);
     let finalScore = Math.round(15 + normalized * 80);
+    const meta = getKekuatanAndColor(finalScore);
     return {
       no: g.no,
       id: g.id,
       name: g.name,
       raw_score: parseFloat(g.score.toFixed(4)),
-      score: finalScore
+      score: finalScore,
+      kekuatan: meta.kekuatan,
+      color: meta.color
     };
   });
 
@@ -351,13 +362,17 @@ function calculateInterimResults(tier1, tier2, tier3, type, showText = true, tie
       const normVal = userVal > 5 ? userVal : userVal * 20;
       finalScore = Math.round(parentBaseScore * 0.4 + normVal * 0.6);
     }
+    const finalBoundedScore = Math.min(99, Math.max(1, finalScore));
+    const meta = getKekuatanAndColor(finalBoundedScore);
     return {
       no: sub.no,
       id: sub.id,
       name: sub.name,
       group_id: sub.group_id,
       group_name: sub.group_name,
-      score: Math.min(99, Math.max(1, finalScore))
+      score: finalBoundedScore,
+      kekuatan: meta.kekuatan,
+      color: meta.color
     };
   });
 
@@ -519,7 +534,35 @@ function calculateInterimResults(tier1, tier2, tier3, type, showText = true, tie
   const recommendedProfesi = Array.from(new Set(topCategories.flatMap(g => profesiMap[g.id] || [])));
   const recommendedJurusan = Array.from(new Set(topCategories.flatMap(g => jurusanMap[g.id] || [])));
 
-  // Character Warnings
+  // Ego Warning (Extreme Introvert / Extrovert > 75%)
+  let egoWarning = null;
+  const introVal = (tier1 && tier1.introvert !== undefined) ? tier1.introvert : 50;
+  const extroVal = (tier1 && tier1.extrovert !== undefined) ? tier1.extrovert : 50;
+
+  if (introVal >= 75) {
+    egoWarning = {
+      type: 'introvert_extreme',
+      title: 'Dominansi Energi Introvert Sangat Tinggi',
+      definisi: 'Cenderung terlalu banyak menarik diri dari pergaulan dan memendam pemikiran sendiri.',
+      solusi_perbaiki: 'Perbaiki dengan melatih keterbukaan (Ulfah) dan kebersamaan (Ta\'aawun).'
+    };
+  } else if (extroVal >= 75) {
+    egoWarning = {
+      type: 'extrovert_extreme',
+      title: 'Dominansi Energi Extrovert Sangat Tinggi',
+      definisi: 'Sangat tergantung pada suasana luar dan mudah gelisah jika berada dalam keheningan.',
+      solusi_perbaiki: 'Perbaiki dengan melatih keheningan (Shamt) dan ketenangan kontemplatif (Anaah).'
+    };
+  }
+
+  // Narrative Synthesis
+  const dominantSocialEnergy = (introVal >= extroVal)
+    ? `Introvert (${introVal}%)`
+    : `Extrovert (${extroVal}%)`;
+  const top2Names = sortedGroups.slice(0, 2).map(g => g.name).join(' dan ');
+  const topSubgroupName = topSubgroups18[0] ? topSubgroups18[0].name : '';
+  const ringkasanKepribadian = `Memiliki kecenderungan energi sosial ${dominantSocialEnergy}. Bakat dominan paling menonjol pada bidang ${top2Names}${topSubgroupName ? `, dengan sub-kelompok bakat terkuat pada "${topSubgroupName}"` : ''}. Berpotensi tampil optimal dengan julukan ${julukan}.`;
+
   const lalaiWarnings = topCategories.map(g => ({
     category_id: g.id,
     category_name: g.name,
@@ -535,6 +578,8 @@ function calculateInterimResults(tier1, tier2, tier3, type, showText = true, tie
   return {
     julukan,
     panggilan,
+    ringkasan_kepribadian: ringkasanKepribadian,
+    ego_warning: egoWarning,
     highest_bahasa_hati: highestBahasaHati,
     highest_gaya_belajar: highestGayaBelajar,
     highest_gaya_belajar_arab: highestGayaBelajarArab,

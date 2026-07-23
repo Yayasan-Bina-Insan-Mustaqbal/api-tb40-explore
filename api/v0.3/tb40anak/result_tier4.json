@@ -3,7 +3,7 @@
   "status": "complete",
   "next_tier": "tier_4",
   "saved": true,
-  "timestamp": "2026-07-23T22:54:19.659Z",
+  "timestamp": "2026-07-23T23:00:26.044Z",
   "halfway_report": {
     "completion_percentage": 100,
     "completed_tiers": [
@@ -17,6 +17,8 @@
     "preliminary_results": {
       "julukan": "'Pekerja Keras yang Cerdas'",
       "panggilan": "'Pekerja Keras yang Cerdas'",
+      "ringkasan_kepribadian": "Memiliki kecenderungan energi sosial Introvert (60%). Bakat dominan paling menonjol pada bidang Pekerja Keras dan Cerdas, dengan sub-kelompok bakat terkuat pada \"Giat bekerja\". Berpotensi tampil optimal dengan julukan 'Pekerja Keras yang Cerdas'.",
+      "ego_warning": null,
       "highest_bahasa_hati": "Pertolongan Nyata & Aksi Nyata (Acts of Service)",
       "highest_gaya_belajar": "Kinestetik & Eksperimen Langsung (Praktik)",
       "highest_gaya_belajar_arab": "Al Fuad (الفُؤَاد) - Kinestetik",
@@ -104,7 +106,9 @@
           "name": "Giat bekerja",
           "group_id": "bekerja_keras",
           "group_name": "Pekerja Keras",
-          "score": 88
+          "score": 88,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "2",
@@ -112,7 +116,9 @@
           "name": "Berwibawa",
           "group_id": "bekerja_keras",
           "group_name": "Pekerja Keras",
-          "score": 84
+          "score": 84,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "1",
@@ -120,7 +126,9 @@
           "name": "Berambisi",
           "group_id": "bekerja_keras",
           "group_name": "Pekerja Keras",
-          "score": 81
+          "score": 81,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "4",
@@ -128,7 +136,9 @@
           "name": "Suka berpikir imajinatif",
           "group_id": "berpikir",
           "group_name": "Cerdas",
-          "score": 78
+          "score": 78,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "12",
@@ -136,7 +146,9 @@
           "name": "Suka menolong",
           "group_id": "mempengaruhi",
           "group_name": "Tegas",
-          "score": 68
+          "score": 68,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         }
       ],
       "weak_subgroups_18": [
@@ -146,7 +158,9 @@
           "name": "Suka apa adanya",
           "group_id": "berperasaan",
           "group_name": "Berperasaan",
-          "score": 60
+          "score": 60,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "18",
@@ -154,7 +168,9 @@
           "name": "Suka melayani dengan cara mengalah",
           "group_id": "melayani",
           "group_name": "Lembut",
-          "score": 56
+          "score": 56,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "15",
@@ -162,7 +178,9 @@
           "name": "Suka mengeratkan hubungan yang sudah ada",
           "group_id": "bekerjasama",
           "group_name": "Gaul",
-          "score": 54
+          "score": 54,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "17",
@@ -170,7 +188,9 @@
           "name": "Suka melayani dengan cara menjaga",
           "group_id": "melayani",
           "group_name": "Lembut",
-          "score": 52
+          "score": 52,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "16",
@@ -178,7 +198,9 @@
           "name": "Suka melayani dengan cara memberi",
           "group_id": "melayani",
           "group_name": "Lembut",
-          "score": 49
+          "score": 49,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         }
       ],
       "bakat_kekuatan": [
@@ -188,7 +210,9 @@
           "name": "Giat bekerja",
           "group_id": "bekerja_keras",
           "group_name": "Pekerja Keras",
-          "score": 88
+          "score": 88,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "2",
@@ -196,7 +220,9 @@
           "name": "Berwibawa",
           "group_id": "bekerja_keras",
           "group_name": "Pekerja Keras",
-          "score": 84
+          "score": 84,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "1",
@@ -204,7 +230,9 @@
           "name": "Berambisi",
           "group_id": "bekerja_keras",
           "group_name": "Pekerja Keras",
-          "score": 81
+          "score": 81,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "4",
@@ -212,7 +240,9 @@
           "name": "Suka berpikir imajinatif",
           "group_id": "berpikir",
           "group_name": "Cerdas",
-          "score": 78
+          "score": 78,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "12",
@@ -220,7 +250,9 @@
           "name": "Suka menolong",
           "group_id": "mempengaruhi",
           "group_name": "Tegas",
-          "score": 68
+          "score": 68,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         }
       ],
       "bakat_kelemahan": [
@@ -230,7 +262,9 @@
           "name": "Suka apa adanya",
           "group_id": "berperasaan",
           "group_name": "Berperasaan",
-          "score": 60
+          "score": 60,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "18",
@@ -238,7 +272,9 @@
           "name": "Suka melayani dengan cara mengalah",
           "group_id": "melayani",
           "group_name": "Lembut",
-          "score": 56
+          "score": 56,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "15",
@@ -246,7 +282,9 @@
           "name": "Suka mengeratkan hubungan yang sudah ada",
           "group_id": "bekerjasama",
           "group_name": "Gaul",
-          "score": 54
+          "score": 54,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "17",
@@ -254,7 +292,9 @@
           "name": "Suka melayani dengan cara menjaga",
           "group_id": "melayani",
           "group_name": "Lembut",
-          "score": 52
+          "score": 52,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "16",
@@ -262,7 +302,9 @@
           "name": "Suka melayani dengan cara memberi",
           "group_id": "melayani",
           "group_name": "Lembut",
-          "score": 49
+          "score": 49,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         }
       ],
       "ranked_subgroups_18": [
@@ -272,7 +314,9 @@
           "name": "Giat bekerja",
           "group_id": "bekerja_keras",
           "group_name": "Pekerja Keras",
-          "score": 88
+          "score": 88,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "2",
@@ -280,7 +324,9 @@
           "name": "Berwibawa",
           "group_id": "bekerja_keras",
           "group_name": "Pekerja Keras",
-          "score": 84
+          "score": 84,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "1",
@@ -288,7 +334,9 @@
           "name": "Berambisi",
           "group_id": "bekerja_keras",
           "group_name": "Pekerja Keras",
-          "score": 81
+          "score": 81,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "4",
@@ -296,7 +344,9 @@
           "name": "Suka berpikir imajinatif",
           "group_id": "berpikir",
           "group_name": "Cerdas",
-          "score": 78
+          "score": 78,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "12",
@@ -304,7 +354,9 @@
           "name": "Suka menolong",
           "group_id": "mempengaruhi",
           "group_name": "Tegas",
-          "score": 68
+          "score": 68,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "14",
@@ -312,7 +364,9 @@
           "name": "Suka membuat hubungan baru",
           "group_id": "bekerjasama",
           "group_name": "Gaul",
-          "score": 68
+          "score": 68,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "6",
@@ -320,7 +374,9 @@
           "name": "Suka berpikir analitis",
           "group_id": "berpikir",
           "group_name": "Cerdas",
-          "score": 67
+          "score": 67,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "9",
@@ -328,7 +384,9 @@
           "name": "Suka merendah",
           "group_id": "berperasaan",
           "group_name": "Berperasaan",
-          "score": 67
+          "score": 67,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "13",
@@ -336,7 +394,9 @@
           "name": "Suka menggunakan hubungan yang ada",
           "group_id": "bekerjasama",
           "group_name": "Gaul",
-          "score": 65
+          "score": 65,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "5",
@@ -344,7 +404,9 @@
           "name": "Suka berpikir positif",
           "group_id": "berpikir",
           "group_name": "Cerdas",
-          "score": 64
+          "score": 64,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "11",
@@ -352,7 +414,9 @@
           "name": "Suka memotivasi",
           "group_id": "mempengaruhi",
           "group_name": "Tegas",
-          "score": 64
+          "score": 64,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "8",
@@ -360,7 +424,9 @@
           "name": "Pendiam",
           "group_id": "berperasaan",
           "group_name": "Berperasaan",
-          "score": 63
+          "score": 63,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "10",
@@ -368,7 +434,9 @@
           "name": "Suka menguasai",
           "group_id": "mempengaruhi",
           "group_name": "Tegas",
-          "score": 61
+          "score": 61,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "7",
@@ -376,7 +444,9 @@
           "name": "Suka apa adanya",
           "group_id": "berperasaan",
           "group_name": "Berperasaan",
-          "score": 60
+          "score": 60,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "18",
@@ -384,7 +454,9 @@
           "name": "Suka melayani dengan cara mengalah",
           "group_id": "melayani",
           "group_name": "Lembut",
-          "score": 56
+          "score": 56,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "15",
@@ -392,7 +464,9 @@
           "name": "Suka mengeratkan hubungan yang sudah ada",
           "group_id": "bekerjasama",
           "group_name": "Gaul",
-          "score": 54
+          "score": 54,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "17",
@@ -400,7 +474,9 @@
           "name": "Suka melayani dengan cara menjaga",
           "group_id": "melayani",
           "group_name": "Lembut",
-          "score": 52
+          "score": 52,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "16",
@@ -408,7 +484,9 @@
           "name": "Suka melayani dengan cara memberi",
           "group_id": "melayani",
           "group_name": "Lembut",
-          "score": 49
+          "score": 49,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         }
       ],
       "ranked_categories": [
@@ -417,42 +495,54 @@
           "id": "bekerja_keras",
           "name": "Pekerja Keras",
           "raw_score": 0.474,
-          "score": 95
+          "score": 95,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "2",
           "id": "berpikir",
           "name": "Cerdas",
           "raw_score": 0.35,
-          "score": 62
+          "score": 62,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "4",
           "id": "mempengaruhi",
           "name": "Tegas",
           "raw_score": 0.322,
-          "score": 54
+          "score": 54,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "5",
           "id": "bekerjasama",
           "name": "Gaul",
           "raw_score": 0.258,
-          "score": 37
+          "score": 37,
+          "kekuatan": "Lemah",
+          "color": "rgb(187, 187, 187)"
         },
         {
           "no": "3",
           "id": "berperasaan",
           "name": "Berperasaan",
           "raw_score": 0.246,
-          "score": 34
+          "score": 34,
+          "kekuatan": "Lemah",
+          "color": "rgb(187, 187, 187)"
         },
         {
           "no": "6",
           "id": "melayani",
           "name": "Lembut",
           "raw_score": 0.174,
-          "score": 15
+          "score": 15,
+          "kekuatan": "Sangat Lemah",
+          "color": "rgb(136, 136, 136)"
         }
       ],
       "actual_categories": [
@@ -461,42 +551,54 @@
           "id": "bekerja_keras",
           "name": "Pekerja Keras",
           "raw_score": 0.474,
-          "score": 95
+          "score": 95,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "2",
           "id": "berpikir",
           "name": "Cerdas",
           "raw_score": 0.35,
-          "score": 62
+          "score": 62,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "3",
           "id": "berperasaan",
           "name": "Berperasaan",
           "raw_score": 0.246,
-          "score": 34
+          "score": 34,
+          "kekuatan": "Lemah",
+          "color": "rgb(187, 187, 187)"
         },
         {
           "no": "4",
           "id": "mempengaruhi",
           "name": "Tegas",
           "raw_score": 0.322,
-          "score": 54
+          "score": 54,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         },
         {
           "no": "5",
           "id": "bekerjasama",
           "name": "Gaul",
           "raw_score": 0.258,
-          "score": 37
+          "score": 37,
+          "kekuatan": "Lemah",
+          "color": "rgb(187, 187, 187)"
         },
         {
           "no": "6",
           "id": "melayani",
           "name": "Lembut",
           "raw_score": 0.174,
-          "score": 15
+          "score": 15,
+          "kekuatan": "Sangat Lemah",
+          "color": "rgb(136, 136, 136)"
         }
       ],
       "top_categories": [
@@ -505,21 +607,27 @@
           "id": "bekerja_keras",
           "name": "Pekerja Keras",
           "raw_score": 0.474,
-          "score": 95
+          "score": 95,
+          "kekuatan": "Sangat Kuat",
+          "color": "rgb(255, 100, 100)"
         },
         {
           "no": "2",
           "id": "berpikir",
           "name": "Cerdas",
           "raw_score": 0.35,
-          "score": 62
+          "score": 62,
+          "kekuatan": "Kuat",
+          "color": "rgb(255, 225, 98)"
         },
         {
           "no": "4",
           "id": "mempengaruhi",
           "name": "Tegas",
           "raw_score": 0.322,
-          "score": 54
+          "score": 54,
+          "kekuatan": "Sedang",
+          "color": "rgb(145, 196, 131)"
         }
       ],
       "weak_categories": [
@@ -528,21 +636,27 @@
           "id": "bekerjasama",
           "name": "Gaul",
           "raw_score": 0.258,
-          "score": 37
+          "score": 37,
+          "kekuatan": "Lemah",
+          "color": "rgb(187, 187, 187)"
         },
         {
           "no": "3",
           "id": "berperasaan",
           "name": "Berperasaan",
           "raw_score": 0.246,
-          "score": 34
+          "score": 34,
+          "kekuatan": "Lemah",
+          "color": "rgb(187, 187, 187)"
         },
         {
           "no": "6",
           "id": "melayani",
           "name": "Lembut",
           "raw_score": 0.174,
-          "score": 15
+          "score": 15,
+          "kekuatan": "Sangat Lemah",
+          "color": "rgb(136, 136, 136)"
         }
       ],
       "recommended_profesi": [
@@ -673,6 +787,8 @@
   "result": {
     "julukan": "'Pekerja Keras yang Cerdas'",
     "panggilan": "'Pekerja Keras yang Cerdas'",
+    "ringkasan_kepribadian": "Memiliki kecenderungan energi sosial Introvert (60%). Bakat dominan paling menonjol pada bidang Pekerja Keras dan Cerdas, dengan sub-kelompok bakat terkuat pada \"Giat bekerja\". Berpotensi tampil optimal dengan julukan 'Pekerja Keras yang Cerdas'.",
+    "ego_warning": null,
     "highest_bahasa_hati": "Pertolongan Nyata & Aksi Nyata (Acts of Service)",
     "highest_gaya_belajar": "Kinestetik & Eksperimen Langsung (Praktik)",
     "highest_gaya_belajar_arab": "Al Fuad (الفُؤَاد) - Kinestetik",
@@ -760,7 +876,9 @@
         "name": "Giat bekerja",
         "group_id": "bekerja_keras",
         "group_name": "Pekerja Keras",
-        "score": 88
+        "score": 88,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "2",
@@ -768,7 +886,9 @@
         "name": "Berwibawa",
         "group_id": "bekerja_keras",
         "group_name": "Pekerja Keras",
-        "score": 84
+        "score": 84,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "1",
@@ -776,7 +896,9 @@
         "name": "Berambisi",
         "group_id": "bekerja_keras",
         "group_name": "Pekerja Keras",
-        "score": 81
+        "score": 81,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "4",
@@ -784,7 +906,9 @@
         "name": "Suka berpikir imajinatif",
         "group_id": "berpikir",
         "group_name": "Cerdas",
-        "score": 78
+        "score": 78,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "12",
@@ -792,7 +916,9 @@
         "name": "Suka menolong",
         "group_id": "mempengaruhi",
         "group_name": "Tegas",
-        "score": 68
+        "score": 68,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       }
     ],
     "weak_subgroups_18": [
@@ -802,7 +928,9 @@
         "name": "Suka apa adanya",
         "group_id": "berperasaan",
         "group_name": "Berperasaan",
-        "score": 60
+        "score": 60,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "18",
@@ -810,7 +938,9 @@
         "name": "Suka melayani dengan cara mengalah",
         "group_id": "melayani",
         "group_name": "Lembut",
-        "score": 56
+        "score": 56,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "15",
@@ -818,7 +948,9 @@
         "name": "Suka mengeratkan hubungan yang sudah ada",
         "group_id": "bekerjasama",
         "group_name": "Gaul",
-        "score": 54
+        "score": 54,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "17",
@@ -826,7 +958,9 @@
         "name": "Suka melayani dengan cara menjaga",
         "group_id": "melayani",
         "group_name": "Lembut",
-        "score": 52
+        "score": 52,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "16",
@@ -834,7 +968,9 @@
         "name": "Suka melayani dengan cara memberi",
         "group_id": "melayani",
         "group_name": "Lembut",
-        "score": 49
+        "score": 49,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       }
     ],
     "bakat_kekuatan": [
@@ -844,7 +980,9 @@
         "name": "Giat bekerja",
         "group_id": "bekerja_keras",
         "group_name": "Pekerja Keras",
-        "score": 88
+        "score": 88,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "2",
@@ -852,7 +990,9 @@
         "name": "Berwibawa",
         "group_id": "bekerja_keras",
         "group_name": "Pekerja Keras",
-        "score": 84
+        "score": 84,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "1",
@@ -860,7 +1000,9 @@
         "name": "Berambisi",
         "group_id": "bekerja_keras",
         "group_name": "Pekerja Keras",
-        "score": 81
+        "score": 81,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "4",
@@ -868,7 +1010,9 @@
         "name": "Suka berpikir imajinatif",
         "group_id": "berpikir",
         "group_name": "Cerdas",
-        "score": 78
+        "score": 78,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "12",
@@ -876,7 +1020,9 @@
         "name": "Suka menolong",
         "group_id": "mempengaruhi",
         "group_name": "Tegas",
-        "score": 68
+        "score": 68,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       }
     ],
     "bakat_kelemahan": [
@@ -886,7 +1032,9 @@
         "name": "Suka apa adanya",
         "group_id": "berperasaan",
         "group_name": "Berperasaan",
-        "score": 60
+        "score": 60,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "18",
@@ -894,7 +1042,9 @@
         "name": "Suka melayani dengan cara mengalah",
         "group_id": "melayani",
         "group_name": "Lembut",
-        "score": 56
+        "score": 56,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "15",
@@ -902,7 +1052,9 @@
         "name": "Suka mengeratkan hubungan yang sudah ada",
         "group_id": "bekerjasama",
         "group_name": "Gaul",
-        "score": 54
+        "score": 54,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "17",
@@ -910,7 +1062,9 @@
         "name": "Suka melayani dengan cara menjaga",
         "group_id": "melayani",
         "group_name": "Lembut",
-        "score": 52
+        "score": 52,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "16",
@@ -918,7 +1072,9 @@
         "name": "Suka melayani dengan cara memberi",
         "group_id": "melayani",
         "group_name": "Lembut",
-        "score": 49
+        "score": 49,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       }
     ],
     "ranked_subgroups_18": [
@@ -928,7 +1084,9 @@
         "name": "Giat bekerja",
         "group_id": "bekerja_keras",
         "group_name": "Pekerja Keras",
-        "score": 88
+        "score": 88,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "2",
@@ -936,7 +1094,9 @@
         "name": "Berwibawa",
         "group_id": "bekerja_keras",
         "group_name": "Pekerja Keras",
-        "score": 84
+        "score": 84,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "1",
@@ -944,7 +1104,9 @@
         "name": "Berambisi",
         "group_id": "bekerja_keras",
         "group_name": "Pekerja Keras",
-        "score": 81
+        "score": 81,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "4",
@@ -952,7 +1114,9 @@
         "name": "Suka berpikir imajinatif",
         "group_id": "berpikir",
         "group_name": "Cerdas",
-        "score": 78
+        "score": 78,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "12",
@@ -960,7 +1124,9 @@
         "name": "Suka menolong",
         "group_id": "mempengaruhi",
         "group_name": "Tegas",
-        "score": 68
+        "score": 68,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "14",
@@ -968,7 +1134,9 @@
         "name": "Suka membuat hubungan baru",
         "group_id": "bekerjasama",
         "group_name": "Gaul",
-        "score": 68
+        "score": 68,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "6",
@@ -976,7 +1144,9 @@
         "name": "Suka berpikir analitis",
         "group_id": "berpikir",
         "group_name": "Cerdas",
-        "score": 67
+        "score": 67,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "9",
@@ -984,7 +1154,9 @@
         "name": "Suka merendah",
         "group_id": "berperasaan",
         "group_name": "Berperasaan",
-        "score": 67
+        "score": 67,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "13",
@@ -992,7 +1164,9 @@
         "name": "Suka menggunakan hubungan yang ada",
         "group_id": "bekerjasama",
         "group_name": "Gaul",
-        "score": 65
+        "score": 65,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "5",
@@ -1000,7 +1174,9 @@
         "name": "Suka berpikir positif",
         "group_id": "berpikir",
         "group_name": "Cerdas",
-        "score": 64
+        "score": 64,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "11",
@@ -1008,7 +1184,9 @@
         "name": "Suka memotivasi",
         "group_id": "mempengaruhi",
         "group_name": "Tegas",
-        "score": 64
+        "score": 64,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "8",
@@ -1016,7 +1194,9 @@
         "name": "Pendiam",
         "group_id": "berperasaan",
         "group_name": "Berperasaan",
-        "score": 63
+        "score": 63,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "10",
@@ -1024,7 +1204,9 @@
         "name": "Suka menguasai",
         "group_id": "mempengaruhi",
         "group_name": "Tegas",
-        "score": 61
+        "score": 61,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "7",
@@ -1032,7 +1214,9 @@
         "name": "Suka apa adanya",
         "group_id": "berperasaan",
         "group_name": "Berperasaan",
-        "score": 60
+        "score": 60,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "18",
@@ -1040,7 +1224,9 @@
         "name": "Suka melayani dengan cara mengalah",
         "group_id": "melayani",
         "group_name": "Lembut",
-        "score": 56
+        "score": 56,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "15",
@@ -1048,7 +1234,9 @@
         "name": "Suka mengeratkan hubungan yang sudah ada",
         "group_id": "bekerjasama",
         "group_name": "Gaul",
-        "score": 54
+        "score": 54,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "17",
@@ -1056,7 +1244,9 @@
         "name": "Suka melayani dengan cara menjaga",
         "group_id": "melayani",
         "group_name": "Lembut",
-        "score": 52
+        "score": 52,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "16",
@@ -1064,7 +1254,9 @@
         "name": "Suka melayani dengan cara memberi",
         "group_id": "melayani",
         "group_name": "Lembut",
-        "score": 49
+        "score": 49,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       }
     ],
     "ranked_categories": [
@@ -1073,42 +1265,54 @@
         "id": "bekerja_keras",
         "name": "Pekerja Keras",
         "raw_score": 0.474,
-        "score": 95
+        "score": 95,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "2",
         "id": "berpikir",
         "name": "Cerdas",
         "raw_score": 0.35,
-        "score": 62
+        "score": 62,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "4",
         "id": "mempengaruhi",
         "name": "Tegas",
         "raw_score": 0.322,
-        "score": 54
+        "score": 54,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "5",
         "id": "bekerjasama",
         "name": "Gaul",
         "raw_score": 0.258,
-        "score": 37
+        "score": 37,
+        "kekuatan": "Lemah",
+        "color": "rgb(187, 187, 187)"
       },
       {
         "no": "3",
         "id": "berperasaan",
         "name": "Berperasaan",
         "raw_score": 0.246,
-        "score": 34
+        "score": 34,
+        "kekuatan": "Lemah",
+        "color": "rgb(187, 187, 187)"
       },
       {
         "no": "6",
         "id": "melayani",
         "name": "Lembut",
         "raw_score": 0.174,
-        "score": 15
+        "score": 15,
+        "kekuatan": "Sangat Lemah",
+        "color": "rgb(136, 136, 136)"
       }
     ],
     "actual_categories": [
@@ -1117,42 +1321,54 @@
         "id": "bekerja_keras",
         "name": "Pekerja Keras",
         "raw_score": 0.474,
-        "score": 95
+        "score": 95,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "2",
         "id": "berpikir",
         "name": "Cerdas",
         "raw_score": 0.35,
-        "score": 62
+        "score": 62,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "3",
         "id": "berperasaan",
         "name": "Berperasaan",
         "raw_score": 0.246,
-        "score": 34
+        "score": 34,
+        "kekuatan": "Lemah",
+        "color": "rgb(187, 187, 187)"
       },
       {
         "no": "4",
         "id": "mempengaruhi",
         "name": "Tegas",
         "raw_score": 0.322,
-        "score": 54
+        "score": 54,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       },
       {
         "no": "5",
         "id": "bekerjasama",
         "name": "Gaul",
         "raw_score": 0.258,
-        "score": 37
+        "score": 37,
+        "kekuatan": "Lemah",
+        "color": "rgb(187, 187, 187)"
       },
       {
         "no": "6",
         "id": "melayani",
         "name": "Lembut",
         "raw_score": 0.174,
-        "score": 15
+        "score": 15,
+        "kekuatan": "Sangat Lemah",
+        "color": "rgb(136, 136, 136)"
       }
     ],
     "top_categories": [
@@ -1161,21 +1377,27 @@
         "id": "bekerja_keras",
         "name": "Pekerja Keras",
         "raw_score": 0.474,
-        "score": 95
+        "score": 95,
+        "kekuatan": "Sangat Kuat",
+        "color": "rgb(255, 100, 100)"
       },
       {
         "no": "2",
         "id": "berpikir",
         "name": "Cerdas",
         "raw_score": 0.35,
-        "score": 62
+        "score": 62,
+        "kekuatan": "Kuat",
+        "color": "rgb(255, 225, 98)"
       },
       {
         "no": "4",
         "id": "mempengaruhi",
         "name": "Tegas",
         "raw_score": 0.322,
-        "score": 54
+        "score": 54,
+        "kekuatan": "Sedang",
+        "color": "rgb(145, 196, 131)"
       }
     ],
     "weak_categories": [
@@ -1184,21 +1406,27 @@
         "id": "bekerjasama",
         "name": "Gaul",
         "raw_score": 0.258,
-        "score": 37
+        "score": 37,
+        "kekuatan": "Lemah",
+        "color": "rgb(187, 187, 187)"
       },
       {
         "no": "3",
         "id": "berperasaan",
         "name": "Berperasaan",
         "raw_score": 0.246,
-        "score": 34
+        "score": 34,
+        "kekuatan": "Lemah",
+        "color": "rgb(187, 187, 187)"
       },
       {
         "no": "6",
         "id": "melayani",
         "name": "Lembut",
         "raw_score": 0.174,
-        "score": 15
+        "score": 15,
+        "kekuatan": "Sangat Lemah",
+        "color": "rgb(136, 136, 136)"
       }
     ],
     "recommended_profesi": [
